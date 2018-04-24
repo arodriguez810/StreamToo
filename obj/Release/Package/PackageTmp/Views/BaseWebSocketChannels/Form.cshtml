@@ -1,0 +1,154 @@
+@model Admin.Models.BaseWebSocketChannel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<style>
+    .CodeMirror{
+        height: 150px !important;
+    }
+</style>
+<i data-width="80%" class="dn" id="modalInfoWebSocketChannels" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create WebSocketChannels")" data-editModalTitle="@("Edit WebSocketChannels")" data-editing="@(Model.Id==0?"False":"True")"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h3 class="panel-title">Web Socket Channels</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseWebSocketChannels")" id="BaseWebSocketChannel-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(d => d.Id)
+                <div class="row">
+                    @Html.BaseTextBox("Name", Model.Name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("ParametersName", Model.ParametersName, "Parameters Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Parameters Name") }, "maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+                <div class="row">
+                    @Html.BaseDateTimePick("StartDate", Model.StartDate, "Start Date", 6, "Start Date", "date", "", "", false)
+                    @Html.BaseDateTimePick("EndDate", Model.EndDate, "End Date", 6, "End Date", "date", "", "", false)
+                </div>
+                <div class="row">
+                    @Html.BaseTimePicker("StartTime", Model.StartTime, "Start Time", 6, "Start Time", "", new MyHtmlHelpers.BaseToolTip("Start Time"))
+                    @Html.BaseTimePicker("EndTime", Model.EndTime, "End Time", 6, "End Time", "", new MyHtmlHelpers.BaseToolTip("End Time"))
+                </div>
+                <div class="row">
+                    @Html.BaseCheckBox("IsGlobal", Model.IsGlobal, "", "Is Global", 2, "Yes", "No", "")
+                    @Html.BaseCheckBox("NoDateLimit", Model.NoDateLimit, "", "No Date Limit", 2, "Yes", "No", "")
+                    @Html.BaseCheckBox("NoTimeLimit", Model.NoTimeLimit, "", "No Time Limit", 2, "Yes", "No", "")
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("ServerCode", null, "Server Code", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Server Code") }, "", "", true, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("ClientCode", null, "Client Code", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Client Code") }, "", "", true, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("DataEmitExample", null, "Data Emit Example", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Data Emit Example") }, "", "", true, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+            </fieldset>
+            <footer>
+                @if (!string.IsNullOrEmpty(ViewBag.from))
+                {
+                    string[] relations = ViewBag.from.Split(':');
+                    <a class="btn btn-danger formClose" title="@("Close")" href="#MS@(relations[0].Split('_')[0])/Form/@(relations[1])"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+                else if (ViewBag.relations.Count > 0 && Model.Id != 0)
+                {
+                    <a class="btn btn-danger formClose fromBack" title="@("Close")" href="#BaseWebSocketChannels/Index"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+                <button class="btn btn-success" data-success="$('#baseDynamicModalObject').modal('hide');csBaseWebSocketChannels@(ViewBag.from.Split(':')[0]).data('CStable').update();" title="@("Save")"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+@if (ViewBag.relations.Count > 0 && Model.Id != 0)
+{
+    bool first = true;
+    <div class="panel panel-primary">
+        <ul class="nav nav-tabs">
+            @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+            {
+                var fkSplit = item.FK_Column.Split('_');
+                <li class="@(first ? "active" : "")">
+                    <a href="#@(item.K_Table + "_" + item.FK_Column)" data-toggle="tab" aria-expanded="@(first ? "true" : "false")">
+                        @Helper.Capitalize(item.K_Table, 2)
+                    </a>
+                </li>
+                first = false;
+            }
+        </ul>
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                @{
+                    first = true;
+                }
+                @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                    <div class="tab-pane fade @(first ? "active in" : "")" id="@(item.K_Table + "_" + item.FK_Column)">
+                        Loading...
+                    </div>
+                    <script>
+                        loadContent("@Url.Action("Index", item.K_Table, new { from = item.FK_Column+ ":"+Model.Id })", "#@(item.K_Table + "_" + item.FK_Column)");
+                    </script>
+                    first = false;
+                }
+            </div>
+        </div>
+    </div>
+                    }
+<script>
+    function next() {
+        location.href = "#BaseWebSocketChannels/Form/" + BaseLastID;
+    }
+    pageSetUp(true);
+
+    var mime = 'text/javascript';
+    if (window.location.href.indexOf('mime=') > -1) {
+        mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
+    }
+
+    $(document).ready(function () {
+        validateForm("BaseWebSocketChannel-form");
+        var from = "@ViewBag.from";
+        HideRelation("BaseWebSocketChannel-form", from);
+
+        var serverCode = `@Html.Raw(Model.ServerCode)`;
+        var clientCode = `@Html.Raw(Model.ClientCode)`;
+        var json = `@Html.Raw(Model.DataEmitExample)`;
+
+        $('#ServerCode').val(serverCode);
+        $('#ClientCode').val(clientCode);
+        $('#DataEmitExample').val(json);
+
+        editor = CodeMirror.fromTextArea(document.getElementById('ServerCode'), {
+            mode: mime,
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+        });
+
+        editor2 = CodeMirror.fromTextArea(document.getElementById('ClientCode'), {
+            mode: mime,
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+        });
+
+        editor3 = CodeMirror.fromTextArea(document.getElementById('DataEmitExample'), {
+            mode: 'application/ld+json',
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+        });
+    });
+</script>

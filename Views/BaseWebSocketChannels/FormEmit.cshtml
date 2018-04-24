@@ -1,0 +1,70 @@
+@model Admin.Models.BaseWebSocketChannel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<style>
+    .CodeMirror {
+        height: 150px !important;
+    }
+</style>
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create WebSocket Channels")" data-editmodaltitle="@("Edit WebSocket Channels")" data-editing="@(Model.Id == 0 ? "False" : "True")" data-onclose="csSMWebSocketChannels.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.Id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Data Emit Example</h3>
+    </div>
+    <div class="panel-body">
+        <form id="BaseWebSocketChannels-formEmit" class="smart-form">
+            <fieldset>
+                @Html.HiddenFor(m => m.Name)
+                <div class="row">
+                    @Html.BaseTextBox("DataEmitExample", null, "Write JSON Data code to emit example", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Write JSON Data code to emit example"), cols = "60", rows = "20" }, "", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="Close" href="javascript:void();">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </a>
+                <button class="btn btn-info" id="btnSubmit" title="Make Emit">
+                    <i class="glyphicon glyphicon-transfer"></i>
+                </button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    var mime = 'text/javascript';
+    if (window.location.href.indexOf('mime=') > -1) {
+        mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
+    }
+
+    $(document).ready(function () {
+        validateForm("BaseWebSocketChannels-formEmit");
+
+        var json = `@Html.Raw(Model.DataEmitExample)`;
+
+        $('#DataEmitExample').val(json);
+
+        editor = CodeMirror.fromTextArea(document.getElementById('DataEmitExample'), {
+            mode: 'application/ld+json',
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+        });
+
+        $(document).delegate('#btnSubmit', 'click', function (e) {
+            e.preventDefault();
+            var name = $('[name="Name"]').val();
+            var data = editor.getValue();
+            socket.emit(name, data);
+        });
+    });
+</script>

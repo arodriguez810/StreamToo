@@ -1,0 +1,182 @@
+﻿@model Admin.Controllers.SendController.HomeData
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{
+    Layout = "~/Views/SharedClient/layout.cshtml";
+    ViewBag.title = "SMSChat";
+    BaseAccount account = null;
+    if (WebSecurity.IsAuthenticated)
+    {
+        account = new Context().BaseAccounts.FirstOrDefault(d => d.email == WebSecurity.CurrentUserName);
+    }
+}
+
+<div class="row">
+    <div class="col-md-7 col-sm-7 col-lg-7 col-xs-12 padding-mobile">
+        <div class="panel panel-default">
+            <div class="panel-heading primary-color text-white">Send Message</div>
+            <div class="panel-body">
+                <form action="@Url.Action(WebSecurity.IsAuthenticated?"SendPay": "SendFree", "Service")" id="freeMessage" class="smart-form ajaxForm" data-jsonback="response">
+                    <div class="form-group">
+                        <label for="phone" class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pl pr">Phone Number to Send:</label>
+                        <div class="col-md-5 col-sm-5 col-lg-5 col-xs-12 pl pr">
+                            <input type="tel" name="phone" id="phone" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" data-validation="required;number" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pl pr">Message characters: <b id="limite">@ViewBag.limit</b></label>
+                        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pr pl">
+                            <textarea name="body" class="form-control message-text" rows="5" id="message" data-validation="required" maxlength="@ViewBag.limit" aria-required="true"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-lg-5 col-xs-12 pl pr">
+                            <label for="via_response" class="">Via response (Phone/Email):</label>
+                            @if (!WebSecurity.IsAuthenticated)
+                            {
+                                <input type="text" class="form-control" id="via_response" data-validation="required" name="via">
+                            }
+                            else
+                            {
+                                <select class="form-control" id="via_response" data-validation="required" name="via">
+                                    <option value="@account.phone">Phone: @account.phone</option>
+                                    <option value="@account.email">Email: @account.email</option>
+                                </select>
+                            }
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-lg-7 col-xs-12 pr buttons">
+                            <button type="submit" class="btn btn-success btn-md pull-right send" data-toggle="modal44" data-target="#myModal44">Send</button>
+                            <button type="button" class="btn btn-default btn-md pull-right clear-fields">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="hidden-md hidden-sm hidden-lg">
+            <p class="text-muted pull-left copy-movil">Copyright © all rights reserved. SMSC 2017</p>
+            <div class="terms-mobile">
+                <p class="text-muted pull-left hello"><a href="#" target="_blank">Terms of service</a> | <a href="#" target="_blank">Privacy Policy</a></p>
+                <p class="text-muted pull-right vivavi">
+                    <a href="http://viyavi.com" target="_blank">
+                        <img src="~/client/img/viyavi.png">
+                    </a>
+                </p>
+            </div>
+            <p class="text-muted pull-right devp devp-mov">
+                <a href="http://viyavi.com" target="_blank">
+                    <img src="~/client/img/logofooter-mobile.png">
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-5 col-lg-5 col-xs-12 hidden-xs">
+        @if (!WebSecurity.IsAuthenticated)
+        {
+            if (Model.UpsItem != null)
+            {
+                <aside class="sidebar-publicity">
+                    <a href="@Model.UpsItem.linkUrl">  <img src="@Helper.getImage("MSAdd", "addImage", Model.UpsItem.addImage)" alt="@Model.UpsItem.alt"></a>
+                </aside>
+            }
+            if (Model.MiddlesItem != null)
+            {
+                <aside class="sidebar-publicity">
+                    <a href="@Model.MiddlesItem.linkUrl">  <img src="@Helper.getImage("MSAdd", "addImage", Model.MiddlesItem.addImage)" alt="@Model.MiddlesItem.alt"></a>
+                </aside>
+            }
+        }
+        else
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading primary-color text-white">Last Messages</div>
+                <div class="panel-body" style="height:337px;overflow:auto">
+                    <table class="table table-responsive" id="messages"></table>
+                </div>
+            </div>
+
+        }
+    </div>
+    @if (!WebSecurity.IsAuthenticated)
+    {
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 hidden-xs">
+            @if (Model.DowsItem != null)
+            {
+                <aside class="sidebar-publicity" style="width: 100%;">
+                    <p class="center">
+                        <a href="@Model.DowsItem.linkUrl">  <img src="@Helper.getImage("MSAdd", "addImage", Model.DowsItem.addImage)" alt="@Model.DowsItem.alt"></a>
+                    </p>
+                </aside>
+            }
+        </div>
+    }
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog mensaje-conf">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header primary-color text-white" style="border-top-left-radius: 4px;border-top-right-radius: 4px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sent Message</h4>
+            </div>
+            <div class="modal-body">
+                <p class="message">Your message has been sent.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+        function response(data) {
+            data = eval("(" + data + ")");
+            switch (data.status) {
+                case "warning":
+                case "error": {
+                    swal(data.status, data.message, data.status);
+                    break;
+                }
+                case "success": {
+                    swal(data.status, data.message, data.status);
+                    $("#freeMessage")[0].reset();
+                    break;
+                }
+            }
+        }
+        function fillMessages(data){
+            $("#messages").empty();
+            console.log(data);
+            for(var i in data.messages){
+                $("#messages").append("<tr><td>"+data.messages[i].replace(/@@more@@/g,"")+"</td></tr>");
+            }
+        }
+        $(document).ready(function () {
+            var isAuth = "@WebSecurity.IsAuthenticated";
+            $(".clear-fields").click(function () {
+                $("#freeMessage")[0].reset();
+                $("#message").trigger("keyup");
+            });
+            pageSetUp(true);
+            $(document).ready(function () {
+                validateForm("freeMessage");
+            });
+            var limit = @ViewBag.limit;
+            $("#message").keyup(function () {
+                var current = @ViewBag.limit - $(this).val().length;
+                $("#limite").html(current);
+            });
+
+            if(isAuth=="True"){
+                getJson("@Url.Action("LastMessages", "Service")",null,fillMessages,"GET");
+                setInterval(function(){
+                    getJson("@Url.Action("LastMessages", "Service")"+"?_="+new Date().getTime(),null,fillMessages,"GET");
+                }, 10000);
+            }
+
+
+        });
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@model Admin.Models.BaseGraph
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Graphs")" data-editmodaltitle="@("Edit Graphs")" data-editing="@(Model.id == 0 ? "False" : "True")" data-onclose="csGraphs.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Graph Definition</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseGraphs")" id="Graphs-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(model => model.id)
+                <div class="row">
+                    @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("title", Model.title, "Title", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Title") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @{var selectedqueryGraphID = new List<object>(); if (Model.queryGraphID != null) { selectedqueryGraphID.Add(Model.queryGraphID); } }
+                    @Html.BaseDropDownList("queryGraphID", "BaseQueryGraph", "id", "name", "", 6, "Query Graph", "Select Query Graph", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedqueryGraphID, false, "Refresh Query Graph", "", "required", "", null)
+
+                    @{
+                        var selectedTypeGraphID = new List<object>();
+                        if (Model.BaseTypesGraphs != null)
+                        {
+                            foreach (var item in Model.BaseTypesGraphs.Select(x => x.id).ToList())
+                            {
+                                selectedTypeGraphID.Add(item);
+                            }
+                        }
+                    }
+                    @Html.BaseDropDownList("TypeGraphID", "BaseTypesGraphs", "id", "name", "", 6, "Types", "Select Types Graphs", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedTypeGraphID, true, "Refresh Types Graphs", "", "required", "", null)
+                </div>
+              
+
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("Graphs-form");
+    });
+
+    $("#preview").click(function () {
+
+        var form = $("#Graphs-form");
+        form.validate();
+
+        if (form.valid()) {
+
+            var bu = $(this);
+            bu.data('loading-text', "<i class='fa fa-refresh fa-spin'></i>");
+            bu.button('loading');
+
+            $.ajax({
+                url: "@Url.Action("_GraphView")",
+                type: 'post',
+                data: $("#Graphs-form").serialize(),
+                //async:false,
+                success: function (data) {
+                    $("#previeGraph").html(data);
+
+                }
+            });
+            bu.button('reset');
+        }
+
+        return false;
+    });
+</script>

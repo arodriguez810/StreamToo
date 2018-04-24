@@ -1,0 +1,90 @@
+@model Admin.Models.BaseLog
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i data-width="60%" class="dn" id="modalInfoseLog" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create seLog")"  data-editModalTitle="@("Edit seLog")" data-editing="@(Model.created==0?"False":"True")" ></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h3 class="panel-title">seLog</h3>
+    </div>
+    <div class="panel-body">
+<form action="@Url.Action("Save", "BaseLog")" id="BaseLog-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")"  >
+<fieldset>
+<div class="row">
+@Html.BaseDateTimePick("created", Model.created, "Created", 6, "Created", "required;date", "", "")
+@{var selectedbasedynamicList_entity = new List<object>(); if(Model.basedynamicList_entity!=null) { selectedbasedynamicList_entity.Add(Model.basedynamicList_entity); } } 
+@Html.BaseDropDownList("basedynamicList_entity", "BaseDynamicList", "id", "name", "", 6, "Entity", "Select Entity", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedbasedynamicList_entity, false, "Refresh BaseDynamicList", "", "required", "", null) 
+</div>
+<div class="row">
+@Html.BaseSpiner("entityId", Model.entityId, "Entity Id", 6, MyHtmlHelpers.spinnerDirection.both, "", "number", 0, 2147483647, 1, 1, "n")
+</div>
+<div class="row">
+@Html.BaseTextBox("entityIdS", Model.entityIdS,"Entity Id S", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Entity Id S")  }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip(""))
+@Html.BaseDateTimePick("date", Model.date, "Date", 6, "Date", "required;date", "", "")
+</div>
+<div class="row">
+@{var selectedbaseUser_user = new List<object>(); if(Model.baseUser_user!=null) { selectedbaseUser_user.Add(Model.baseUser_user); } } 
+@Html.BaseDropDownList("baseUser_user", "BaseUser", "ID", "username", "", 6, "User", "Select User", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedbaseUser_user, false, "Refresh BaseUser", "", "required", "", null) 
+@{var selectedbaseLogAction_action = new List<object>(); if(Model.baseLogAction_action!=null) { selectedbaseLogAction_action.Add(Model.baseLogAction_action); } } 
+@Html.BaseDropDownList("baseLogAction_action", "BaseLogAction", "id", "name", "", 6, "Action", "Select Action", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedbaseLogAction_action, false, "Refresh BaseLogAction", "", "required", "", null) 
+</div>
+<div class="row">
+@Html.BaseTextBox("version", Model.version,"Version", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Version")  }, "", "", true, new MyHtmlHelpers.BaseToolTip(""))
+</div>
+</fieldset>
+<footer>
+@if (!string.IsNullOrEmpty(ViewBag.from))
+                {
+                    string[] relations = ViewBag.from.Split(':');
+                    <a class="btn btn-danger formClose" title="@("Close")" href="#Ba@(relations[0].Split('_')[0])/Form/@(relations[1])"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+else if (ViewBag.relations.Count > 0 && Model.created != 0)
+                {
+                    <a class="btn btn-danger formClose fromBack" title="@("Close")" href="#BaseLog/Index"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+<button class="btn btn-success" data-success="$('#baseDynamicModalObject').modal('hide');csBaseLog@(ViewBag.from.Split(':')[0]).data('CStable').update();" title="@("Save")" ><i class="glyphicon glyphicon-floppy-disk"></i></button>
+</footer>
+</form>
+    </div>
+</div>
+@if (ViewBag.relations.Count > 0 && Model.created != 0)
+{
+    bool first = true;
+    <div class="panel panel-primary">
+        <ul class="nav nav-tabs">
+            @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                <li class="@(first ? "active" : "")"><a href="#@(item.K_Table + "_" + item.FK_Column)" data-toggle="tab" aria-expanded="@(first ? "true" : "false")">@Helper.Capitalize(item.K_Table,2)'s @Helper.Capitalize(item.FK_Column.Split('_')[1])</a></li>
+                first = false;
+            }
+        </ul>
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                @{
+                    first = true;
+                }
+                @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                    <div class="tab-pane fade @(first ? "active in" : "")" id="@(item.K_Table + "_" + item.FK_Column)">
+                        Loading...
+                    </div>
+                    <script>
+                        loadContent("@Url.Action("index", item.K_Table, new { from = item.FK_Column+ ":"+Model.created })", "#@(item.K_Table + "_" + item.FK_Column)");
+                    </script>
+first = false;
+                }
+            </div>
+        </div>
+    </div>
+                    }
+<script>
+function next() {
+        location.href = "#BaseLog/Form/" + BaseLastID;
+}
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseLog-form");
+var from = "@ViewBag.from";
+        HideRelation("BaseLog-form", from);
+    });
+</script>

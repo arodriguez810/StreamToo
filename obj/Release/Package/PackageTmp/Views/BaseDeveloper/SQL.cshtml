@@ -1,0 +1,42 @@
+﻿@using Admin.Controllers;
+@model Admin.BaseModels.ViewModels.QueryMode
+<textarea name="SQL" id="SQL" rows="500">@Model.Text</textarea>
+<button id="exec" class="btn btn-success">Run</button>
+<div id="result" style="overflow: auto">
+</div>
+<script>
+    var mime = 'text/x-mariadb';
+    if (window.location.href.indexOf('mime=') > -1) {
+        mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
+    }
+
+    $(document).ready(function () {
+        editor = CodeMirror.fromTextArea(document.getElementById('SQL'), {
+            mode: mime,
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: { "Ctrl-Space": "autocomplete" },
+            hintOptions: {
+                tables: {
+                    users: { name: null, score: null, birthDate: null },
+                    countries: { name: null, population: null, size: null }
+                }
+            }
+        });
+
+        $("#exec").click(function () {
+            $('#result').html("<img style='width:19%;height:50%' src='@("img/loading/ajax_loader_blue_512.gif")'>");
+            $.ajax({
+                url: "@Url.Action("Result", "BaseDeveloper")",
+                type: 'post',
+                data: { sql: editor.getValue() },
+                success: function (data) {
+                    $("#result").html(data)
+                }
+            });
+        });
+    });
+</script>

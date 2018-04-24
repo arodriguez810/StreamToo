@@ -1,0 +1,103 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.Models;
+@{
+    int acordeonCount = 0;
+    Context db = new Context();
+    string collapse = "collapse in";
+    Admin.Models.BaseUser userMind = Helper.GetUser(db);
+}
+
+<div class="panel-group" id="accordionAction">
+    @foreach (var item in db.BaseControllers.Where(d => !string.IsNullOrEmpty(d.infoName)).OrderBy(d => d.infoName))
+    {
+        if (acordeonCount == 0)
+        { @Html.Raw("<div class=\"col col-lg-12\">")
+        }
+        string tituloController = (item.infoName != "") ? item.infoName : item.name;
+        string tituloControllerHijo = "";
+
+        var hijos = item.BaseActions;
+        if (hijos.Any())
+        {
+            tituloControllerHijo = "Sub_" + ((!string.IsNullOrEmpty(item.infoName)) ? item.infoName : item.name).Replace(" ", "_");
+        }
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" class="aCollapsedAC" data-parent="#accordionAction" href="#@tituloControllerHijo">@tituloController</a>
+                </h4>
+            </div>
+            @if (hijos.Any())
+            {
+                <div id="@tituloControllerHijo" class="panel-collapse ppact @collapse">
+                    <div class="panel-body">
+                        <div style="width: 100%; margin-bottom: 20px" class="fl">
+                            <input type="checkbox" @Html.Raw("onclick=\"checkFuntion(" + item.id + ", this)\"") name="" id="" class="ckxact" /> Marcar todo
+                        </div>
+                        @foreach (var h in hijos)
+                        {
+                            if (new MenuAuthorize().HasPermission(h.name, h.BaseController.name) == MenuAuthorize.AccessPermission.Grant)
+                            {
+                                if (h.displayName != "")
+                                {
+                                    string check = "";
+                                    var kk = db.BaseProfiles.Find(Model.id);
+
+                                    if (kk.BaseActions.FirstOrDefault(x => x.id == h.id) != null)
+                                    {
+                                        check = "checked=\"checked\"";
+                                    }
+
+                                    string t = ((h.displayName != "") ? h.displayName : h.name);
+                                    <input type="checkbox" name="ActionID_@h.id" id="ActionID_@h.id" @check class="ckx @Html.Raw("classCheck" + item.id)" />
+                                    @t
+                                    <div class="hh"></div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+            collapse = "collapse";
+            acordeonCount++;
+            if (acordeonCount == db.BaseControllers.Where(d => d.infoName != "").Count())
+            {
+                @Html.Raw("</div>")
+                <div></div>
+                acordeonCount = 0;
+            }
+
+    }
+    <div class="clearfix"></div>
+</div>
+<script>
+    $(".aCollapsedAC").click(function () {
+        var l = $(this);
+        var div = l.attr("href");
+        //debugger
+        //$(div).collapse("show");
+        $(".ppact").each(function (index) {
+            var id = $(this).attr("id");
+
+            var k = "#" + id;
+            if (div != k) {
+
+                $("#" + id).removeClass("collapse in").addClass("collapse");
+
+            }
+        });
+
+
+    });
+    function checkFuntion(id, e) {
+        if ($(e).prop("checked")) {
+            $(".classCheck" + id).prop("checked", true);
+        }
+        else {
+            $(".classCheck" + id).prop("checked", false);
+        }
+    }
+</script>

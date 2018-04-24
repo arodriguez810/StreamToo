@@ -1,0 +1,43 @@
+﻿<h2>Morris</h2>
+<div id="morris-line">
+</div>
+
+<div id="morris-area">
+</div>
+
+<div id="morris-donut">
+</div>
+<div id="morris-bar">
+</div>
+
+<script type="text/javascript">
+
+    var startMorris = function () {
+        var json = @Html.Raw(ViewBag.morris_line);    
+        var morris_donut = @Html.Raw(ViewBag.morris_donut);    
+        
+        $('#morris-line').buildMorris({
+            type: 'line',
+            json: json
+        });    
+
+        $('#morris-area').buildMorris({
+            type: 'area',
+            json: json
+        });   
+    
+        $('#morris-bar').buildMorris({
+            type: 'bar',
+            json: json
+        });  
+
+        $('#morris-donut').buildMorris({
+            type: 'donut',
+            json: morris_donut
+        });
+    }      
+        
+    $.fn.buildMorris.loadMorris(startMorris);
+
+
+</script>

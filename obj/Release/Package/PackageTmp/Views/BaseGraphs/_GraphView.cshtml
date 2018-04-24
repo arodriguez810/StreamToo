@@ -1,0 +1,26 @@
+﻿<ul class="nav nav-tabs" role="tablist">
+    @foreach (var litabs in (List<Admin.Controllers.BaseGraphsController.datosdivs>)ViewBag.tabs)
+    {   
+        <li class="@litabs.status bknone">
+            <a href="#@litabs.name" role="tab" data-toggle="tab">@litabs.text Graph</a>
+        </li>        
+    }
+</ul>
+<br />
+@foreach (var graphDivs in (List<Admin.Controllers.BaseGraphsController.datosdivs>)ViewBag.divsGraficos)
+{   
+    @Html.Raw(string.Format("<div id=\"{0}\"></div>", graphDivs.name));
+}
+<div class="tab-content">
+
+    @foreach (var tabsDivs in (List<Admin.Controllers.BaseGraphsController.datosdivs>)ViewBag.divsTabs)
+    {   
+        @Html.Raw(string.Format("<div id=\"{0}\" class=\"tab-pane {1}\"></div>", tabsDivs.name, tabsDivs.status));
+    }
+    <div id="error_@ViewBag.dverro" class="DivGraphError"></div>
+</div>
+
+
+<script type="text/javascript">
+    @Html.Raw(ViewBag.javascriptGraficos)
+</script>

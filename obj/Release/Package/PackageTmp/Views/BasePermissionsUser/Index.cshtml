@@ -1,0 +1,206 @@
+﻿@model Admin.Models.BaseUser
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+@{  
+    Widget widget = new Widget("Acciones_list", "Actions List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widget.Data_widget_deletebutton = true;
+    widget.Data_widget_togglebutton = true;
+    widget.Data_widget_colorbutton = true;
+    widget.Data_widget_fullscreenbutton = true;
+    widget.Data_widget_sortable = true;
+    widget.Data_widget_editbutton = true;
+
+    Widget widgetMenu = new Widget("Menu_list", "Menu List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widgetMenu.Data_widget_deletebutton = true;
+    widgetMenu.Data_widget_togglebutton = true;
+    widgetMenu.Data_widget_colorbutton = true;
+    widgetMenu.Data_widget_fullscreenbutton = true;
+    widgetMenu.Data_widget_sortable = true;
+    widgetMenu.Data_widget_editbutton = true;
+
+    Widget widgetW = new Widget("Widgets", "Widgets List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widgetW.Data_widget_deletebutton = true;
+    widgetW.Data_widget_togglebutton = true;
+    widgetW.Data_widget_colorbutton = true;
+    widgetW.Data_widget_fullscreenbutton = true;
+    widgetW.Data_widget_sortable = true;
+    widgetW.Data_widget_editbutton = true;
+}
+
+<h2>Usuario:@Model.FullName </h2>
+<br />
+<label>Seleccione Perfil:</label>
+
+<form id="save-form" action="@Url.Action("SaveData", "BasePermissionsUser")" class="" method="post">
+    @Html.HiddenFor(model => model.ID)
+
+
+    @{var selectedPerfil = new List<object>();
+      if (Model.BaseProfiles != null)
+      {
+          foreach (var item in Model.BaseProfiles)
+          {
+              selectedPerfil.Add(item.id);
+          }
+
+      }
+    }
+    @Html.BaseDropDownList("userProfileID", "BaseProfile", "id", "name", "", 4, "", "Select Profile", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedPerfil, true, "asdad", "", "", "", null, "pl0 pr0")
+    <br />
+    <br />
+
+    <section id="widget-grid" class="">
+        <div class="row">
+            @Html.Raw(widgetMenu.beginHeader())
+            @Html.Raw(widgetMenu.beginCustomButton())
+            <!--Aqui Botones-->
+            @Html.Raw(widgetMenu.Dcontinue())
+            @Html.Raw(widgetMenu.endHeader())
+            <div id="getMenus">Loading Content...</div>
+            @Html.Raw(widgetMenu.Dcontinue())
+            @Html.Raw(widgetMenu.end())
+        </div>
+        <div class="row">
+            @Html.Raw(widget.beginHeader())
+            @Html.Raw(widget.beginCustomButton())
+            <!--Aqui Botones-->
+            @Html.Raw(widget.Dcontinue())
+            @Html.Raw(widget.endHeader())
+            <div id="getActions">Loading Content...</div>
+            @Html.Raw(widget.Dcontinue())
+            @Html.Raw(widget.end())
+        </div>
+    </section>
+
+
+
+    @*<section id="widget-gridWidget" class="">
+        <div class="row">
+            @Html.Raw(widgetW.beginHeader())
+            @Html.Raw(widgetW.beginCustomButton())
+            <!--Aqui Botones-->
+            @Html.Raw(widgetW.Dcontinue())
+            @Html.Raw(widgetW.endHeader())
+            <!--Aqui Contenido-->
+            <div id="getWidgets"></div>
+            @Html.Raw(widgetW.Dcontinue())
+            @Html.Raw(widgetW.end())
+        </div>
+    </section>*@
+
+    <p>
+        <button id="clickem" class="btn btn-success">@("Save Settings")</button>
+    </p>
+</form>
+
+
+
+<div class="modal fade" id="baseDynamicModalObject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header_modal">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title title_modal" id="baseGenericModalTitle">
+                    Opciones de la acción
+                </h4>
+            </div>
+            <div class="modal-body" id="baseDynamicModalBody">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    pageSetUp();
+    $(document).ready(function () {
+        var id = "@Html.Raw(Model.ID)";
+        $.ajax({
+            url: "@Url.Action("ListaMenus", "BasePermissionsUser")",
+            data: { idUser: id },
+            success: function (data) {
+                $('#getMenus').html(data);
+            }
+        });
+
+       @* $.ajax({
+            url: "@Url.Action("ListaWidgets", "BasePermissionsUser")",
+            data: { idUser: id },
+            success: function (data) {
+                $('#getWidgets').html(data);
+            }
+        });*@
+
+        $.ajax({
+            url: "@Url.Action("ListaAcciones", "BasePermissionsUser")",
+            data: { idUser: id },
+            success: function (data) {
+                $('#getActions').html(data);
+            }
+        });
+
+    });
+
+    $(document).on("click", ".ckxact", function () {
+        var ck = $(this);
+
+        if (ck.is(":checked")) {
+
+            $(this).next(".ppp").attr("disabled", false);
+        } else {
+            $(this).next(".ppp").attr("disabled", true);
+        }
+
+    });
+
+    $(document).on("click", ".ppp", function () {
+        $me = $(this);
+        var id = $me.data("idaction");
+        var user = $("#ID").val();
+
+        var action = "@Url.Action("actionsProperties", new { actionid = "zeseze", userid = "avcdw" })";
+        action = action.replace("zeseze", id);
+        action = action.replace("avcdw", user);
+
+        action = action.replace("&amp", "&");
+        action = action.replace(";", "");
+
+
+        if (action) {
+            //este se usa
+            $me.data('loading-text', "<i class='fa fa-refresh fa-spin'></i>");
+            $me.button('loading');
+
+            $('#baseDynamicModalBody').load(action, function () {
+
+                options = {
+                    backdrop: true,
+                    keyboard: true
+                };
+
+                $('#baseDynamicModalObject').modal(options);
+
+
+                //$info = $("#modalInfo");
+                //$('#baseGenericModalTitle').html("");
+                //if ($info.data("modalimg")) {
+                //    $('#baseGenericModalTitle').append("<img src='" + $info.data("modalimg") + "'>");
+                //}
+                //if ($info.data("editing") == "True") {
+                //    $('#baseGenericModalTitle').append($info.data("editmodaltitle"));
+                //} else {
+                //    $('#baseGenericModalTitle').append($info.data("modaltitle"));
+                //}
+                $me.button('reset');
+            });
+        }
+        return false;
+
+    });
+
+
+</script>

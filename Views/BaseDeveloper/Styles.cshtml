@@ -1,0 +1,120 @@
+﻿@using Admin.BaseClass.UI
+@using Admin.Models;
+
+
+<form action="@Url.Action("ChangeStyle", "BaseDeveloper")" method="post" id="NII-form" class="smart-form" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+    <fieldset>
+        <div class="row">
+            @{
+                List<object> selecteds = new List<object>();
+                selecteds.Add(ViewBag.config.css);
+            }
+            @Html.BaseDropDownList("theme", ((Dictionary<string, string>)ViewBag.styles), 12, "Theme", "Select", "", "", selecteds, false, "required", "")
+        </div>
+        <div class="row">
+            @{var selectedoneSome = new List<object>(); selectedoneSome.Add(ViewBag.config.primaryColor); }
+            @Html.BaseDropDownList("primaryColor", ((Dictionary<string, string>)ViewBag.colors), 6, "Primary Color", "Select Primary Color", "", "", selectedoneSome, false, "required", "")
+
+            @{var selectedone2 = new List<object>(); selectedone2.Add(ViewBag.config.secundaryColor); }
+            @Html.BaseDropDownList("secundaryColor", ((Dictionary<string, string>)ViewBag.colors), 6, "Secundary Color", "Select Secundary Color", "", "", selectedone2, false, "required", "")
+        </div>
+    </fieldset>
+
+    <footer>
+        <button id="btnSubmit" class="btn btn-success"><i class="glyphicon glyphicon-ok" title="@("Save")"></i></button>
+    </footer>
+</form>
+
+
+<div class="row">
+    Example
+    <a href="javascript:void(0)" class="btn btn-default nochange">Default</a>
+    <a href="javascript:void(0)" class="btn btn-primary nochange">Primary</a>
+    <a href="javascript:void(0)" class="btn btn-success nochange">Success</a>
+    <a href="javascript:void(0)" class="btn btn-info nochange ">Info</a>
+    <a href="javascript:void(0)" class="btn btn-warning nochange ">Warning</a>
+    <a href="javascript:void(0)" class="btn btn-danger nochange ">Danger</a>
+    <a href="javascript:void(0)" class="btn btn-link nochange ">Link</a>
+</div>
+
+<script>
+    pageSetUp(false);
+    $(document).ready(function () {
+        validateForm("NII-form");
+
+        var lastprimaryColor = "@(ViewBag.config.primaryColor)";
+        var lastsecundaryColor = "@(ViewBag.config.secundaryColor)";
+        var lastCss = "@(ViewBag.config.css)";
+
+
+
+        $("#theme").change(function () {
+            $me = $(this);
+            var styleSheets = document.styleSheets;
+            var part = styleSheets[0].href.split('css')[0];
+            var hrefLarge = part + "css/" + lastCss + ".css";
+            var hrefShort = "css/" + lastCss + ".css";
+            for (var i = 0; i < styleSheets.length; i++) {
+                if (styleSheets[i].href == hrefLarge || styleSheets[i].href == hrefShort) {
+                    styleSheets[i].disabled = true;
+                    break;
+                }
+            }
+            loadCSS(part + "css/" + $me.val() + ".css");
+            lastCss = $me.val();
+        });
+        $("#primaryColor").change(function () {
+            $me = $(this);
+            if ($me.val() == lastsecundaryColor) {
+                alert("Can't display the same color in primary yo secundary.");
+                $me.val(lastprimaryColor);
+                return;
+            }
+            var items = document.getElementsByTagName("*");
+            for (var i = items.length; i--;) {
+                if (items[i].className.indexOf('nochange') === -1)
+                    items[i].className = items[i].className.replace(new RegExp("-" + lastprimaryColor, 'g'), "-" + $me.val());
+            }
+            lastprimaryColor = $me.val();
+        });
+
+        $("#secundaryColor").change(function (index, element) {
+            $me = $(this);
+            if ($me.val() == lastprimaryColor) {
+                alert("Can't display the same color in primary yo secundary.");
+                $me.val(lastsecundaryColor);
+                return;
+            }
+            var items = document.getElementsByTagName("*");
+            for (var i = items.length; i--;) {
+                if (items[i].className.indexOf('nochange') === -1)
+                    items[i].className = items[i].className.replace(new RegExp("-" + lastsecundaryColor, 'g'), "-" + $me.val());
+            }
+            lastsecundaryColor = $me.val();
+        });
+
+        $("#btnSubmit").click(function () {
+            var form = $("#NII-form");
+            var $me = $(this);
+            form.validate();
+            if (form.valid()) {
+                $me.attr("disabled", "disabled");
+                $.ajax({
+                    type: "POST",
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function (response) {
+                        alert(response.message);
+                        $me.removeAttr("disabled");
+                        location.reload();
+                    },
+                    error: function (err) {
+                        alert(err);
+
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,49 @@
+﻿@model Admin.Models.BaseMenu
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{
+    Dictionary<string, string> list = new Dictionary<string, string>();
+    list.Add("1", "Azul");
+    list.Add("2", "Rojo");
+    list.Add("3", "Verde");
+    list.Add("4", "Amarillo");
+    list.Add("5", "Naranja");
+}
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create BaseMenu")"></i>
+<form action="@Url.Action("Action", "Controller")" id="BaseMenu-form" class="smart-form ajaxForm" data-callback="$('#baseDynamicModalBody').modal('hide');" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")">
+    <fieldset>
+        @Html.HiddenFor(model => model.id)
+        @{ 
+            List<object> tags = new List<object>();
+            tags.Add("Angel");tags.Add("Jonmer");tags.Add("Halley");tags.Add("Andy");
+            tags.Add("Johan"); tags.Add("Jheiron"); tags.Add("Expedito");
+        }
+        @Html.BaseKnob("Cricular", 1, "Circulo", 12, 120, 120,1,5,"#428BCA","","required")
+        @Html.BaseTagsInput("tags", tags, "Tags", 12, "", "required")
+        @Html.BaseColorPicker("color", "", "Color", 12, false, "", "required")
+        @Html.BaseSpiner("spniner", 55, "Spiner", 12, MyHtmlHelpers.spinnerDirection.both, "", "required", 50, 200, 1.5, 1, "C")
+        @Html.BaseScaleSlider2("slider", MyHtmlHelpers.sliderClassColor.info, 50, 1000.50, 10.50, 12, 70, 500, MyHtmlHelpers.sliderHandle.round, MyHtmlHelpers.sliderSelection.after, "Estimado", "required")
+        @Html.BaseDateTime("datetime", null, "", 12, "Fecha", "required", "datetime2", "", new MyHtmlHelpers.BaseToolTip("Date"))
+        @Html.BaseDateTime("datetime2", null, "", 12, "Fecha", "required", "", "datetime")
+        @Html.BaseTimePicker("time", null, "", 12, "Time", "required", new MyHtmlHelpers.BaseToolTip("Time"))
+        @Html.BaseRating("Rating", 5, "Calidad", 0, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_star, "required", "Calidad del framework")
+        @Html.BaseCheckBox("checksolo", false, "Listo", "Check Solo", 12, "Si", "No", "required")
+        @Html.BaseFile("BaseFile", "", 12, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_file, "required", "")
+        @{var selected = new List<object>(); selected.Add(5); }
+        @Html.BaseDropDownList("DropDown", "BaseCountry", "id", "officialLongForm+' ('+officialShortForm+')'", "", 10, "", "Select Country", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selected, false, "Refresh Countries", "", "required", "", null)
+        @Html.BaseDropDownList("DropDownGroupBy", "BaseTimeZones", "id", "abbreviation+' ('+fullName+')'", "", 10, "", "Select Country", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_align_justify, null, true, "Refresh Time Zones", "location", "required")
+        @Html.BaseTextBox("controllerID", Model.directLink, new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("DirectLink") }, "required;remote:"+Url.Action("RemoteUniqValidation","BaseGeneral")+"=post>BaseAction?name&controllerID", "", false, new MyHtmlHelpers.BaseToolTip("Tooltip de ejemplo"), "")
+        @Html.BaseTextBox("name", Model.directLink, new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("name") }, "required;remote:"+Url.Action("RemoteUniqValidation","BaseGeneral")+"=post>BaseAction?name", "", false, new MyHtmlHelpers.BaseToolTip("Tooltip de ejemplo"))
+        @Html.BaseSelectorList(MyHtmlHelpers.BaseSelector.radio, "Radios", "BaseInboxConversationCategory", "id", "name", "", 2, 1, "Radios", 1, "Refresh Types", "Yes", "No", "required")
+    </fieldset>
+    <footer>
+        <button class="btn btn-info">@("Save")</button>
+    </footer>
+</form>
+<form action="@Url.Action("GenerateForm", "Geass")" class="dropzone mydropzone" id="myID"></form>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseMenu-form");
+    });
+</script>

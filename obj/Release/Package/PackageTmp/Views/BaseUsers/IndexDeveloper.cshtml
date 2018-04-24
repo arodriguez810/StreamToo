@@ -1,0 +1,59 @@
+﻿@model Admin.Models.ViewModels.PermissionsModel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{  
+    Widget widget = new Widget("user_list", "User List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widget.Data_widget_deletebutton = true;
+    widget.Data_widget_togglebutton = true;
+    widget.Data_widget_colorbutton = true;
+    widget.Data_widget_fullscreenbutton = true;
+    widget.Data_widget_sortable = true;
+    widget.Data_widget_editbutton = true;
+}
+
+<section id="widget-grid" class="">
+    <div class="row">
+        @Html.Raw(widget.beginHeader())
+        @Html.Raw(widget.beginCustomButton())
+        <button class="btn btn-success baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>"  data-action="@Url.Action("Form", "BaseUsers")" title="@("Add New")"><i class="glyphicon glyphicon-plus"></i></button>
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.endHeader())
+        <div class="" data-url="/Alpha/Users/data" id="mytable2"></div>
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.end())
+    </div>
+</section>
+
+@*<div id="mytable" data-url="@Url.Action("data", "User")" class=""></div>
+*@
+
+<script type="text/javascript">
+    pageSetUp();
+    //var t1 = $('#mytable'),
+    
+    //t1.CStable({
+    //    ajaxUrl: t1.data('url'),
+    //    hasSearch: true,
+    //    hasShow: true,
+    //    //filterListSelector: {
+    //    //    '#status_filter': {
+    //    //        isControl: false
+    //    //    },
+    //    //    '.status2_filter': {
+    //    //        isControl: true
+    //    //    }
+    //    //}
+    //});
+    csUser = $('#mytable2');
+    csUser.CStable({
+        ajaxUrl: csUser.data('url'),
+        pagerFirstLabel: '@("First")',
+        pagerLastLabel: '@("Last")',
+        ajaxData: {
+            limit: 10,
+            offset: 0
+        },
+        current: 1,
+        pagerCount: 10
+    });
+</script>

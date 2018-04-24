@@ -1,0 +1,211 @@
+﻿@using Admin.CustomCode
+@{
+    //var values = HttpContext.Current.Request.RequestContext.RouteData.Values;
+    //var title = string.Format("{0} - {1}", Helper.t(values.Values.ToArray()[0].ToString()), Helper.t(values.Values.ToArray()[1].ToString()));
+    Admin.Models.Context db = new Admin.Models.Context();
+    Admin.BaseClass.Format.ValidationMessage messageInstance = new Admin.BaseClass.Format.ValidationMessage();
+}
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    @Html.Partial("_Head")
+</head>
+<body class="smart-style-1">
+    <div id="dvLoading" style="display: none;"></div>
+    <header class="btn-@(ViewBag.config.primaryColor)" id="header">
+        <div id="logo-group">
+            <span id="logo">
+                @{
+                    string img = @Helper.GetApplicationImage(new Admin.Models.Context());
+                }
+                <img alt="@ViewBag.config.appName" src="@img" style="margin-top:9px; margin-left:9px;">
+            </span>
+            <h3 style="color: black;width: 660px;margin-left: 227px !important;margin-top: 2px;line-height: 41px;"></h3>
+        </div>
+        <div class="pull-right">
+            @Html.Partial("_PullRight")
+            @Html.Partial("_LanguageList")
+            @Html.Partial("_LanguageList")
+        </div>
+    </header>
+    <div style="float: left; position: relative; width: 100%;">
+        @Html.Partial("_NavBar")
+        <div id="main" role="main">
+            @Html.Partial("Ribbon")
+            <div id="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="suerte">
+        <div id="content_footer">
+            <p class="fr black_margin_p">
+                <span id="RefreshSpan" class="fl black_margin">Developed by </span>
+                <a id="logotipo_footer" class="fl" target="_blank" href="@ViewBag.config.address">@ViewBag.config.name</a>
+                <span class="fl black_margin">
+                    -V.@ViewBag.config.version
+                </span>
+            </p>
+        </div>
+    </div>
+    @Html.Partial("_Modals")
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+    </div>
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = ($("#left-panel").width() + 5) + "px";
+        }
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+        }
+    </script>
+    <script>
+        if (!window.jQuery.ui)
+            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        var appName = "@(ViewBag.config.appName)";
+        var baseCSS = "@(ViewBag.config.css)";
+        var primaryColor = "@(ViewBag.config.primaryColor)";
+        var secundaryColor = "@(ViewBag.config.secundaryColor)";
+    </script>
+    <script src="~/js/lightbox.min.js"></script>
+    <script src="js/language/language.js?@ViewBag.config.version"></script>
+    <script src="js/language/@(System.Globalization.CultureInfo.CurrentCulture.Name).js?@ViewBag.config.version"></script>
+    <script src="js/bootstrap/bootstrap.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/jquery-cookie/jquery.cookie.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/jquery-cstable/jquery.cstable.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/datetimepicker/moment-with-locales.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/datetimepicker/bootstrap-datetimepicker.js?@ViewBag.config.version"></script>
+    <script src="js/notification/SmartNotification.min.js?@ViewBag.config.version"></script>
+    <script src="js/smartwidgets/jarvis.widget.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/jquery-validate/jquery.validate.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/masked-input/jquery.maskedinput.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/masked-input/jquery.maskMoney.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/select2/select2.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/contextmenu/jquery.contextMenu.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/contextmenu/jquery.ui.position.js?@ViewBag.config.version"></script>
+
+
+    <!-- browser msie issue fix -->
+    <!-- FastClick: For mobile devices: you can disable this in app.js
+        <script src="js/plugin/fastclick/fastclick.js"></script> -->
+    <!--[if IE 7]>
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+        <![endif]-->
+    <!-- Demo purpose only -->
+    <script src="js/plugin/jquery-form/jquery-form.min.js?@ViewBag.config.version"></script>
+    <script src="js/changeDropTablesSql.js?@ViewBag.config.version"></script>
+    <style type="text/css">
+        .CodeMirror {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow: auto;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="js/plugin/codemirror/lib/codemirror.css?@ViewBag.config.version" />
+    <link rel="stylesheet" href="js/plugin/codemirror/theme/monokai.css?@ViewBag.config.version" />
+    <link rel="stylesheet" href="js/plugin/codemirror//addon/hint/show-hint.css?@ViewBag.config.version" />
+    <script src="js/plugin/codemirror/lib/codemirror.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/mode/css/css.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/mode/htmlmixed/htmlmixed.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/mode/htmlembedded/htmlembedded.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/mode/xml/xml.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/mode/sql/sql.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/addon/edit/matchbrackets.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/addon/selection/active-line.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/addon/hint/show-hint.js?@ViewBag.config.version"></script>
+    <script src="js/plugin/codemirror/addon/hint/css-hint.js?@ViewBag.config.version"></script>
+    <link rel="stylesheet" type="application/javascript" media="screen" href="js/plugin/ckeditor/ckeditor.js?@ViewBag.config.version">
+    <script src="js/plugin/ckeditor/ckeditor.js?@ViewBag.config.version"></script>
+    <script src="js/jquery-table-expand.js?@ViewBag.config.version"></script>
+    <script src="js/html2canvas.min.js?@ViewBag.config.version"></script>
+    <script src="js/html2canvas.js?@ViewBag.config.version"></script>
+    <script src="js/querybuilder/dependency/jQuery.extendext.min.js?@ViewBag.config.version"></script>
+    <script src="js/querybuilder/dependency/doT.js?@ViewBag.config.version"></script>
+    <script src="js/querybuilder/dependency/moment.js?@ViewBag.config.version"></script>
+    <script src="js/querybuilder/dist/js/query-builder.js?@ViewBag.config.version"></script>
+    <script src="js/querybuilder/browser/sql-parser.js?@ViewBag.config.version"></script>
+
+    <script>
+        cacheNotif = [];
+        function getJson(url, dataDic, callback, type) {
+            if (type == undefined || type == null)
+                type = "POST";
+            $.ajax({
+                url: url,
+                type: type,
+                data: dataDic,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data, textStatus, jqXHR) {
+                    callback(eval("(" + data + ")"));
+                }
+            });
+        }
+
+        $("#notificationCount").hide();
+
+
+    </script>
+    <script src="js/app.js?@ViewBag.config.version"></script>
+    <script src="js/general.js?@ViewBag.config.version"></script>
+    <script>
+
+        var allminiTables = [];
+        @foreach (var item in db.BaseDynamicLists)
+        {
+            @Html.Raw($"allminiTables.push('{item.name}');");
+        }
+        var preventUnloadPrompt;
+        $('a').on('click', function () { preventUnloadPrompt = true; });
+        $('form').on('submit', function () { preventUnloadPrompt = true; });
+        $(window).bind("beforeunload", function (e) {
+            var rval;
+            if (preventUnloadPrompt) {
+                return;
+            } else {
+                $('#logoutForm').submit();
+            }
+            return rval;
+        });
+
+        $(document).ready(function () {
+            var idleState = false;
+            var idleTimer = null;
+            $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick', function () {
+                clearTimeout(idleTimer);
+                if (idleState == true) {
+                    $("body").css('background-color', '#fff');
+                }
+                idleState = false;
+                idleTimer = setTimeout(function () {
+                    $('#logoutForm').submit();
+                    idleState = true;
+                }, @(ViewBag.config.SessionTimeOut));
+            });
+            $("body").trigger("mousemove");
+
+
+        });
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8unedkkngdlPIqjOTqlHRHXmbo9_k5vg"></script>
+    @*<script src="http://maps.google.com/maps/api/js?v=3.exp&key=AIzaSyB8unedkkngdlPIqjOTqlHRHXmbo9_k5vg"></script>*@
+</body>
+@RenderSection("featured", required: false)
+@RenderSection("scripts", required: false)
+</html>

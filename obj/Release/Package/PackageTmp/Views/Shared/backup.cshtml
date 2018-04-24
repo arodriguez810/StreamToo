@@ -1,0 +1,108 @@
+@model Admin.Models.BOCustomer
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i data-width="80%" class="dn" id="modalInfoCustomer" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Customer")" data-editmodaltitle="@("Edit Customer")" data-editing="@(Model.id==0?"False":"True")" data-onclose="csBOCustomer.data('CStable').update();"></i>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Customer</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BOCustomer")" id="BOCustomer-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(d => d.id)
+                @Html.HiddenFor(d => d.creationDate)
+                <div class="row">
+                    @Html.BaseTextBox("username", Model.username, "Username", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Username") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("email", Model.email, "Email", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Email") }, "required;email;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("phone", Model.phone, "Phone", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Phone") }, "required;maxlength:13", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("firstName", Model.firstName, "FirstName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("FirstName") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("lastName", Model.lastName, "LastName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("LastName") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @{var selectedcountry = new List<object>(); if (Model.country != null) { selectedcountry.Add(Model.country); } }
+                    @Html.BaseDropDownList("country", "BaseCountry", "id", "officialShortForm", "", 4, "Country", "Select BaseCountry", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedcountry, false, "Refresh BaseCountry", "", "required", "", null)
+                </div>
+                <div class="row">
+                    @{var selectedemployee = new List<object>(); if (Model.employee != null) { selectedemployee.Add(Model.employee); } }
+                    @Html.BaseDropDownList("employee", "BOEmployee", "id", "documentID", "", 4, "Employee", "Select BOEmployee", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedemployee, false, "Refresh BOEmployee", "", "", "", null)
+                    @Html.BaseCheckBox("demo", Model.demo, "", "Demo", 4, "Yes", "No", "")
+                    @{var selectedstatus = new List<object>(); if (Model.status != null) { selectedstatus.Add(Model.status); } }
+                    @Html.BaseDropDownList("status", "BOStatu", "id", "name", "", 4, "Status", "Select BOStatu", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedstatus, false, "Refresh BOStatu", "", "required", "", null)
+                </div>
+                <div class="row">
+                    @{var selectedsaleStatus = new List<object>(); if (Model.saleStatus != null) { selectedsaleStatus.Add(Model.saleStatus); } }
+                    @Html.BaseDropDownList("saleStatus", "BOSaleStatu", "id", "name", "", 4, "SaleStatus", "Select BOSaleStatu", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedsaleStatus, false, "Refresh BOSaleStatu", "", "required", "", null)
+                    @{var selectedcurrency = new List<object>(); if (Model.currency != null) { selectedcurrency.Add(Model.currency); } }
+                    @Html.BaseDropDownList("currency", "BOCurrency", "id", "name", "", 4, "Currency", "Select BOCurrency", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedcurrency, false, "Refresh BOCurrency", "", "", "", null)
+                    @Html.HiddenFor(d => d.lastLoginND)
+                    @{var selectedsystem = new List<object>(); if (Model.system != null) { selectedsystem.Add(Model.system); } }
+                    @Html.BaseDropDownList("system", "BOSystem", "id", "name", "", 4, "System", "Select BOSystem", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedsystem, false, "Refresh BOSystem", "", "required", "", null)
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="#BOCustomer/Index"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-@(ViewBag.config.secundaryColor)" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+
+<style>
+    .badge {
+        border-radius: 16px;
+        color: #000;
+        display: inline-block;
+        font-size: 35px;
+        font-weight: normal;
+        line-height: 1;
+        margin: -8px !important;
+        min-width: 10px;
+        padding: 1px 6px 0 5px;
+        text-align: center;
+        vertical-align: text-top;
+        white-space: nowrap;
+        background-color: white;
+    }
+</style>
+<button id="refreshDetail" class="btn btn-@(ViewBag.config.secundaryColor)"><i class="glyphicon glyphicon-refresh"></i></button>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Details</h3>
+    </div>
+    <div class="panel-body">
+        <div id="detail">
+
+        </div>
+    </div>
+</div>
+
+<section id="widget-grid">
+    <div class="row" id="sub">
+
+    </div>
+</section>
+<script>
+    pageSetUp(false, false);
+    if ($("#modalInfoCustomer").data("editing") == "True") {
+        function LCP1() { loadContentAppend("@Url.Action("index", "BOPositionCustomer", new {id =Model.id })", "#sub", LCP2); }
+        function LCP2() { loadContentAppend("@Url.Action("index", "BOCustomerCallCustomer", new {id =Model.id })", "#sub", LCP3); }
+        function LCP3() { loadContentAppend("@Url.Action("index", "BOCustomerDespositCustomer", new {id =Model.id })", "#sub", LCP4); }
+        function LCP4() { loadContentAppend("@Url.Action("index", "BOWithdrawalCustomer", new {id =Model.id })", "#sub", LCP5); }
+        function LCP5() { loadContentAppend("@Url.Action("index", "BOCustomerLoginLogCustomer", new {id =Model.id })", "#sub", LCP6); }
+        function LCP6() { loadContentAppend("@Url.Action("index", "BOCustomerCardCustomer", new {id =Model.id })", "#sub", LCP7); }
+        LCP1();
+        function LCP7() {
+            pageSetUp(false, true);
+        }
+    }
+
+    loadContent("@Url.Action("Detail", "BOCustomer", new { id = Model.id })", "#detail");
+
+    $(document).ready(function () {
+        validateForm("BOCustomer-form");
+        $("#refreshDetail").click(function () {
+            loadContent("@Url.Action("Detail", "BOCustomer", new { id = Model.id })", "#detail");
+        });
+    });
+</script>

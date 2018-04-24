@@ -1,0 +1,98 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.Models;
+@{
+
+}
+
+<style>
+    #actionListGroup {
+        height: 500px;
+        overflow-y: auto;
+    }
+
+    .width-100 {
+        width: 100%;
+    }
+
+    .just-padding {
+        padding: 15px;
+    }
+
+    .list-group.list-group-root {
+        padding: 0;
+        overflow: hidden;
+    }
+
+        .list-group.list-group-root .list-group {
+            margin-bottom: 0;
+        }
+
+        .list-group.list-group-root .list-group-item {
+            border-radius: 0;
+            border-width: 1px 0 0 0;
+        }
+
+        .list-group.list-group-root > .list-group-item:first-child {
+            border-top-width: 0;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group-item {
+            padding-left: 30px;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group > .list-group-item {
+            padding-left: 45px;
+        }
+</style>
+
+@Html.Raw((string)ViewBag.Html)
+
+<script>
+    $(".aCollapsedAC").click(function () {
+        var l = $(this);
+        var div = l.attr("href");
+        //debugger
+        //$(div).collapse("show");
+        $(".ppact").each(function (index) {
+            var id = $(this).attr("id");
+
+            var k = "#" + id;
+            if (div != k) {
+
+                $("#" + id).removeClass("collapse in").addClass("collapse");
+
+            }
+        });
+
+
+    });
+    function checkFuntion(id, e) {
+        if ($(e).prop("checked")) {
+            $(".classCheck" + id).prop("checked", true);
+        }
+        else {
+            $(".classCheck" + id).prop("checked", false);
+        }
+    }
+
+    $(function () {
+        $('#search2').keyup(function () {
+            var current_query = $(this).val().toLowerCase();;
+            if (current_query !== "") {
+                $("#actionListGroup > li").hide();
+                $("#actionListGroup > li.canSearch").each(function () {
+                    var current_keyword = $(this).text().toLowerCase();;
+                    if (current_keyword.indexOf(current_query) >= 0) {
+                        $(this).show();
+                        $("#actionListGroup").find('ul[data-parent="' + $(this).data('id') + '"]').show();
+                    } else {
+                        $("#actionListGroup").find('ul[data-parent="' + $(this).data('id') + '"]').hide();
+                    }
+                });
+            } else {
+                $("#actionListGroup > li").show();
+                $("#actionListGroup").find('ul[data-parent]').show();
+            };
+        });
+    });
+</script>

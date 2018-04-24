@@ -1,0 +1,341 @@
+﻿@model Admin.Models.Context
+@using Admin.BaseClass.UI;
+@{
+
+    List<Admin.Models.BaseWidget> lWidget = new List<Admin.Models.BaseWidget>();
+    List<Widget> lWidgetInstancias = new List<Widget>();
+    Admin.Models.BaseUser user = new Admin.Models.Context().BaseUsers.Find(WebSecurity.CurrentUserId);
+
+    var widgets = Model.BaseWidgets.Where(x => x.BaseGraphs.Count > 0 || x.actionContent != null);
+
+    foreach (var item in widgets)
+    {
+        lWidget.Add(item);
+    }
+
+    foreach (var item in lWidget)
+    {
+        bool pass = false;
+        foreach (var userpro in user.BaseProfiles)
+        {
+            foreach (var widgetpro in item.BaseProfiles)
+            {
+                if (userpro.id == widgetpro.id)
+                {
+                    pass = true;
+                }
+                if (pass) { break; }
+            }
+            if (pass) { break; }
+        }
+        if (!pass)
+        {
+            continue;
+        }
+
+        string idWid = "Widget_" + item.id + "_" + item.name.Replace(" ", "");
+        string widTitle = item.name;
+        Widget wd = new Widget(idWid, widTitle, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+        wd.BaseWidget = item;
+        wd.Data_widget_deletebutton = true;
+        wd.Data_widget_togglebutton = true;
+        wd.Data_widget_colorbutton = false;
+        wd.Data_widget_fullscreenbutton = true;
+        wd.Data_widget_sortable = true;
+        wd.Data_widget_editbutton = false;
+
+        lWidgetInstancias.Add(wd);
+
+    }
+}
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-3">
+        <label class="">Rows (@user.widgetsToShow)</label>
+        <select id="widSelect" class="baseSelect custom-scroll select2 select2-offscreen" name="widSelect" tabindex="-1">
+            <option value="" selected="selected">Split by</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+    <div style="margin-top: 23px">
+        <button id="clickme" class="btn btn-success" title="@("Save Settings")"><i class="glyphicon glyphicon-ok"></i></button>
+    </div>
+</div>
+<br />
+@{
+    if (lWidgetInstancias.Count > 0)
+    {
+        var cantToShow = user.widgetsToShow;
+        int widCount = 1;
+        int increment = 0;
+        if (cantToShow >= 1)
+        {
+            widCount = (int)cantToShow;
+        }
+        int ancho = 12 / widCount;
+        System.Text.StringBuilder kk = new System.Text.StringBuilder();
+        <section id="widget-grid" class="">
+            @foreach (Widget w in lWidgetInstancias)
+            {
+                if (increment == 0)
+                {
+                    @Html.Raw("<div class=\"row\"> \n")
+                }
+                w.Width = ancho;
+                @Html.Raw(w.beginHeader())
+                @Html.Raw(w.beginCustomButton())
+                if (w.BaseWidget.hasRange)
+                {
+                    <button class="btn btn-@(ViewBag.config.secundaryColor) refreshTable" data-toggle="modal" data-target="#Modal_@w.Id" title="Filtrar por Fecha"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_filter"></i></button>
+                }
+                @Html.Raw(w.Dcontinue())
+                @Html.Raw(w.endHeader())
+                var wiid = w.Id.Split('_')[1];
+                if (string.IsNullOrEmpty(w.BaseWidget.actionContent))
+                {
+                    <div id="printG@(wiid)" data-param="@wiid" data-url="@Url.Action("_GraphView", "BaseDonWidget", new { widgetID = wiid })" class="partialCall"></div>
+                }
+                else
+                {
+                    <div id="printG@(wiid)" data-param="@wiid" data-url="@w.BaseWidget.actionContent" class="partialCallCustom"></div>
+                }
+                @Html.Raw(w.end())
+                increment++;
+                if (increment == widCount)
+                {
+                    @Html.Raw("</div> \n")
+                    increment = 0;
+                }
+                <div class="modal fade" id="Modal_@w.Id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header header_modal">
+                                <button type="button" class="close buttom_modal" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title title_modal">
+                                    Filter by Date Range: @w.Title
+                                </h4>
+                            </div>
+                            <div class="modal-body no-padding">
+                                <form action="" id="filter-form" class="smart-form">
+                                    @if (w.BaseWidget.hasRange)
+                                    {
+                                        <fieldset>
+                                            <div class="row">
+                                                <section class="col col-lg-6 pr fl">
+                                                    <label class="label">From</label>
+                                                    <label class="input">
+                                                        <i class="icon-append fa fa-calendar"></i>
+                                                        <input id="fechad_@wiid" class="datetime" type="text" value="" data-dateformat="yy-mm-dd" data-changemonth="true" data-changeyear="true" data-showbuttonpanel="true" data-child="fechah_@wiid" data-numberofmonths="1" data-validation="date;required" placeholder="From" name="fechad_@wiid" data-chil="fechah_@wiid">
+                                                        <b class="tooltip tooltip-top-right">
+                                                            <i class="fa fa-exclamation txt-color-blue"></i>
+                                                            Date from
+                                                        </b>
+                                                    </label>
+                                                </section>
+                                                <section class="col col-lg-6 pr fl">
+                                                    <label class="label">To</label>
+                                                    <label class="input">
+                                                        <i class="icon-append fa fa-calendar"></i>
+                                                        <input id="fechah_@wiid" class="datetime" type="text" value="" data-dateformat="yy-mm-dd" data-changemonth="true" data-changeyear="true" data-showbuttonpanel="true" data-parent="fechad_@wiid" data-numberofmonths="1" data-validation="date;required" placeholder="To" name="fechah_@wiid">
+                                                        <b class="tooltip tooltip-top-right">
+                                                            <i class="fa fa-exclamation txt-color-blue"></i>
+                                                            Date To
+                                                        </b>
+                                                    </label>
+                                                </section>
+                                            </div>
+                                        </fieldset>
+                                    }
+                                    <footer>
+                                        <button id="cancel" type="button" data-wiid="@wiid" data-modalname="Modal_@w.Id" class="btn btn-danger btn_color_so cancel">
+                                            Close
+                                        </button>
+                                        <button id="save" type="button" data-wiid="@wiid" data-modalname="Modal_@w.Id" data-success="$('#Modal_@w.Id').modal('hide');" class="btn btn-save save">
+                                            Apply
+                                        </button>
+
+                                    </footer>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    }
+}
+<script type="text/javascript">
+    pageSetUp();
+    $(document).ready(function () {
+        loadScript('js/plugin/morris/raphael-min.js', function () {
+            loadScript('js/plugin/morris/morris.js', partialCall);
+        });
+    });
+    function partialCall() {
+        var elements = $('.partialCall');
+        elements.each(function () {
+            var url = $(this).data("url");
+            var param = $(this).data("param");
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: { widgetID: param },
+                success: function (data) {
+                    $("#" + "printG" + param).html(data);
+                }
+            });
+        });
+        partialCallCustom();
+    }
+
+    function partialCallCustom() {
+        var elements = $('.partialCallCustom');
+        elements.each(function () {
+            var url = $(this).data("url");
+            var param = $(this).data("param");
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (data) {
+                    $("#" + "printG" + param).html(data);
+                }
+            });
+        });
+    }
+
+    $(".button-icon.jarviswidget-fullscreen-btn, .button-icon.jarviswidget-toggle-btn").click(function () {
+        var t = $(this);
+        var div = t.parent().parent().parent();
+        var divBodyWidget = $(div).children("div").children("div.widget-body");
+        var divPartialCall = $(divBodyWidget).children("div.partialCall");
+        if (divPartialCall !== undefined && divPartialCall != "") {
+            var url = $(divPartialCall).data("url");
+            var param = $(divPartialCall).data("param");
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: { widgetID: param },
+                success: function (data) {
+                    $("#" + "printG" + param).html(data);
+                }
+            });
+        }
+    });
+
+    $(".save").click(function () {
+        var bu = $(this);
+        bu.data('loading-text', "<i class='fa fa-refresh fa-spin'></i>");
+        bu.button('loading');
+
+        var param = $(this).data("wiid");
+        var modalname = $(this).data("modalname");
+        var fechad = $("#fechad_" + param + "").val();
+        var fechah = $("#fechah_" + param + "").val();
+        var url = "@Url.Action("_GraphView", "BaseDonWidget")";
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: { widgetID: param, fechad: fechad, fechah: fechah },
+            success: function (data) {
+                $("#" + "printG" + param).html(data);
+                $("#" + modalname + "").modal("hide");
+                bu.button('reset');
+            }
+        });
+        bu.button('reset');
+    });
+
+    $(".cancel").click(function () {
+        var bu = $(this);
+        bu.data('loading-text', "<i class='fa fa-refresh fa-spin'></i>");
+        bu.button('loading');
+
+        var param = $(this).data("wiid");
+        var modalname = $(this).data("modalname");
+
+        $("#fechad_" + param + "").val("");
+        $("#fechah_" + param + "").val("");
+
+        var url = "@Url.Action("_GraphView", "BaseDonWidget")";
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: { widgetID: param },
+            success: function (data) {
+                $("#" + "printG" + param).html(data);
+                $("#" + modalname + "").modal("hide");
+                bu.button('reset');
+            }
+        });
+        bu.button('reset');
+    });
+
+
+    $("#clickme").click(function () {
+
+        var bu = $(this);
+        bu.data('loading-text', "<i class='fa fa-refresh fa-spin'></i>");
+        bu.button('loading');
+
+        var idsel = $("#widSelect").val();
+
+        if (idsel != "") {
+            $.ajax({
+                url: "@Url.Action("Dashboard", "BaseHome")",
+                type: 'post',
+                data: { widSelect: idsel },
+                success: function (data) {
+
+                    if (data === "Ok") {
+                        location.reload();
+                    } else {
+                        $.smallBox({
+                            title: data,
+                            color: "#b94a48",
+                            iconSmall: "fa fa-check bounce animated",
+                            timeout: 5000
+                        });
+                        bu.button('reset');
+                    }
+                }
+            });
+        } else {
+
+            $.smallBox({
+                title: "Debe seleccionar una cantidad.",
+                color: "#b94a48",
+                iconSmall: "fa fa-check bounce animated",
+                timeout: 5000
+            });
+            bu.button('reset');
+            return false;
+        }
+    });
+
+
+    $(function () {
+        $(".ppaa").tooltip();
+    });
+
+    //{
+    //    position: {
+    //            my: "center bottom-20",
+    //            at: "center top",
+    //            using: function( position, feedback ) {
+    //                $( this ).css( position );
+    //                $( "<div>" )
+    //                  .addClass( "arrow" )
+    //                  .addClass( feedback.vertical )
+    //                  .addClass( feedback.horizontal )
+    //                  .appendTo( this );
+    //            }
+    //    }
+    //}
+
+</script>

@@ -1,0 +1,36 @@
+﻿@model Admin.Models.BaseActionLock
+
+@{
+    ViewBag.Title = "Operación Bloqueada";
+}
+
+<div class="section_title fluid_wrap">
+    <div class="col-lg-8 pl0">
+        <h1 class="the_title">No puede ingresar a esta área</h1>
+    </div>
+    <div class="col-lg-4 pr0"></div>
+</div>
+
+<div class="drag_and_drop_container fluid_wrap reset">
+    <div class="drag_container_title">
+        <h2>Detalle del error</h2>
+    </div>
+    <div class="drag_container_the_content_area drag_content_area_fluid_wrap">
+
+        <fieldset>
+            <legend></legend>
+
+            <ul class="form_items_container col-lg-12 pl0">
+                <li>
+                    <label>No se puede acceder a Edit la información del área solicidata debido a que otro usuario la está editando.</label><br /><br />
+                    <label>Detalles: </label><br />
+                    <label>Usuario editando la información:  @ViewBag.user </label><br />
+                    <label>Fecha Bloqueo: @Model.lockDate </label><br />
+                    <label>Tiempo de bloqueo: @Model.lockMins minutos</label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+    <!--end drag_container_the_content_area-->
+</div>
+<!--end drag_and_drop_container-->

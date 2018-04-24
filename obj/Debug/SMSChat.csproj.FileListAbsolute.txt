@@ -1,0 +1,466 @@
+C:\wamp64\www\SMS\bin\roslyn\csc.exe
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\wamp64\www\SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\wamp64\www\SMS\bin\roslyn\System.Collections.Immutable.dll
+C:\wamp64\www\SMS\bin\roslyn\System.Reflection.Metadata.dll
+C:\wamp64\www\SMS\bin\roslyn\vbc.exe
+C:\wamp64\www\SMS\bin\roslyn\VBCSCompiler.exe
+C:\wamp64\www\SMS\bin\roslyn\VBCSCompiler.exe.config
+C:\wamp64\www\SMS\bin\Admin.dll.config
+C:\wamp64\www\SMS\bin\Admin.dll
+C:\wamp64\www\SMS\bin\Admin.pdb
+C:\wamp64\www\SMS\bin\Antlr3.Runtime.dll
+C:\wamp64\www\SMS\bin\Calabonga.Mvc.PagedListExt.dll
+C:\wamp64\www\SMS\bin\DocumentFormat.OpenXml.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.AspNet.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.Core.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OAuth.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OpenId.dll
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\wamp64\www\SMS\bin\EntityFramework.dll
+C:\wamp64\www\SMS\bin\EntityFramework.SqlServer.dll
+C:\wamp64\www\SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\wamp64\www\SMS\bin\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\SMS\bin\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\SMS\bin\Microsoft.Web.Helpers.dll
+C:\wamp64\www\SMS\bin\Microsoft.Web.Infrastructure.dll
+C:\wamp64\www\SMS\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\wamp64\www\SMS\bin\Newtonsoft.Json.dll
+C:\wamp64\www\SMS\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\SMS\bin\System.Net.Http.Extensions.dll
+C:\wamp64\www\SMS\bin\System.Net.Http.Formatting.dll
+C:\wamp64\www\SMS\bin\System.Net.Http.Primitives.dll
+C:\wamp64\www\SMS\bin\System.Web.Helpers.dll
+C:\wamp64\www\SMS\bin\System.Web.Http.dll
+C:\wamp64\www\SMS\bin\System.Web.Http.Tracing.dll
+C:\wamp64\www\SMS\bin\System.Web.Http.WebHost.dll
+C:\wamp64\www\SMS\bin\System.Web.Mvc.dll
+C:\wamp64\www\SMS\bin\System.Web.Optimization.dll
+C:\wamp64\www\SMS\bin\System.Web.Razor.dll
+C:\wamp64\www\SMS\bin\System.Web.WebPages.Deployment.dll
+C:\wamp64\www\SMS\bin\System.Web.WebPages.dll
+C:\wamp64\www\SMS\bin\System.Web.WebPages.Razor.dll
+C:\wamp64\www\SMS\bin\Twilio.dll
+C:\wamp64\www\SMS\bin\WebGrease.dll
+C:\wamp64\www\SMS\bin\WebMatrix.Data.dll
+C:\wamp64\www\SMS\bin\WebMatrix.WebData.dll
+C:\wamp64\www\SMS\bin\Org.Mentalis.Security.Cryptography.dll
+C:\wamp64\www\SMS\bin\Mono.Math.dll
+C:\wamp64\www\SMS\bin\Antlr3.Runtime.pdb
+C:\wamp64\www\SMS\bin\DocumentFormat.OpenXml.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.AspNet.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.Core.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OAuth.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OpenId.xml
+C:\wamp64\www\SMS\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\wamp64\www\SMS\bin\EntityFramework.xml
+C:\wamp64\www\SMS\bin\EntityFramework.SqlServer.xml
+C:\wamp64\www\SMS\bin\Ionic.Zip.pdb
+C:\wamp64\www\SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\wamp64\www\SMS\bin\Microsoft.IdentityModel.Tokens.xml
+C:\wamp64\www\SMS\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\wamp64\www\SMS\bin\Newtonsoft.Json.xml
+C:\wamp64\www\SMS\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\wamp64\www\SMS\bin\System.Net.Http.Extensions.xml
+C:\wamp64\www\SMS\bin\System.Net.Http.Formatting.xml
+C:\wamp64\www\SMS\bin\System.Net.Http.Primitives.xml
+C:\wamp64\www\SMS\bin\System.Web.Helpers.xml
+C:\wamp64\www\SMS\bin\System.Web.Http.xml
+C:\wamp64\www\SMS\bin\System.Web.Http.Tracing.xml
+C:\wamp64\www\SMS\bin\System.Web.Http.WebHost.xml
+C:\wamp64\www\SMS\bin\System.Web.Mvc.xml
+C:\wamp64\www\SMS\bin\System.Web.Optimization.xml
+C:\wamp64\www\SMS\bin\System.Web.Razor.xml
+C:\wamp64\www\SMS\bin\System.Web.WebPages.xml
+C:\wamp64\www\SMS\bin\System.Web.WebPages.Deployment.xml
+C:\wamp64\www\SMS\bin\System.Web.WebPages.Razor.xml
+C:\wamp64\www\SMS\bin\Microsoft.Web.Infrastructure.xml
+C:\wamp64\www\SMS\bin\Twilio.xml
+C:\wamp64\www\SMS\bin\WebMatrix.Data.xml
+C:\wamp64\www\SMS\bin\WebMatrix.WebData.xml
+C:\wamp64\www\SMS\bin\Org.Mentalis.Security.Cryptography.xml
+C:\wamp64\www\SMS\bin\Mono.Math.xml
+C:\wamp64\www\SMS\obj\Debug\SMSChat.csproj.App.config
+C:\wamp64\www\SMS\obj\Debug\SMSChat.csprojResolveAssemblyReference.cache
+C:\wamp64\www\SMS\obj\Debug\Admin.Properties.Resources.resources
+C:\wamp64\www\SMS\obj\Debug\SMSChat.csproj.GenerateResource.Cache
+C:\wamp64\www\SMS\obj\Debug\Admin.dll
+C:\wamp64\www\SMS\obj\Debug\Admin.pdb
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\csc.exe
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\vbc.exe
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Admin.dll.config
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Admin.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Admin.pdb
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Antlr3.Runtime.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.Core.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\EntityFramework.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.Web.Helpers.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Newtonsoft.Json.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Extensions.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Formatting.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Primitives.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Helpers.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.Tracing.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.WebHost.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Mvc.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Optimization.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Razor.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Twilio.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\WebGrease.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\WebMatrix.Data.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\WebMatrix.WebData.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Mono.Math.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Antlr3.Runtime.pdb
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DocumentFormat.OpenXml.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.Core.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\EntityFramework.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Ionic.Zip.pdb
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Newtonsoft.Json.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Extensions.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Formatting.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Net.Http.Primitives.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Helpers.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.Tracing.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Http.WebHost.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Mvc.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Optimization.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.Razor.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Twilio.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\WebMatrix.Data.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\WebMatrix.WebData.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\bin\Mono.Math.xml
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\SMSChat.csproj.App.config
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\SMSChat.csprojResolveAssemblyReference.cache
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\SMSChat.csproj.GenerateResource.Cache
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\Admin.dll
+C:\Users\Andy\Documents\Visual Studio 2015\Projects\SMSChatApp\obj\Debug\Admin.pdb
+C:\wamp64\www\SMS\bin\CaptchaMvc.pdb
+C:\wamp64\www\SMS\bin\CaptchaMvc.xml
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\csc.exe
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\vbc.exe
+C:\Users\EIS\source\repos\SMSChat\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\source\repos\SMSChat\bin\Admin.dll.config
+C:\Users\EIS\source\repos\SMSChat\bin\Admin.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Admin.pdb
+C:\Users\EIS\source\repos\SMSChat\bin\Antlr3.Runtime.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DocumentFormat.OpenXml.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\source\repos\SMSChat\bin\EntityFramework.dll
+C:\Users\EIS\source\repos\SMSChat\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Newtonsoft.Json.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Helpers.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Mvc.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Optimization.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Razor.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.dll
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Twilio.dll
+C:\Users\EIS\source\repos\SMSChat\bin\WebGrease.dll
+C:\Users\EIS\source\repos\SMSChat\bin\WebMatrix.Data.dll
+C:\Users\EIS\source\repos\SMSChat\bin\WebMatrix.WebData.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Mono.Math.dll
+C:\Users\EIS\source\repos\SMSChat\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\source\repos\SMSChat\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\source\repos\SMSChat\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\source\repos\SMSChat\bin\EntityFramework.xml
+C:\Users\EIS\source\repos\SMSChat\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Newtonsoft.Json.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Helpers.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Mvc.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Optimization.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.Razor.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\source\repos\SMSChat\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Twilio.xml
+C:\Users\EIS\source\repos\SMSChat\bin\WebMatrix.Data.xml
+C:\Users\EIS\source\repos\SMSChat\bin\WebMatrix.WebData.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\source\repos\SMSChat\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\SMSChat.csproj.App.config
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\SMSChat.csproj.GenerateResource.Cache
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\SMSChat.csproj.CoreCompileInputs.cache
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\Admin.dll
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\Admin.pdb
+C:\Users\EIS\source\repos\SMSChat\obj\Debug\SMSChat.csprojResolveAssemblyReference.cache
+C:\wamp64\www\SMSChat\obj\Debug\SMSChat.csproj.App.config
+C:\wamp64\www\SMSChat\obj\Debug\SMSChat.csprojResolveAssemblyReference.cache
+C:\wamp64\www\SMSChat\obj\Debug\Admin.Properties.Resources.resources
+C:\wamp64\www\SMSChat\obj\Debug\SMSChat.csproj.GenerateResource.Cache
+C:\wamp64\www\SMSChat\obj\Debug\Admin.dll
+C:\wamp64\www\SMSChat\obj\Debug\Admin.pdb
+C:\wamp64\www\SMSChat\bin\roslyn\csc.exe
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\wamp64\www\SMSChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\wamp64\www\SMSChat\bin\roslyn\System.Collections.Immutable.dll
+C:\wamp64\www\SMSChat\bin\roslyn\System.Reflection.Metadata.dll
+C:\wamp64\www\SMSChat\bin\roslyn\vbc.exe
+C:\wamp64\www\SMSChat\bin\roslyn\VBCSCompiler.exe
+C:\wamp64\www\SMSChat\bin\roslyn\VBCSCompiler.exe.config
+C:\wamp64\www\SMSChat\bin\Admin.dll.config
+C:\wamp64\www\SMSChat\bin\Admin.dll
+C:\wamp64\www\SMSChat\bin\Admin.pdb
+C:\wamp64\www\SMSChat\bin\Antlr3.Runtime.dll
+C:\wamp64\www\SMSChat\bin\Calabonga.Mvc.PagedListExt.dll
+C:\wamp64\www\SMSChat\bin\DocumentFormat.OpenXml.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.AspNet.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.Core.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OAuth.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OpenId.dll
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\wamp64\www\SMSChat\bin\EntityFramework.dll
+C:\wamp64\www\SMSChat\bin\EntityFramework.SqlServer.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.Web.Helpers.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.Web.Infrastructure.dll
+C:\wamp64\www\SMSChat\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\wamp64\www\SMSChat\bin\Newtonsoft.Json.dll
+C:\wamp64\www\SMSChat\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Extensions.dll
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Formatting.dll
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Primitives.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Helpers.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Http.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Http.Tracing.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Http.WebHost.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Mvc.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Optimization.dll
+C:\wamp64\www\SMSChat\bin\System.Web.Razor.dll
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.Deployment.dll
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.dll
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.Razor.dll
+C:\wamp64\www\SMSChat\bin\Twilio.dll
+C:\wamp64\www\SMSChat\bin\WebGrease.dll
+C:\wamp64\www\SMSChat\bin\WebMatrix.Data.dll
+C:\wamp64\www\SMSChat\bin\WebMatrix.WebData.dll
+C:\wamp64\www\SMSChat\bin\Org.Mentalis.Security.Cryptography.dll
+C:\wamp64\www\SMSChat\bin\Mono.Math.dll
+C:\wamp64\www\SMSChat\bin\Antlr3.Runtime.pdb
+C:\wamp64\www\SMSChat\bin\DocumentFormat.OpenXml.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.AspNet.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.Core.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OAuth.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OpenId.xml
+C:\wamp64\www\SMSChat\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\wamp64\www\SMSChat\bin\EntityFramework.xml
+C:\wamp64\www\SMSChat\bin\EntityFramework.SqlServer.xml
+C:\wamp64\www\SMSChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\wamp64\www\SMSChat\bin\Microsoft.IdentityModel.Tokens.xml
+C:\wamp64\www\SMSChat\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\wamp64\www\SMSChat\bin\Newtonsoft.Json.xml
+C:\wamp64\www\SMSChat\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Extensions.xml
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Formatting.xml
+C:\wamp64\www\SMSChat\bin\System.Net.Http.Primitives.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Helpers.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Http.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Http.Tracing.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Http.WebHost.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Mvc.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Optimization.xml
+C:\wamp64\www\SMSChat\bin\System.Web.Razor.xml
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.xml
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.Deployment.xml
+C:\wamp64\www\SMSChat\bin\System.Web.WebPages.Razor.xml
+C:\wamp64\www\SMSChat\bin\Microsoft.Web.Infrastructure.xml
+C:\wamp64\www\SMSChat\bin\Twilio.xml
+C:\wamp64\www\SMSChat\bin\WebMatrix.Data.xml
+C:\wamp64\www\SMSChat\bin\WebMatrix.WebData.xml
+C:\wamp64\www\SMSChat\bin\Org.Mentalis.Security.Cryptography.xml
+C:\wamp64\www\SMSChat\bin\Mono.Math.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\csc.exe
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.CSharp.Core.targets
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\System.Collections.Immutable.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\System.Reflection.Metadata.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\vbc.exe
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\VBCSCompiler.exe
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\roslyn\VBCSCompiler.exe.config
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Admin.dll.config
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Admin.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Admin.pdb
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Antlr3.Runtime.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Calabonga.Mvc.PagedListExt.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.AspNet.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.Core.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OAuth.Consumer.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OAuth.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OpenId.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\EntityFramework.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\EntityFramework.SqlServer.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.IdentityModel.Logging.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.IdentityModel.Tokens.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.Web.Helpers.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.Web.WebPages.OAuth.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Newtonsoft.Json.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.IdentityModel.Tokens.Jwt.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Extensions.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Formatting.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Primitives.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Helpers.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.Tracing.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.WebHost.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Mvc.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Optimization.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Razor.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.Deployment.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.Razor.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Twilio.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\WebGrease.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\WebMatrix.Data.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\WebMatrix.WebData.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Org.Mentalis.Security.Cryptography.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Mono.Math.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Antlr3.Runtime.pdb
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DocumentFormat.OpenXml.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.AspNet.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.Core.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OAuth.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OAuth.Consumer.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OpenId.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\EntityFramework.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\EntityFramework.SqlServer.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.IdentityModel.Tokens.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.Web.WebPages.OAuth.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Newtonsoft.Json.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.IdentityModel.Tokens.Jwt.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Extensions.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Formatting.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Net.Http.Primitives.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Helpers.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.Tracing.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Http.WebHost.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Mvc.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Optimization.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.Razor.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.Deployment.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\System.Web.WebPages.Razor.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Microsoft.Web.Infrastructure.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Twilio.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\WebMatrix.Data.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\WebMatrix.WebData.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Org.Mentalis.Security.Cryptography.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\bin\Mono.Math.xml
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\SMSChat.csproj.App.config
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\SMSChat.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\Admin.Properties.Resources.resources
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\SMSChat.csproj.GenerateResource.Cache
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\SMSChat.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\Admin.dll
+\\vmware-host\Shared Folders\Documents\Visual Studio 2017\Projects\smschat\obj\Debug\Admin.pdb

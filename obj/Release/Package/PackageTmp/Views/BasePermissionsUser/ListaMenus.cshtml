@@ -1,0 +1,182 @@
+﻿@model Admin.Models.BaseUser
+@using Admin.Models;
+@{
+    int acordeonCount = 0;
+    Context db = new Context();
+    string collapse = "collapse in";
+
+    Admin.Models.BaseUser userMind = Helper.GetUser(db);
+    int userID = userMind.ID;
+    List<Admin.Models.BaseMenu> allUserMenu = new List<Admin.Models.BaseMenu>();
+    var fromDirect = db.BaseUserMenus.Where(d => d.userID == userID).ToList();
+
+    foreach (var item in fromDirect)
+    {
+        allUserMenu.Add(item.BaseMenu);
+    }
+    foreach (var item in userMind.BaseProfiles)
+    {
+        foreach (var menus in item.BaseProfileMenus)
+        {
+            allUserMenu.Add(menus.BaseMenu);
+        }
+    }
+}
+<div class="panel-group" id="accordion">
+    @foreach (var item in db.BaseMenus.Where(q => q.hidden.HasValue).Where(d => !d.hidden.Value).OrderBy(x => x.noOrder))
+    {
+        if (allUserMenu.Where(d => d.id == item.id).Count() > 0 || userMind.superUser)
+        {
+            if (item.menuID == null)
+            {
+                string tituloMenu = (item.realTitle != "") ? item.realTitle : item.realText;
+                string tituloMenuHijo = "";
+
+                var hijos = item.BaseMenu1.Where(x => x.menuID == item.id);
+                if (hijos.Any())
+                {
+                    tituloMenuHijo = "Sub_" + ((item.realTitle != "") ? item.realTitle : item.realText).Replace(" ", "_");
+                }
+
+                string check = "";
+                if (item.BaseUserMenus.FirstOrDefault(x => x.menuID == item.id && x.userID == Model.ID) != null)
+                {
+                    check = "checked=\"checked\"";
+                }
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" class="aCollapsed" data-parent="#accordion" href="#@tituloMenuHijo">@tituloMenu</a>
+                            <input type="checkbox" name="MenuID_@item.id" id="MenuID_@item.id" @check class="ckx" />
+                        </h4>
+                    </div>
+                    @if (hijos.Any())
+                    {
+                        <div id="@tituloMenuHijo" class="panel-collapse @collapse">
+                            <div class="panel-body">
+                                @foreach (var h in hijos)
+                                {
+                                    if (allUserMenu.Where(d => d.id == h.id).Count() > 0 || userMind.superUser)
+                                    {
+                                        check = "";
+                                        var hijosdehijos = h.BaseMenu1.Where(x => x.menuID == h.id);
+                                        if (h.BaseUserMenus.FirstOrDefault(x => x.menuID == h.id && x.userID == Model.ID) != null)
+                                        {
+                                            check = "checked=\"checked\"";
+                                        }
+                                        <input type="checkbox" name="MenuID_@h.id" id="MenuID_@h.id" @check class="ckx" />
+                                        @h.realTitle
+                                        <div class="hh">
+                                            @foreach (var hh in hijosdehijos)
+                                            {
+                                                if (allUserMenu.Where(d => d.id == hh.id).Count() > 0 || userMind.superUser)
+                                                {
+                                                    check = "";
+
+                                                    if (hh.BaseUserMenus.FirstOrDefault(x => x.menuID == hh.id && x.userID == Model.ID) != null)
+                                                    {
+                                                        check = "checked=\"checked\"";
+                                                    }
+
+                                                    <label>
+                                                        <input type="checkbox" name="MenuID_@hh.id" id="MenuID_@hh.id" @check class="ckx" />
+                                                        @hh.realTitle
+                                                    </label>
+                                                    <br />
+                                                }
+                                            }
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                collapse = "collapse";
+                acordeonCount++;
+                if (acordeonCount == 2)
+                {
+                    acordeonCount = 0;
+                }
+            }
+        }
+    }
+</div>
+
+<!--esto es lo que se repetira por cada menu-->
+@*@if (Model.BaseProfileMenus.Any())
+    {
+        if (acordeonCount == 0)
+        {
+        <div class="col col-lg-4">
+        }
+        <div class="panel-group" id="accordion">
+            @foreach (var item in Model.BaseProfileMenus)
+            {
+                var menu = new Admin.Models.Context().BaseMenus.FirstOrDefault(x => x.id == item.menuID);
+                string tituloMenu = (item.BaseMenu.realTitle != "") ? menu.realTitle : menu.realText;
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">@tituloMenu</a>
+                        </h4>
+                    </div>
+
+                    @if (menu.menuID != 0)
+                    {
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                shoy un hijo
+                            </div>
+                        </div>
+                    }
+                </div>
+                    acordeonCount++;
+                    if (acordeonCount == 4)
+                    {
+                        </div>
+                        acordeonCount = 0;
+                    }
+            }
+        </div>
+    }
+    else
+    {
+
+    }*@
+
+
+
+
+<!--Creo otro acordeon-->
+@*<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne2">What is HTML 2222?</a>
+            </h4>
+        </div>
+
+        <div id="collapseOne2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+            </div>
+        </div>
+    </div>*@
+
+
+<script>
+    $(".aCollapsed").click(function () {
+        var l = $(this);
+        var div = l.attr("href");
+        //debugger
+        ////$(div).collapse("show");
+        //$(div).each(function (index) {
+        //    //$(this).addClass("collapse in");
+        //    $(this).collapse("show");
+        //    debugger
+        //});
+
+
+    });
+</script>

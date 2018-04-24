@@ -1,0 +1,172 @@
+﻿@using Admin.CustomCode
+@{
+    //var values = HttpContext.Current.Request.RequestContext.RouteData.Values;
+    //var title = string.Format("{0} - {1}", Helper.t(values.Values.ToArray()[0].ToString()), Helper.t(values.Values.ToArray()[1].ToString()));
+    Admin.Models.Context db = new Admin.Models.Context();
+    Admin.BaseClass.Format.ValidationMessage messageInstance = new Admin.BaseClass.Format.ValidationMessage();
+
+}
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    @Html.Partial("_HeadPlane")
+
+</head>
+<body class="smart-style-1">
+
+
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = ($("#left-panel").width()+5)+"px";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="~/js/libs/jquery-2.0.2.min.js"><\/script>');
+        }
+    </script>
+    <script>
+        if (!window.jQuery.ui)
+            document.write('<script src="../js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        var appName = "@(ViewBag.config.appName)";
+        var baseCSS = "@(ViewBag.config.css)";
+        var primaryColor = "@(ViewBag.config.primaryColor)";
+        var secundaryColor = "@(ViewBag.config.secundaryColor)";
+    </script>
+    <script src="~/js/language/language.js"></script>
+    <script src="~/js/language/@(System.Globalization.CultureInfo.CurrentCulture.Name).js"></script>
+    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+    <script src="~/js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js"></script>
+    <script src="~/js/plugin/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/js/plugin/jquery-cstable/jquery.cstable.js"></script>
+    <script src="~/js/plugin/datetimepicker/moment-with-locales.js"></script>
+    <script src="~/js/plugin/datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="~/js/notification/SmartNotification.min.js"></script>
+    <script src="~/js/smartwidgets/jarvis.widget.min.js"></script>
+    <script src="~/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+    <script src="~/js/plugin/masked-input/jquery.maskMoney.js"></script>
+    <script src="~/js/plugin/select2/select2.min.js"></script>
+    <script src="~/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+    <script src="~/js/plugin/contextmenu/jquery.contextMenu.js"></script>
+    <script src="~/js/plugin/contextmenu/jquery.ui.position.js"></script>
+    <!-- browser msie issue fix -->
+    <!-- FastClick: For mobile devices: you can disable this in app.js
+        <script src="~/js/plugin/fastclick/fastclick.js"></script> -->
+    <!--[if IE 7]>
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+        <![endif]-->
+    <!-- Demo purpose only -->
+    <script src="~/js/plugin/jquery-form/jquery-form.min.js"></script>
+    <script src="~/js/changeDropTablesSql.js"></script>
+    <style type="text/css">
+        .CodeMirror {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow: auto;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="~/js/plugin/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="~/js/plugin/codemirror/theme/monokai.css" />
+    <link rel="stylesheet" href="~/js/plugin/codemirror//addon/hint/show-hint.css" />
+    <script src="~/js/plugin/codemirror/lib/codemirror.js"></script>
+    <script src="~/js/plugin/codemirror/mode/css/css.js"></script>
+    <script src="~/js/plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="~/js/plugin/codemirror/mode/htmlembedded/htmlembedded.js"></script>
+    <script src="~/js/plugin/codemirror/mode/xml/xml.js"></script>
+    <script src="~/js/plugin/codemirror/mode/sql/sql.js"></script>
+    <script src="~/js/plugin/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="~/js/plugin/codemirror/addon/selection/active-line.js"></script>
+    <script src="~/js/plugin/codemirror/addon/hint/show-hint.js"></script>
+    <script src="~/js/plugin/codemirror/addon/hint/css-hint.js"></script>
+    <link rel="stylesheet" type="application/javascript" media="screen" href="~/js/plugin/ckeditor/ckeditor.js">
+    <script src="~/js/plugin/ckeditor/ckeditor.js"></script>
+    <script src="~/js/jquery-table-expand.js"></script>
+    <script src="~/js/app.js"></script>
+    <script src="~/js/general.js"></script>
+    <script>
+        var preventUnloadPrompt;
+        $('a').on('click', function () { preventUnloadPrompt = true; });
+        $('form').on('submit', function () { preventUnloadPrompt = true; });
+        $(window).bind("beforeunload", function (e) {
+            var rval;
+            if (preventUnloadPrompt) {
+                return;
+            } else {
+                $('#logoutForm').submit();
+            }
+            return rval;
+        });
+        $(document).ready(function () {
+            var idleState = false;
+            var idleTimer = null;
+            $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick', function () {
+                clearTimeout(idleTimer);
+                if (idleState == true) {
+                    $("body").css('background-color', '#fff');
+                }
+                idleState = false;
+                idleTimer = setTimeout(function () {
+                    $('#logoutForm').submit();
+                    idleState = true;
+                }, @(ViewBag.config.SessionTimeOut));
+            });
+            $("body").trigger("mousemove");
+        });
+    </script>
+
+    <div id="dvLoading" style="display: none;"></div>
+    <header class="btn-@(ViewBag.config.primaryColor)" id="header">
+        <div id="logo-group">
+            <span id="logo">
+                @{
+                    string img = @Helper.GetApplicationImage(new Admin.Models.Context());
+                }
+                <img alt="@ViewBag.config.appName" src="~/@img" style="margin-top:9px; margin-left:9px;">
+            </span>
+        </div>
+        @*<div class="pull-right">
+                @Html.Partial("_PullRight")
+                @Html.Partial("_LanguageList")
+                @Html.Partial("_LanguageList")
+            </div>*@
+    </header>
+    <div style="float: left; position: relative; width: 100%;">
+        <div id="main" role="main">
+            @Html.Partial("Ribbon")
+            <div id="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="suerte">
+        <div id="content_footer">
+            <p class="fr black_margin_p">
+                <span class="fl black_margin">Developed by </span>
+                <a id="logotipo_footer" class="fl" target="_blank" href="~/@ViewBag.config.address">@ViewBag.config.name</a>
+                <span class="fl black_margin">
+                    -V.@ViewBag.config.version
+                </span>
+            </p>
+        </div>
+    </div>
+    @Html.Partial("_Modals")
+    <div id="myNav" class="overlay">
+
+    </div>
+
+</body>
+@RenderSection("featured", required: false)
+@RenderSection("scripts", required: false)
+</html>

@@ -1,0 +1,167 @@
+@model Admin.Models.BaseAction
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{
+    Widget widget = new Widget("seAction_list", "seAction", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widget.Data_widget_deletebutton = true;
+    widget.Data_widget_togglebutton = true;
+    widget.Data_widget_colorbutton = true;
+    widget.Data_widget_fullscreenbutton = true;
+    widget.Data_widget_sortable = true;
+    widget.Data_widget_editbutton = true;
+}
+
+<section id="widget-grid" class="widget-grid">
+    @{bool allowExport = false; bool saveConfig = false; string cookieName = ""; int id = 0; bool enableControl = true;}
+    @foreach (var item in (List<BaseDynamicList>)ViewBag.dynamicList)
+    {
+        if (item.name == ViewBag.tableName)
+        {
+            allowExport = item.allowExport;
+            cookieName = item.cookieKey;
+            id = item.id;
+            saveConfig = item.allowSaveConfig;
+            enableControl = item.enableControl;
+            break;
+        }
+    }
+    <div class="row">
+        @Html.Raw(widget.beginHeader())
+        @Html.Raw(widget.beginCustomButton())
+        <input id="refi" type="hidden" value="seAction" />
+        <button class="btn btn-@(ViewBag.config.secundaryColor) baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>" data-action="@Url.Action("Form", "BaseAction", new { controllerID = Model.controllerID })" title="@("Add New")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_plus"></i></button>
+        <button class="btn btn-@(ViewBag.config.secundaryColor) refreshTable" onclick="refreshMe();" data-action="@Url.Action("Form", "BaseAction")" title="@("Refresh Table")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_refresh"></i></button>
+        @if (allowExport)
+        {
+            <button class="btn btn-@(ViewBag.config.secundaryColor)" onclick="exportCSV();" title="@("Export Excel")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_export"></i></button>
+        }
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.endHeader())
+        <div id="csBaseActionDiv" data-url="@Url.Action("data", "BaseAction", new { controllerIDT = Model.controllerID })" class=""></div>
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.end())
+    </div>
+</section>
+
+
+
+<script type="text/javascript">
+    pageSetUp();
+    var questionSaveConfig = "@saveConfig";
+    if (questionSaveConfig == "False") {
+        var ck = "@cookieName";
+        delete_cookie(ck);
+    }
+
+    function refreshMe() {
+        csBaseAction.data('CStable').update();
+    }
+
+    var clOff = [
+    @foreach (var item in (List<BaseDynamicColumnList>) ViewBag.column)
+     {
+         if(item.listID == id && !item.show)
+         {
+             string quote = "\"";
+             string x = quote + item.name + quote + ", ";
+             @Html.Raw(x)
+         }
+     }
+    ];
+
+    csBaseAction = $('#csBaseActionDiv');
+    csBaseAction.CStable({
+        ajaxUrl: csBaseAction.data('url'),
+        pagerFirstLabel: '@("First")',
+        pagerLastLabel: '@("Last")',
+        ajaxData: {
+            limit: 200,
+            offset: 0
+        },
+        columnasDesactivadas: clOff,
+        defaultColumnOff: true,
+        current: 1,
+        pagerCount: 10,
+        hasSearch: false,
+        hasShow: false,
+    });
+    function exportCSV() {
+        var cadenaGet = Filters(); //Almacena todos los Filters
+        $.ajax({
+            url: "@Url.Action("getCSV", "BaseAction")",
+            data: cadenaGet + "colActivas=" + columnasActivasReporte() + "&tableName=@ViewBag.tableName",
+            success: function (data) {
+                window.location.href = this.url;
+            }
+        });
+    }
+    //Funcion que retorna un string con los Filters aplicados, en formato GET
+    function Filters() {
+        var get = "";
+        var array = $.map(csBaseAction.data('CStable').options.ajaxData, function (value, index) {
+            return index;
+        });
+        var array2 = $.map(csBaseAction.data('CStable').options.ajaxData, function (value, index) {
+            return value;
+        });
+        for (var i = 0; i < array.length; i++) {
+            get += array[i] + "=" + array2[i] + "&";
+        }
+        return get;
+    }
+    //Funcion que retorna un String con las columnas activas, separadas por "-"
+    function columnasActivasReporte() {
+        var ac = eval(unescape(leerCockie("@cookieName")));
+        var colActivas = "";
+        if (ac != undefined) {
+            for (var i = 0; i < ac.length; i++) {
+                if (ac[i].c) {
+                    colActivas += columns_cstable_cookie_header_csBaseActionDiv[ac[i].v].n + "-";
+                }
+            }
+            colActivas = colActivas.substring(0, colActivas.length - 2);
+        }
+        else {
+            for (var i = 0; i < columns_cstable_cookie_header_csBaseActionDiv.length; i++) {
+                colActivas += columns_cstable_cookie_header_csBaseActionDiv[i].n + "-";
+            }
+            colActivas = colActivas.substring(0, colActivas.length - 2);
+        }
+        return colActivas;
+    }
+    //Si no existe la cookie
+function makeHide@(ViewBag.tableName)() { if (!existCookie("@cookieName")) { $("#updatechecks").trigger("click"); } } if (!existCookie("@cookieName")) {
+        $("#updatechecks").trigger("click");
+    }
+    //Funcion que retorna el contenido de la cookie con el nombre que le pasan
+    function leerCockie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+    //Delete cookie
+    function delete_cookie(name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    function existCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return true;
+        }
+        return false;
+    }
+    function reset() {
+        var ck = "@cookieName";
+        delete_cookie(ck);
+        location.reload();
+    }
+</script>
+

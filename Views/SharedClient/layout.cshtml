@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SMSC</title>
+    <!-- Bootstrap -->
+    <link href="~/client/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/client/css/custom-style.css" rel="stylesheet">
+    <link href="~/js/plugin/sweetalert/sweetalert2.css?@ViewBag.config.version" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="~/client/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="~/client/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    @Html.Partial("~/Views/SharedClient/header.cshtml")
+
+    <div class="container-fluid">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+    <footer class="footer hidden-xs">
+        <div class="container">
+            <p class="text-muted pull-left" style="margin-right: 10px;">Copyright © all rights reserved. SMSC @(DateTime.Now.Year)</p>
+            <p class="text-muted pull-left hello"><a href="~/client/#" target="_blank">Terms of service</a> | <a href="~/client/#" target="_blank">Privacy Policy</a></p>
+            <p class="text-muted pull-left vivavi">
+                <a href="http://viyavi.com" target="_blank">
+                    <img src="~/client/img/viyavi.png">
+                </a>
+            </p>
+            <p class="text-muted pull-right devp">
+                <a href="http://eisdr.com" target="_blank">
+                    <img src="~/client/img/logofooter.png">
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    @Html.Partial("_Modals")
+
+    @*<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="~/client/js/jquery-3.2.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="~/client/js/bootstrap.min.js"></script>
+        <script src="~/client/js/bootstrap-formhelpers.min.js"></script>
+        <script src="~/client/js/jquery.validate.min.js"></script>*@
+    @*<script src="~/client/js/custom-script.js"></script>*@
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+    </div>
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = ($("#left-panel").width()+5)+"px";
+        }
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="~/js/libs/jquery-2.0.2.min.js"><\/script>');
+        }
+    </script>
+    <script>
+        //if (!window.jQuery.ui)
+        //    document.write('<script src="~/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        var appName = "@(ViewBag.config.appName)";
+        var baseCSS = "@(ViewBag.config.css)";
+        var primaryColor = "@(ViewBag.config.primaryColor)";
+        var secundaryColor = "@(ViewBag.config.secundaryColor)";
+    </script>
+    <script src="~/js/language/language.js?@ViewBag.config.version"></script>
+    <script src="~/js/language/@(System.Globalization.CultureInfo.CurrentCulture.Name).js?@ViewBag.config.version"></script>
+    <script src="~/js/bootstrap/bootstrap.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/jquery-cookie/jquery.cookie.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/jquery-cstable/jquery.cstable.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/datetimepicker/moment-with-locales.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/datetimepicker/bootstrap-datetimepicker.js?@ViewBag.config.version"></script>
+    <script src="~/js/notification/SmartNotification.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/smartwidgets/jarvis.widget.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/jquery-validate/jquery.validate.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/masked-input/jquery.maskedinput.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/masked-input/jquery.maskMoney.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/select2/select2.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/bootstrap-slider/bootstrap-slider.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/contextmenu/jquery.contextMenu.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/contextmenu/jquery.ui.position.js?@ViewBag.config.version"></script>
+    <script src="~/js/plugin/sweetalert/sweetalert2.js?@ViewBag.config.version"></script>
+
+    <!-- browser msie issue fix -->
+    <!-- FastClick: For mobile devices: you can disable this in app.js
+        <script src="~/js/plugin/fastclick/fastclick.js"></script> -->
+    <!--[if IE 7]>
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+        <![endif]-->
+    <!-- Demo purpose only -->
+    <script src="~/js/plugin/jquery-form/jquery-form.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/changeDropTablesSql.js?@ViewBag.config.version"></script>
+    <link rel="stylesheet" type="application/javascript" media="screen" href="js/plugin/ckeditor/ckeditor.js?@ViewBag.config.version">
+    <script src="~/js/plugin/ckeditor/ckeditor.js?@ViewBag.config.version"></script>
+    <script src="~/js/jquery-table-expand.js?@ViewBag.config.version"></script>
+    <script src="~/js/html2canvas.min.js?@ViewBag.config.version"></script>
+    <script src="~/js/html2canvas.js?@ViewBag.config.version"></script>
+    <script>
+        cacheNotif = [];
+        function getJson(url, dataDic, callback, type) {
+            if (type == undefined || type == null)
+                type = "POST";
+            $.ajax({
+                url: url,
+                type: type,
+                data: dataDic,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data, textStatus, jqXHR) {
+                    callback(eval("(" + data + ")"));
+                }
+            });
+        }
+
+        $("#notificationCount").hide();
+
+
+    </script>
+    <script src="~/js/app.js?@ViewBag.config.version"></script>
+    <script src="~/js/general.js?@ViewBag.config.version"></script>
+    <script>
+        var preventUnloadPrompt;
+        $('a').on('click', function () { preventUnloadPrompt = true; });
+        $('form').on('submit', function () { preventUnloadPrompt = true; });
+        $(window).bind("beforeunload", function (e) {
+            var rval;
+            if (preventUnloadPrompt) {
+                return;
+            } else {
+                $('#logoutForm').submit();
+            }
+            return rval;
+        });
+        $(document).ready(function () {
+            var idleState = false;
+            var idleTimer = null;
+            $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick', function () {
+                clearTimeout(idleTimer);
+                if (idleState == true) {
+                    $("body").css('background-color', '#fff');
+                }
+                idleState = false;
+                idleTimer = setTimeout(function () {
+                    $('#logoutForm').submit();
+                    idleState = true;
+                }, @(ViewBag.config.SessionTimeOut));
+            });
+            $("body").trigger("mousemove");
+
+
+
+
+        });
+    </script>
+</body>
+@RenderSection("featured", required: false)
+@RenderSection("scripts", required: false)
+</html>

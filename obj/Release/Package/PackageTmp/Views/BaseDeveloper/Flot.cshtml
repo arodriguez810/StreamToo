@@ -1,0 +1,50 @@
+﻿<div id="bar-chart" class="chart"></div>
+<br />
+<br />
+<div id="barh-chart" class="chart"></div>
+<br />
+<br />
+<div id="pie-chart" class="chart"></div>
+<br />
+<br />
+<div id="line-chart" class="chart"></div>
+
+<script type="text/javascript">
+    
+    function charts(){
+        if ($("#bar-chart").length) {
+            var data = @Html.Raw(ViewBag.flot_bar);
+            var options =  @Html.Raw(ViewBag.Options);
+            $.plot($("#bar-chart"), data, options);
+        }
+
+        if ($("#barh-chart").length) {
+            var data = @Html.Raw(ViewBag.flot_barH);
+            var options =  @Html.Raw(ViewBag.Options2);
+            $.plot($("#barh-chart"), data, options);
+        }
+
+        if ($("#pie-chart").length) {
+            
+            var data = @Html.Raw(ViewBag.flot_pie);
+            var options =  @Html.Raw(ViewBag.Options3);
+            $.plot($("#pie-chart"), data, options);
+        }
+
+        if ($("#sin-chart").length) {
+            
+            var data = @Html.Raw(ViewBag.flot_Sin);
+            var options =  @Html.Raw(ViewBag.Options4);
+            $.plot($("#sin-chart"), data, options);
+        }
+
+        if ($("#line-chart").length) {
+            
+            var data = @Html.Raw(ViewBag.flot_line);
+            var options =  @Html.Raw(ViewBag.Options5);
+            $.plot($("#line-chart"), data,options);
+        }
+    }
+        
+    $.fn.buildFlot.loadFlot(charts);
+</script>

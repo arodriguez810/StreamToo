@@ -1,0 +1,90 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.Models;
+@using System.Data;
+@{
+    int acordeonCount = 0;
+    Context db = new Context();
+    string collapse = "collapse in";
+
+    Admin.Models.BaseUser userMind = Helper.GetUser(db);
+    int userID = userMind.ID;
+    List<Admin.Models.BaseMenu> allUserMenu = new List<Admin.Models.BaseMenu>();
+    var fromDirect = db.BaseUserMenus.Where(d => d.userID == userID).ToList();
+
+    foreach (var item in fromDirect)
+    {
+        allUserMenu.Add(item.BaseMenu);
+    }
+    foreach (var item in userMind.BaseProfiles)
+    {
+        foreach (var menus in item.BaseProfileMenus)
+        {
+            allUserMenu.Add(menus.BaseMenu);
+        }
+    }
+    
+}
+
+<div class="panel-group" id="accordionWidgets">
+    @foreach (var item in db.BaseWidgets)
+    {
+        if (acordeonCount == 0)
+        { @*@Html.Raw("<div class=\"col col-lg-4\">")*@
+        }
+        string titulWidgets = (item.description != "") ? item.description : item.name;
+        string tituloGrafico = "";
+
+        var graphs = item.BaseGraphs;
+        
+        if (graphs.Any())
+        {
+            tituloGrafico = "Sub_" + ((item.description != "") ? item.description : item.name).Replace(" ", "_").Replace(")","_").Replace("(","_");
+
+            string check = "";            
+            var kk = db.BaseProfiles.Find(Model.id);
+            if (kk.BaseWidgets1.FirstOrDefault(x => x.id == item.id) != null)
+            {
+                check = "checked=\"checked\"";
+            }
+            
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" class="aCollapsedWidgets" data-parent="#accordionWidgets" href="#@tituloGrafico">
+                        @titulWidgets
+                    </a>
+                    <input type="checkbox" name="WidgetID_@item.id" id="WidgetID_@item.id" @check class="ckx" />
+                </h4>
+            </div>
+            @if (graphs.Any())
+            {
+                <div id="@tituloGrafico" class="panel-collapse @collapse">
+                    <div class="panel-body">
+                        @foreach (var h in graphs)
+                        {
+                            check = "";                           
+
+                            if (h.BaseProfiles.FirstOrDefault(x => x.id == Model.id) != null)
+                            {
+                                check = "checked=\"checked\"";
+                            }
+                            string ti = (h.title != "") ? h.title : h.name;      
+                             <input type="checkbox" name="GraphID_@h.id" id="GraphID_@h.id" @check class="ckx" />
+                             @ti
+                            <div class="hhw"> </div>
+                        }
+                    </div>
+                </div>            
+            }
+        </div>
+            db = new Context();
+            collapse = "collapse";
+            acordeonCount++;
+            if (acordeonCount == 2)
+            {
+@*@Html.Raw("</div>")*@
+                acordeonCount = 0;
+            }
+            }
+    }
+</div>

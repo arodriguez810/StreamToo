@@ -1,0 +1,30 @@
+﻿@{
+    //Admin.Models.Context db = new Admin.Models.Context();
+    //Admin.Models.Application company = new Helper().ApplicationData;
+    //var thelanguages = db.BaseLanguages.FirstOrDefault(d => d.languageCultureName.Substring(0, 2) == company.languague);
+}
+<ul class="header-dropdown-list hidden-xs" style="visibility:hidden">
+    <li>
+       @* <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img alt="" src="~/img/flags/@(thelanguages.flagImage).ico">
+            <span>@thelanguages.languageCultureName.Substring(0,2) </span><i class="fa fa-angle-down"></i></a>
+
+        <ul class="dropdown-menu pull-right">
+
+            <li class="active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img alt="" src="~/img/flags/@(thelanguages.flagImage).ico">
+                    <span>@thelanguages.languageCultureName.Substring(0,2) </span><i class="fa fa-angle-down"></i></a>
+            </li>
+            @foreach (var lang in db.BaseLanguages.Select(d => new { name = d.languageCultureName.Substring(0, 2), flag = d.flagImage }).Distinct().Where(d => d.name != thelanguages.languageCultureName.Substring(0, 2)))
+            {
+                <li>
+                    <a href="javascript:void(0);">
+                        <img alt="" src="~/img/flags/@(lang.flag).ico">
+                        @lang.name</a>
+                </li>
+            }
+        </ul>*@
+    </li>
+</ul>
+<!-- end multiple lang -->

@@ -1,0 +1,64 @@
+﻿@model Admin.Models.VWBaseDynamicList
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+
+
+<div>
+    <div class="col-md-6 pl0 ">
+        <h2 class="tile_seccion">Forms</h2>
+    </div>
+    <div class="col-md-6 pr0" style='text-align:right'>
+        <button class="btn btn-@(ViewBag.config.secundaryColor) baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>" data-action="@Url.Action("addNew", "BaseColumns")" title="@("Add New")"> <i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_plus"></i> </button>
+        <button class="btn btn-@(ViewBag.config.secundaryColor) refreshTable" onclick="refreshMe();" data-action="@Url.Action("Form", "BaseColumns")" title="@("Refresh Table")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_refresh"></i></button>
+    </div>
+    </div>
+
+<div class="panel" style="border:none">
+    <div class="panel-body">
+        <div id="csBaseDynamicListDiv" data-url="@Url.Action("data", "BaseColumns")" class=""></div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    pageSetUp();
+
+    function refreshMe() {
+        csBaseDynamicList.data('CStable').update();
+    }
+    var clOff = ["cookieKey", "enableControl", "id"];
+    var csBaseDynamicList = $('#csBaseDynamicListDiv');
+    csBaseDynamicList.CStable({
+        ajaxUrl: csBaseDynamicList.data('url'),
+        pagerFirstLabel: '@("First")',
+        pagerLastLabel: '@("Last")',
+        ajaxData: {
+            limit: 200,
+            offset: 0
+        },
+        columnasDesactivadas: clOff,
+        defaultColumnOff: true,
+        current: 1,
+        pagerCount: 10,
+        hasSearch: false,
+        hasShow: false,
+    });
+
+    function existCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return true;
+        }
+        return false;
+    }
+
+    //Si no existe la cookie
+    if (!existCookie("cstable_cookie_header_csBaseDynamicListDiv")) {
+        $("#updatechecks").trigger("click");
+    }
+</script>

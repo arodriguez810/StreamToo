@@ -1,0 +1,60 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Profile")" data-editmodaltitle="@("Edit Profile")" data-editing="@(Model.id == 0 ? "False" : "True")" data-onclose="if(csBaseProfile.data('CStable')!=undefined){csBaseProfile.data('CStable').update();}"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Profile</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseProfiles")" id="BaseProfile-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(model => model.id)
+                @Html.HiddenFor(model => model.creationDate)
+                <div class="row">
+
+                    @if (Model.id > 0)
+            {
+                        @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name"), data_remotemessage = "Ya existe un registro con este nombre" }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"), "col-xs-6")
+                        @Html.Hidden("name_old", Model.name)
+                    }
+                    else
+                    {
+                        @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name"), data_remotemessage = "Ya existe un registro con este nombre" }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"), "col-xs-6")
+                    }
+                    @{var selectedactionID = new List<object>(); if (Model.defaultActionID != null) { selectedactionID.Add(Model.defaultActionID); } }
+                    @Html.BaseDropDownList("defaultActionID", "VWBaseMenuMenu", "id", "title", "where [padre] !=''", 6, "Default Page", "Seleccione Página", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedactionID, false, "Actualizar Páginas", "padre", "", "", null, "col-xs-6")
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("description", Model.description, "Description", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Description") }, "maxlength:200", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"), "col-xs-12")
+                </div>
+            </fieldset>
+            <footer>
+                @*<a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>*@
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+                @if (Model.id != 0)
+                {
+                    @*<a id="setperm" class="btn btn-default" data-dismiss="modal">Permissions</a>*@
+                }
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseProfile-form");
+    });
+
+    $("#setperm").click(function () {
+        var id = "@Html.Raw(Model.id)"; //$("#id").val();
+        var parameters = "?id=" + id;
+        var url = "@Admin.BaseClass.URLHelper.getUrl("BasePermissions", "Index")" + parameters;
+        window.open(url, "_parent");
+    });
+
+</script>

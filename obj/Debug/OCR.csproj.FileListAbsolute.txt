@@ -1,0 +1,474 @@
+C:\wamp64\www\OCR\obj\Debug\OCR.csproj.App.config
+C:\wamp64\www\OCR\obj\Debug\OCR.csprojResolveAssemblyReference.cache
+C:\wamp64\www\OCR\obj\Debug\Admin.Properties.Resources.resources
+C:\wamp64\www\OCR\obj\Debug\OCR.csproj.GenerateResource.Cache
+C:\wamp64\www\OCR\obj\Debug\Admin.dll
+C:\wamp64\www\OCR\obj\Debug\Admin.pdb
+C:\wamp64\www\OCR\bin\roslyn\csc.exe
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\wamp64\www\OCR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\wamp64\www\OCR\bin\roslyn\System.Collections.Immutable.dll
+C:\wamp64\www\OCR\bin\roslyn\System.Reflection.Metadata.dll
+C:\wamp64\www\OCR\bin\roslyn\vbc.exe
+C:\wamp64\www\OCR\bin\roslyn\VBCSCompiler.exe
+C:\wamp64\www\OCR\bin\roslyn\VBCSCompiler.exe.config
+C:\wamp64\www\OCR\bin\Admin.dll.config
+C:\wamp64\www\OCR\bin\Admin.dll
+C:\wamp64\www\OCR\bin\Admin.pdb
+C:\wamp64\www\OCR\bin\Antlr3.Runtime.dll
+C:\wamp64\www\OCR\bin\Calabonga.Mvc.PagedListExt.dll
+C:\wamp64\www\OCR\bin\DocumentFormat.OpenXml.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.AspNet.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.Core.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OAuth.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OpenId.dll
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\wamp64\www\OCR\bin\EntityFramework.dll
+C:\wamp64\www\OCR\bin\EntityFramework.SqlServer.dll
+C:\wamp64\www\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\wamp64\www\OCR\bin\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\OCR\bin\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\OCR\bin\Microsoft.Web.Helpers.dll
+C:\wamp64\www\OCR\bin\Microsoft.Web.Infrastructure.dll
+C:\wamp64\www\OCR\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\wamp64\www\OCR\bin\Newtonsoft.Json.dll
+C:\wamp64\www\OCR\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\OCR\bin\System.Net.Http.Extensions.dll
+C:\wamp64\www\OCR\bin\System.Net.Http.Formatting.dll
+C:\wamp64\www\OCR\bin\System.Net.Http.Primitives.dll
+C:\wamp64\www\OCR\bin\System.Web.Helpers.dll
+C:\wamp64\www\OCR\bin\System.Web.Http.dll
+C:\wamp64\www\OCR\bin\System.Web.Http.Tracing.dll
+C:\wamp64\www\OCR\bin\System.Web.Http.WebHost.dll
+C:\wamp64\www\OCR\bin\System.Web.Mvc.dll
+C:\wamp64\www\OCR\bin\System.Web.Optimization.dll
+C:\wamp64\www\OCR\bin\System.Web.Razor.dll
+C:\wamp64\www\OCR\bin\System.Web.WebPages.Deployment.dll
+C:\wamp64\www\OCR\bin\System.Web.WebPages.dll
+C:\wamp64\www\OCR\bin\System.Web.WebPages.Razor.dll
+C:\wamp64\www\OCR\bin\Twilio.dll
+C:\wamp64\www\OCR\bin\WebGrease.dll
+C:\wamp64\www\OCR\bin\WebMatrix.Data.dll
+C:\wamp64\www\OCR\bin\WebMatrix.WebData.dll
+C:\wamp64\www\OCR\bin\Org.Mentalis.Security.Cryptography.dll
+C:\wamp64\www\OCR\bin\Mono.Math.dll
+C:\wamp64\www\OCR\bin\Antlr3.Runtime.pdb
+C:\wamp64\www\OCR\bin\DocumentFormat.OpenXml.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.AspNet.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.Core.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OAuth.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OpenId.xml
+C:\wamp64\www\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\wamp64\www\OCR\bin\EntityFramework.xml
+C:\wamp64\www\OCR\bin\EntityFramework.SqlServer.xml
+C:\wamp64\www\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\wamp64\www\OCR\bin\Microsoft.IdentityModel.Tokens.xml
+C:\wamp64\www\OCR\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\wamp64\www\OCR\bin\Newtonsoft.Json.xml
+C:\wamp64\www\OCR\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\wamp64\www\OCR\bin\System.Net.Http.Extensions.xml
+C:\wamp64\www\OCR\bin\System.Net.Http.Formatting.xml
+C:\wamp64\www\OCR\bin\System.Net.Http.Primitives.xml
+C:\wamp64\www\OCR\bin\System.Web.Helpers.xml
+C:\wamp64\www\OCR\bin\System.Web.Http.xml
+C:\wamp64\www\OCR\bin\System.Web.Http.Tracing.xml
+C:\wamp64\www\OCR\bin\System.Web.Http.WebHost.xml
+C:\wamp64\www\OCR\bin\System.Web.Mvc.xml
+C:\wamp64\www\OCR\bin\System.Web.Optimization.xml
+C:\wamp64\www\OCR\bin\System.Web.Razor.xml
+C:\wamp64\www\OCR\bin\System.Web.WebPages.xml
+C:\wamp64\www\OCR\bin\System.Web.WebPages.Deployment.xml
+C:\wamp64\www\OCR\bin\System.Web.WebPages.Razor.xml
+C:\wamp64\www\OCR\bin\Microsoft.Web.Infrastructure.xml
+C:\wamp64\www\OCR\bin\Twilio.xml
+C:\wamp64\www\OCR\bin\WebMatrix.Data.xml
+C:\wamp64\www\OCR\bin\WebMatrix.WebData.xml
+C:\wamp64\www\OCR\bin\Org.Mentalis.Security.Cryptography.xml
+C:\wamp64\www\OCR\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\source\repos\OCR\bin\roslyn\csc.exe
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\source\repos\OCR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\source\repos\OCR\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\source\repos\OCR\bin\roslyn\vbc.exe
+C:\Users\EIS\source\repos\OCR\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\source\repos\OCR\bin\Antlr3.Runtime.dll
+C:\Users\EIS\source\repos\OCR\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\source\repos\OCR\bin\DocumentFormat.OpenXml.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\source\repos\OCR\bin\EntityFramework.dll
+C:\Users\EIS\source\repos\OCR\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\source\repos\OCR\bin\Newtonsoft.Json.dll
+C:\Users\EIS\source\repos\OCR\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Helpers.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Mvc.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Optimization.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Razor.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.dll
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\source\repos\OCR\bin\Twilio.dll
+C:\Users\EIS\source\repos\OCR\bin\WebGrease.dll
+C:\Users\EIS\source\repos\OCR\bin\WebMatrix.Data.dll
+C:\Users\EIS\source\repos\OCR\bin\WebMatrix.WebData.dll
+C:\Users\EIS\source\repos\OCR\bin\zxing.dll
+C:\Users\EIS\source\repos\OCR\bin\zxing.presentation.dll
+C:\Users\EIS\source\repos\OCR\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\source\repos\OCR\bin\Mono.Math.dll
+C:\Users\EIS\source\repos\OCR\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\source\repos\OCR\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\source\repos\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\source\repos\OCR\bin\EntityFramework.xml
+C:\Users\EIS\source\repos\OCR\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\source\repos\OCR\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\source\repos\OCR\bin\Newtonsoft.Json.xml
+C:\Users\EIS\source\repos\OCR\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Helpers.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Mvc.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Optimization.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.Razor.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\source\repos\OCR\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\source\repos\OCR\bin\Twilio.xml
+C:\Users\EIS\source\repos\OCR\bin\WebMatrix.Data.xml
+C:\Users\EIS\source\repos\OCR\bin\WebMatrix.WebData.xml
+C:\Users\EIS\source\repos\OCR\bin\zxing.pdb
+C:\Users\EIS\source\repos\OCR\bin\zxing.xml
+C:\Users\EIS\source\repos\OCR\bin\zxing.presentation.pdb
+C:\Users\EIS\source\repos\OCR\bin\zxing.presentation.xml
+C:\Users\EIS\source\repos\OCR\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\source\repos\OCR\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\OCR\obj\Debug\OCR.csproj.App.config
+C:\Users\EIS\source\repos\OCR\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\source\repos\OCR\obj\Debug\OCR.csproj.GenerateResource.Cache
+C:\Users\EIS\source\repos\OCR\obj\Debug\OCR.csproj.CoreCompileInputs.cache
+C:\Users\EIS\source\repos\OCR\obj\Debug\Admin.dll
+C:\Users\EIS\source\repos\OCR\obj\Debug\Admin.pdb
+C:\Users\EIS\source\repos\OCR\bin\Admin.dll.config
+C:\Users\EIS\source\repos\OCR\bin\Admin.dll
+C:\Users\EIS\source\repos\OCR\bin\Admin.pdb
+C:\Users\EIS\source\repos\OCR\obj\Debug\OCR.csprojResolveAssemblyReference.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\csc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\vbc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Admin.dll.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Antlr3.Runtime.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\EntityFramework.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Newtonsoft.Json.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Mvc.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Optimization.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Twilio.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\WebGrease.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\WebMatrix.Data.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\WebMatrix.WebData.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.presentation.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Mono.Math.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\EntityFramework.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Newtonsoft.Json.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Helpers.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Mvc.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Optimization.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Twilio.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\WebMatrix.Data.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\WebMatrix.WebData.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.presentation.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\zxing.presentation.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\Mono.Math.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\OCR.csproj.App.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\OCR.csprojResolveAssemblyReference.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\OCR.csproj.GenerateResource.Cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\OCR.csproj.CoreCompileInputs.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\obj\Debug\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\ocr_backoffice\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\OCR.csproj.App.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\OCR.csprojResolveAssemblyReference.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\OCR.csproj.GenerateResource.Cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\OCR.csproj.CoreCompileInputs.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\obj\Debug\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\csc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\vbc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Admin.dll.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Antlr3.Runtime.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\EntityFramework.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Newtonsoft.Json.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Mvc.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Optimization.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Twilio.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\WebGrease.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\WebMatrix.Data.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\WebMatrix.WebData.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Mono.Math.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\EntityFramework.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Newtonsoft.Json.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Helpers.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Mvc.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Optimization.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Twilio.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\WebMatrix.Data.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\WebMatrix.WebData.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\OCR\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\csc.exe
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\vbc.exe
+C:\Users\EIS\source\repos\OCRBO\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\source\repos\OCRBO\bin\Admin.dll.config
+C:\Users\EIS\source\repos\OCRBO\bin\Admin.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Admin.pdb
+C:\Users\EIS\source\repos\OCRBO\bin\Antlr3.Runtime.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DocumentFormat.OpenXml.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\source\repos\OCRBO\bin\EntityFramework.dll
+C:\Users\EIS\source\repos\OCRBO\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Newtonsoft.Json.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Helpers.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Mvc.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Optimization.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Razor.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.dll
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Twilio.dll
+C:\Users\EIS\source\repos\OCRBO\bin\WebGrease.dll
+C:\Users\EIS\source\repos\OCRBO\bin\WebMatrix.Data.dll
+C:\Users\EIS\source\repos\OCRBO\bin\WebMatrix.WebData.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Mono.Math.dll
+C:\Users\EIS\source\repos\OCRBO\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\source\repos\OCRBO\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\source\repos\OCRBO\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\source\repos\OCRBO\bin\EntityFramework.xml
+C:\Users\EIS\source\repos\OCRBO\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Newtonsoft.Json.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Helpers.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Mvc.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Optimization.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.Razor.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\source\repos\OCRBO\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Twilio.xml
+C:\Users\EIS\source\repos\OCRBO\bin\WebMatrix.Data.xml
+C:\Users\EIS\source\repos\OCRBO\bin\WebMatrix.WebData.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\source\repos\OCRBO\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\OCR.csproj.App.config
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\OCR.csprojResolveAssemblyReference.cache
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\OCR.csproj.GenerateResource.Cache
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\OCR.csproj.CoreCompileInputs.cache
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\Admin.dll
+C:\Users\EIS\source\repos\OCRBO\obj\Debug\Admin.pdb

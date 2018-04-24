@@ -1,0 +1,64 @@
+﻿@model Admin.Models.BaseWidget
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Widget")" data-editmodaltitle="@("Edit Widget")" data-editing="@(Model.id == 0 ? "False" : "True")" data-onclose="csBaseWidget.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Widget</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseDonWidget")" id="BaseWidget-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(model => model.id)
+                <div class="row">
+                    @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("actionContent", Model.actionContent, "Custom Url", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = "Url" }, "maxlength:50", "This field hide the graphics if have value", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+
+                </div>
+                <div class="row">
+                    @{
+                        var selectedGraphs = new List<object>();
+                        if (Model.BaseGraphs != null)
+                        {
+                            foreach (var item in Model.BaseGraphs.Select(x => x.id).ToList())
+                            {
+                                selectedGraphs.Add(item);
+                            }
+
+                        }
+                    }
+                    @Html.BaseDropDownList("GraphsID", "BaseGraphs", "id", "name", "", 12, "Graphs", "Select Graphs", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedGraphs, true, "Refresh Graphs", "", "", "", null)
+
+                    @{
+                        var selectedProfile = new List<object>();
+                        if (Model.BaseProfiles != null)
+                        {
+                            foreach (var item in Model.BaseProfiles.Select(x => x.id).ToList())
+                            {
+                                selectedProfile.Add(item);
+                            }
+
+                        }
+                    }
+                    @Html.BaseDropDownList("ProfilesID", "BaseProfile", "id", "name", "", 12, "Profiles", "Select Profile", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedProfile, true, "Refresh Profile", "", "", "", null)
+                    @Html.BaseTextBox("description", Model.description, "Description", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Description") }, "maxlength:200", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseCheckBox("hasRange", Model.hasRange, "Yes", "Has Range", 6)
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');csBaseWidget.data('CStable').update();" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseWidget-form");
+    });
+</script>

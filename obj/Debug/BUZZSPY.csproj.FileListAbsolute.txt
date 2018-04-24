@@ -1,0 +1,278 @@
+C:\wamp64\www\ABUZZSPY\bin\roslyn\csc.exe
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\wamp64\www\ABUZZSPY\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\wamp64\www\ABUZZSPY\bin\roslyn\System.Collections.Immutable.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\System.Reflection.Metadata.dll
+C:\wamp64\www\ABUZZSPY\bin\roslyn\vbc.exe
+C:\wamp64\www\ABUZZSPY\bin\roslyn\VBCSCompiler.exe
+C:\wamp64\www\ABUZZSPY\bin\roslyn\VBCSCompiler.exe.config
+C:\wamp64\www\ABUZZSPY\bin\Admin.dll.config
+C:\wamp64\www\ABUZZSPY\bin\Admin.dll
+C:\wamp64\www\ABUZZSPY\bin\Admin.pdb
+C:\wamp64\www\ABUZZSPY\bin\Antlr3.Runtime.dll
+C:\wamp64\www\ABUZZSPY\bin\Calabonga.Mvc.PagedListExt.dll
+C:\wamp64\www\ABUZZSPY\bin\DocumentFormat.OpenXml.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.AspNet.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.Core.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OAuth.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OpenId.dll
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\wamp64\www\ABUZZSPY\bin\EntityFramework.dll
+C:\wamp64\www\ABUZZSPY\bin\EntityFramework.SqlServer.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.Web.Helpers.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.Web.Infrastructure.dll
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\wamp64\www\ABUZZSPY\bin\Newtonsoft.Json.dll
+C:\wamp64\www\ABUZZSPY\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Extensions.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Formatting.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Primitives.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Helpers.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.Tracing.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.WebHost.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Mvc.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Optimization.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Razor.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.Deployment.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.dll
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.Razor.dll
+C:\wamp64\www\ABUZZSPY\bin\Twilio.dll
+C:\wamp64\www\ABUZZSPY\bin\WebGrease.dll
+C:\wamp64\www\ABUZZSPY\bin\WebMatrix.Data.dll
+C:\wamp64\www\ABUZZSPY\bin\WebMatrix.WebData.dll
+C:\wamp64\www\ABUZZSPY\bin\Org.Mentalis.Security.Cryptography.dll
+C:\wamp64\www\ABUZZSPY\bin\Mono.Math.dll
+C:\wamp64\www\ABUZZSPY\bin\Antlr3.Runtime.pdb
+C:\wamp64\www\ABUZZSPY\bin\DocumentFormat.OpenXml.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.AspNet.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.Core.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OAuth.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OpenId.xml
+C:\wamp64\www\ABUZZSPY\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\wamp64\www\ABUZZSPY\bin\EntityFramework.xml
+C:\wamp64\www\ABUZZSPY\bin\EntityFramework.SqlServer.xml
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.IdentityModel.Tokens.xml
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\wamp64\www\ABUZZSPY\bin\Newtonsoft.Json.xml
+C:\wamp64\www\ABUZZSPY\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Extensions.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Formatting.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Net.Http.Primitives.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Helpers.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.Tracing.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Http.WebHost.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Mvc.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Optimization.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.Razor.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.Deployment.xml
+C:\wamp64\www\ABUZZSPY\bin\System.Web.WebPages.Razor.xml
+C:\wamp64\www\ABUZZSPY\bin\Microsoft.Web.Infrastructure.xml
+C:\wamp64\www\ABUZZSPY\bin\Twilio.xml
+C:\wamp64\www\ABUZZSPY\bin\WebMatrix.Data.xml
+C:\wamp64\www\ABUZZSPY\bin\WebMatrix.WebData.xml
+C:\wamp64\www\ABUZZSPY\bin\Org.Mentalis.Security.Cryptography.xml
+C:\wamp64\www\ABUZZSPY\bin\Mono.Math.xml
+C:\wamp64\www\ABUZZSPY\obj\Debug\BUZZSPY.csproj.App.config
+C:\wamp64\www\ABUZZSPY\obj\Debug\BUZZSPY.csprojResolveAssemblyReference.cache
+C:\wamp64\www\ABUZZSPY\obj\Debug\Admin.Properties.Resources.resources
+C:\wamp64\www\ABUZZSPY\obj\Debug\BUZZSPY.csproj.GenerateResource.Cache
+C:\wamp64\www\ABUZZSPY\obj\Debug\Admin.dll
+C:\wamp64\www\ABUZZSPY\obj\Debug\Admin.pdb
+C:\Users\EIS\source\repos\BS\bin\roslyn\csc.exe
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\source\repos\BS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\source\repos\BS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\source\repos\BS\bin\roslyn\vbc.exe
+C:\Users\EIS\source\repos\BS\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\source\repos\BS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\source\repos\BS\bin\Admin.dll.config
+C:\Users\EIS\source\repos\BS\bin\Admin.dll
+C:\Users\EIS\source\repos\BS\bin\Admin.pdb
+C:\Users\EIS\source\repos\BS\bin\Antlr3.Runtime.dll
+C:\Users\EIS\source\repos\BS\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\source\repos\BS\bin\DocumentFormat.OpenXml.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\source\repos\BS\bin\EntityFramework.dll
+C:\Users\EIS\source\repos\BS\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\source\repos\BS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\source\repos\BS\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\source\repos\BS\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\source\repos\BS\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\source\repos\BS\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\source\repos\BS\bin\Newtonsoft.Json.dll
+C:\Users\EIS\source\repos\BS\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Helpers.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Mvc.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Optimization.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.Razor.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.dll
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\source\repos\BS\bin\Twilio.dll
+C:\Users\EIS\source\repos\BS\bin\WebGrease.dll
+C:\Users\EIS\source\repos\BS\bin\WebMatrix.Data.dll
+C:\Users\EIS\source\repos\BS\bin\WebMatrix.WebData.dll
+C:\Users\EIS\source\repos\BS\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\source\repos\BS\bin\Mono.Math.dll
+C:\Users\EIS\source\repos\BS\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\source\repos\BS\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\source\repos\BS\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\source\repos\BS\bin\EntityFramework.xml
+C:\Users\EIS\source\repos\BS\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\source\repos\BS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\source\repos\BS\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\source\repos\BS\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\source\repos\BS\bin\Newtonsoft.Json.xml
+C:\Users\EIS\source\repos\BS\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\source\repos\BS\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Helpers.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Mvc.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Optimization.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.Razor.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\source\repos\BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\source\repos\BS\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\EIS\source\repos\BS\bin\Twilio.xml
+C:\Users\EIS\source\repos\BS\bin\WebMatrix.Data.xml
+C:\Users\EIS\source\repos\BS\bin\WebMatrix.WebData.xml
+C:\Users\EIS\source\repos\BS\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\source\repos\BS\bin\Mono.Math.xml
+C:\Users\EIS\source\repos\BS\obj\Debug\BUZZSPY.csproj.App.config
+C:\Users\EIS\source\repos\BS\obj\Debug\BUZZSPY.csprojResolveAssemblyReference.cache
+C:\Users\EIS\source\repos\BS\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\source\repos\BS\obj\Debug\BUZZSPY.csproj.GenerateResource.Cache
+C:\Users\EIS\source\repos\BS\obj\Debug\BUZZSPY.csproj.CoreCompileInputs.cache
+C:\Users\EIS\source\repos\BS\obj\Debug\Admin.dll
+C:\Users\EIS\source\repos\BS\obj\Debug\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\csc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\vbc.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\VBCSCompiler.exe
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Admin.dll.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Admin.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Antlr3.Runtime.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.Core.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\EntityFramework.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\EntityFramework.SqlServer.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Newtonsoft.Json.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Extensions.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Formatting.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Primitives.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Helpers.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.Tracing.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.WebHost.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Mvc.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Optimization.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.Deployment.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.Razor.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Twilio.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\WebGrease.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\WebMatrix.Data.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\WebMatrix.WebData.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Mono.Math.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Antlr3.Runtime.pdb
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DocumentFormat.OpenXml.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.Core.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\EntityFramework.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\EntityFramework.SqlServer.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Newtonsoft.Json.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Extensions.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Formatting.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Net.Http.Primitives.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Helpers.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.Tracing.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Http.WebHost.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Mvc.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Optimization.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.Deployment.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\System.Web.WebPages.Razor.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Twilio.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\WebMatrix.Data.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\WebMatrix.WebData.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\bin\Mono.Math.xml
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\BUZZSPY.csproj.App.config
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\BUZZSPY.csprojResolveAssemblyReference.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\BUZZSPY.csproj.GenerateResource.Cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\BUZZSPY.csproj.CoreCompileInputs.cache
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\Admin.dll
+C:\Users\EIS\Documents\Visual Studio 2017\Projects\buzzspy\obj\Debug\Admin.pdb

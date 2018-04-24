@@ -1,0 +1,165 @@
+@model Admin.Models.BaseController
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+
+
+@{bool allowExport = false; bool saveConfig = false; string cookieName = ""; int id = 0; bool enableControl = true;}
+@foreach (var item in (List<BaseDynamicList>)ViewBag.dynamicList)
+{
+    if (item.name == ViewBag.tableName)
+    {
+        allowExport = item.allowExport;
+        cookieName = item.cookieKey;
+        id = item.id;
+        saveConfig = item.allowSaveConfig;
+        enableControl = item.enableControl;
+        break;
+    }
+}
+<div style='text-align:center'>
+    <input id="refi" type="hidden" value="seController" />
+    <button class="btn btn-@(ViewBag.config.secundaryColor) refreshTable" onclick="refreshMe();" data-action="@Url.Action("Form", "BaseController")" title="@("Refresh Table")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_refresh"></i></button>
+    <button class="btn btn-@(ViewBag.config.secundaryColor) baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>" data-action="@Url.Action("Filters", "BaseDeveloper", new { tableName="BaseController" })" title="@("Filter")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_filter"></i></button>
+    <button class="btn btn-@(ViewBag.config.secundaryColor)" id="configAdmColumns" title="@("Columns")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_list"></i></button>
+    @if (allowExport)
+    {
+        <button class="btn btn-@(ViewBag.config.secundaryColor)" onclick="exportCSV();" title="@("Export Excel")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_export"></i></button>
+    }
+</div>
+<div class="panel" style="border:none">
+    <div class="panel-body">
+        <div id="csBaseControllerDiv" data-url="@Url.Action("data", "BaseController")" class=""></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    pageSetUp();
+    var questionSaveConfig = "@saveConfig";
+    if (questionSaveConfig == "False") {
+        var ck = "@cookieName";
+        delete_cookie(ck);
+    }
+
+    function refreshMe() {
+        csBaseController.data('CStable').update();
+    }
+
+    var clOff = [
+    @foreach (var item in (List<BaseDynamicColumnList>) ViewBag.column)
+     {
+         if(item.listID == id && !item.show)
+         {
+             string quote = "\"";
+             string x = quote + item.name + quote + ", ";
+             @Html.Raw(x)
+         }
+     }
+    ];
+
+    selectedFilters = undefined;
+    filterQuery = "";
+    filterQueryURL = "";
+    generalFilterSearch = "";
+    generalFilterlimit = 20;
+    function LoadTableBaseController() {
+
+        csBaseController = $('#csBaseControllerDiv');
+        csBaseController.CStable({
+            ajaxUrl: csBaseController.data('url'),
+            pagerFirstLabel: '@("First")',
+            pagerLastLabel: '@("Last")',
+            ajaxData: {
+                limit: generalFilterlimit,
+                offset: 0,
+                cstable_search: generalFilterSearch
+            },
+            columnasDesactivadas: clOff,
+            defaultColumnOff: true,
+            current: 1,
+            pagerCount: 10,
+            hasSearch: false,
+            hasShow: false,
+        });
+    }
+    LoadTableBaseController();
+    function exportCSV() {
+        var cadenaGet = Filters(); //Almacena todos los Filters
+        $.ajax({
+            url: "@Url.Action("getCSV", "BaseController")",
+            data: cadenaGet + "colActivas=" + columnasActivasReporte() + "&tableName=@ViewBag.tableName",
+            success: function (data) {
+                window.location.href = this.url;
+            }
+        });
+    }
+    //Funcion que retorna un string con los Filters aplicados, en formato GET
+    function Filters() {
+        var get = "";
+        var array = $.map(csBaseController.data('CStable').options.ajaxData, function (value, index) {
+            return index;
+        });
+        var array2 = $.map(csBaseController.data('CStable').options.ajaxData, function (value, index) {
+            return value;
+        });
+        for (var i = 0; i < array.length; i++) {
+            get += array[i] + "=" + array2[i] + "&";
+        }
+        return get;
+    }
+    //Funcion que retorna un String con las columnas activas, separadas por "-"
+    function columnasActivasReporte() {
+        var ac = eval(unescape(leerCockie("@cookieName")));
+        var colActivas = "";
+        if (ac != undefined) {
+            for (var i = 0; i < ac.length; i++) {
+                if (ac[i].c) {
+                    colActivas += columns_cstable_cookie_header_csBaseControllerDiv[ac[i].v].n + "-";
+                }
+            }
+            colActivas = colActivas.substring(0, colActivas.length - 2);
+        }
+        else {
+            for (var i = 0; i < columns_cstable_cookie_header_csBaseControllerDiv.length; i++) {
+                colActivas += columns_cstable_cookie_header_csBaseControllerDiv[i].n + "-";
+            }
+            colActivas = colActivas.substring(0, colActivas.length - 2);
+        }
+        return colActivas;
+    }
+    //Si no existe la cookie
+function makeHide@(ViewBag.tableName)() { if (!existCookie("@cookieName")) { $("#updatechecks").trigger("click"); } } if (!existCookie("@cookieName")) {
+        $("#updatechecks").trigger("click");
+    }
+    //Funcion que retorna el contenido de la cookie con el nombre que le pasan
+    function leerCockie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+    //Delete cookie
+    function delete_cookie(name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    function existCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return true;
+        }
+        return false;
+    }
+    function reset() {
+        var ck = "@cookieName";
+        delete_cookie(ck);
+        location.reload();
+    }
+</script>
+

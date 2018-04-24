@@ -1,0 +1,105 @@
+﻿@model Admin.Models.BaseDynamicList
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<style>
+    .checkLeft {
+        float: left;
+    }
+</style>
+<i class="dn" id="modalInfo" data-modaltitle="@("Create BaseDynamicList")" data-editmodaltitle="@Model.nameToDisplay" data-editing="@(Model.id==0?"False":"True")" data-onclose="csBaseDynamicList.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Column</h3>
+    </div>
+    <div class="panel-body">
+
+        <form action="@Url.Action("Save", "BaseColumns")" id="BaseDynamicList-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                <div class="row">
+                    @Html.Hidden("id", Model.id)
+                    @Html.Hidden("name", Model.name)
+                    @Html.BaseTextBox("nameToDisplay", Model.nameToDisplay, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { @class = "clase_p_j", placeholder = ("Nombre") }, "required;maxlength:30", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @Html.Hidden("cookieKey", Model.cookieKey)
+                </div>
+                <div class="row">
+                    @Html.BaseCheckBox2("allowSaveConfig", Model.allowSaveConfig, "", "Save Columns Modification", 4, "Si", "No", "")
+                    @Html.BaseCheckBox2("allowExport", Model.allowExport, "", "Export CSV", 4, "Si", "No", "")
+                    @Html.BaseCheckBox2("audit", Model.audit, "", "Audit", 4, "Si", "No", "")
+                </div>
+                <br />
+                <div class="row">
+                    <section class="col col-10" style="width: 100%">
+                        <table class="table table-striped table-hover tabla_style">
+                            <thead>
+                                <tr>
+                                    <th class=" text_th null"><a data-name="name">Name</a></th>
+                                    <th class=" text_th null"><a data-name="show">Show</a></th>
+                                    @*<th class=" text_th null"><a data-name="show">Order</a></th>*@
+                                    <!-- <th class=" text_th null"><a data-name="orderNum">NumOrden</a></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in (List<BaseDynamicColumnList>)ViewBag.bdynamic)
+                                {
+                                    <tr>
+                                        <td>@item.name</td>
+                                        @if (item.show)
+                                        {
+                                            <td><label class="toggle checkLeft"><input class="baseCheck" type="checkbox" onclick="guardar('@item.name-@item.listID')" checked> <i data-swchoff-text="No" data-swchon-text="Yes"></i></label></td>
+                                        }
+                                        else
+                                        {
+                                            <td><label class="toggle checkLeft"><input class="baseCheck" type="checkbox" onclick="guardar('@item.name-@item.listID')"> <i data-swchoff-text="No" data-swchon-text="Yes"></i></label></td>
+                                        }
+                                        @*<td>
+                                            @Html.BaseTextBox("orderNum", item.orderNum, "", null, 12, new { onkeypress = "guardar('" + @item.name + "-" + @item.listID + "')", @class = "clase" }, "required;number")
+                                        </td>*@
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');csBaseDynamicList.data('CStable').update();" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseDynamicList-form");
+    });
+
+
+    function guardar(dat) {
+        $.ajax({
+            url: "@Url.Action("saveColumn", "BaseColumns")",
+            data: "column=" + dat,
+            success: function (data) {
+
+            }
+        });
+    }
+
+    @*function reorder(dat) {
+        $.ajax({
+            url: "@Url.Action("saveOrder", "BaseColumns")",
+            data: "column=" + dat + "&neworder"+,
+            success: function (data) {
+
+            }
+        });
+    }*@
+</script>

@@ -1,0 +1,27 @@
+@model Admin.Models.BaseAction
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfoseAction" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create seAction")" data-editModalTitle="@("Edit seAction")" data-editing="@(Model.id==0?"False":"True")" data-onclose="csBaseAction.data('CStable').update();"></i>
+<form action="@Url.Action("Save", "BaseAction")" id="BaseAction-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")">
+    @Html.HiddenFor(d => d.controllerID)
+    <fieldset>
+        @Html.HiddenFor(d => d.id)
+        <div class="row">
+            @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+            @Html.BaseTextBox("displayName", Model.displayName, "DisplayName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("DisplayName") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+        </div>
+        <div class="row">
+            @Html.BaseCheckBox("isSystem", Model.isSystem, "", "IsSystem", 6, "Si", "No", "")
+        </div>
+    </fieldset>
+    <footer>
+        <a class="btn btn-danger formClose" title="@("Close")"><i class="glyphicon glyphicon-remove"></i></a>
+        <button class="btn btn-@(ViewBag.config.secundaryColor)" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+    </footer>
+</form>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseAction-form");
+    });
+</script>

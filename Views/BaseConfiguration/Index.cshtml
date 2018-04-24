@@ -1,0 +1,106 @@
+﻿@model Admin.BaseModels.ViewModels.BaseConfiguration
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfoseController" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create seController")" data-editmodaltitle="@("Edit seController")" data-onclose="csBaseController.data('CStable').update();"></i>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Configuration</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save")" id="BaseController-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                <legend>Application</legend>
+                <div class="row">
+                    <div class="fl">
+                        <img src="~/Uploads/ApplicationLogos/default.png?a=@(new Random().Next(0,100))" />300x110
+                    </div>
+                    <div class="fr">
+                        <img src="~/Uploads/ApplicationLogos/favicon.png?a=@(new Random().Next(0,100))" width="110" height="110" />
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.BaseFile("logo", "Change Logo", 6, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_file, "", "", "", "")
+                    @Html.BaseFile("favicon", "Change Favicon", 6, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_file, "", "", "", "")
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("name", Model.name, "Company Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("Company Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Company Name's Application"))
+                    @Html.BaseTextBox("address", Model.address, "Site Url", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 5, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @{var languagueD = new List<object>(); if (Model.languague != null) { languagueD.Add(Model.languague); } }
+                    @Html.BaseDropDownList("languague", "BaseLanguage", "languageCultureName", "displayName", "", 4, "Languague", "", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, languagueD, false, "T", "", "required", "", null)
+
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("appName", Model.appName, "App Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("App Name") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip("App Name for all reference"))
+                    @Html.BaseTextBox("companyEmail", Model.companyEmail, "Company Email", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 5, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseSpiner("version", Model.version, "Version", 2, MyHtmlHelpers.spinnerDirection.both, "", "required", 1, int.MaxValue, 1, 1)
+                    @Html.BaseTextBox("copyRight", Model.copyRight, "Copy Right", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 2, new { placeholder = ("") }, "required;maxlength:20", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <img src="~/img/TwilioLogo.png" width="120px" height="60px" />
+                </legend>
+                <div class="row">
+                    @Html.BaseTextBox("AccountSid", Model.AccountSid, "Account ID", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("AuthToken", Model.AuthToken, "AuthToken", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("FromNumber", Model.FromNumber, "From Number", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("maxLength", Model.maxLength, "SMS Max Length", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseCheckBox("ActiveTwilio", Model.ActiveTwilio, "", "Active", 3, "Yes", "No", "required")
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    SMTP <button style="" title="Test Email" data-action="@Url.Action("TestEmail")" class="btn btn-info delete" data-btnactions="Send=>%&amp;Cancel=>" data-buttons="[Send][Cancel]" data-title="Test SMTP Configuration" data-errormessage="No se pudo realizar esta acción" data-message="You sure that you want send this test message?">
+                        <i class="fa fa-mail-forward (alias)"></i>
+                        Test
+                    </button>
+                </legend>
+                <div class="row">
+                    @Html.BaseSpiner("port", Model.port, "Port", 3, MyHtmlHelpers.spinnerDirection.both, "", "required", 1, int.MaxValue, 1, 1)
+                    @Html.BaseCheckBox("smtpSSL", Model.smtpSSL, "", "SSL", 3, "Yes", "No", "required")
+                    @Html.BaseTextBox("email", Model.email, "Email", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("server", Model.server, "Server", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BasePassword("password", Model.password, "Password", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Dates And Times</legend>
+                <div class="row">
+                    @{var timeZoneD = new List<object>(); if (Model.languague != null) { timeZoneD.Add(Model.timeZone); } }
+                    @Html.BaseDropDownList("timeZone", "BaseTimeZones", "fullName", "fullName", "", 4, "Time Zone", "", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, timeZoneD, false, "T", "", "required", "", null)
+                    @Html.BaseTextBox("timeFormat", Model.timeFormat, "Time Format", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("timeOutFormat", Model.timeOutFormat, "Time Out Format", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("timeFormat", Model.dateformat, "Date Format", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("dateOutFormat", Model.dateOutFormat, "Date Out Format", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("dateTimePickerFormat", Model.dateTimePickerFormat, "DateTime PickerFormat", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Sesion And Variables</legend>
+                <div class="row">
+                    @Html.BaseSpiner("SessionTimeOut", Model.SessionTimeOut, "TimeOut", 2, MyHtmlHelpers.spinnerDirection.both, "", "required", 1, int.MaxValue, 1, 1)
+                    @Html.BaseTextBox("SiteID", Model.SiteID, "Site ID", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 3, new { placeholder = ("") }, "required;maxlength:20", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                    @Html.BaseTextBox("colors", Model.colors, "Colors", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 7, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("styles", Model.styles, "Styles", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("") }, "required", "", false, new MyHtmlHelpers.BaseToolTip(""))
+                </div>
+            </fieldset>
+            <footer>
+                <button class="btn btn-@(ViewBag.config.secundaryColor)" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(false);
+    $(document).ready(function () {
+        validateForm("BaseController-form");
+    });
+</script>

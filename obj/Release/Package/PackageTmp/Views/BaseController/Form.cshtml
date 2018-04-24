@@ -1,0 +1,45 @@
+@model Admin.Models.BaseController
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfoseController" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create seController")" data-editmodaltitle="@("Edit seController")" data-editing="@(Model.id==0?"False":"True")" data-onclose="csBaseController.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Controllers</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseController")" id="BaseController-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(d => d.id)
+                <div class="row">
+                    @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("fullName", Model.fullName, "FullName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("FullName") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("infoName", Model.infoName, "InfoName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("InfoName") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("Discriminator", Model.Discriminator, "Discriminator", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Discriminator") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="#BaseController/Index"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-@(ViewBag.config.secundaryColor)" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<div id="sub">
+
+</div>
+<script>
+    pageSetUp();
+    if ($("#modalInfoseController").data("editing") == "True") {
+        loadContent("@Url.Action("index", "BaseAction", new {id =Model.id })", "#sub");
+    }
+
+    $(document).ready(function () {
+        validateForm("BaseController-form");
+    });
+</script>

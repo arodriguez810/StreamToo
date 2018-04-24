@@ -1,0 +1,28 @@
+@model Admin.Models.BaseUserStatu
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Crear erStatus")"  data-editModalTitle="@("Edit erStatus")" data-editing="@(Model.id==0?"False":"True")" data-onclose="csUserStatus.data('CStable').update();" ></i>
+<form action="@Url.Action("Save", "BaseUserStatus")" id="UserStatus-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")"  >
+<fieldset>
+@Html.HiddenFor(d => d.id)
+<div class="row">
+@Html.BaseTextBox("name", Model.name,"Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+@Html.BaseTextBox("description", Model.description,"Description", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Description") }, "maxlength:100", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+</div>
+<div class="row">
+@Html.BaseCheckBox("canLogin", Model.canLogin, "", "CanLogin", 6, "Si", "No", "")
+@{var selecteddefaultAction = new List<object>(); if(Model.defaultAction!=null) { selecteddefaultAction.Add(Model.defaultAction); } } 
+@Html.BaseDropDownList("defaultAction", "BaseAction", "id", "name", "", 6, "DefaultAction", "Select BaseAction", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selecteddefaultAction, false, "Refresh BaseAction", "", "", "", null) 
+</div>
+</fieldset>
+<footer>
+<a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();" ><i class="glyphicon glyphicon-remove"></i></a>
+<button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")" ><i class="glyphicon glyphicon-transfer"></i></button>
+</footer>
+</form>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("UserStatus-form");
+    });
+</script>

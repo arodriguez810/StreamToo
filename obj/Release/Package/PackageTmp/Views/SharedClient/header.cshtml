@@ -1,0 +1,19 @@
+﻿<nav class="navbar navbar-default primary-color">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button id="navbar-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-white" style="padding: 0px;" href="#">
+                <img class="logo-img hidden-xs" src="~/client/img/logo2.png" alt="SMSC">
+                <img class="logo-img hidden-md hidden-sm hidden-lg" src="~/client/img/logo-movil.png" alt="SMSC">
+                <label class="user-mobile text-white">Welcome, GUEST</label>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            @Html.Partial("~/Views/SharedClient/login.cshtml")
+        </div>
+    </div>
+</nav>

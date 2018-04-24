@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPlane.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<style>
+    #main {
+        margin-left: 0 !important;
+    }
+</style>
+<h2>Install</h2>
+
+@model Admin.BaseModels.ViewModels.Install
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfoseController" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create seController")" data-editmodaltitle="@("Edit seController")" data-editing="@("False")" data-onclose="csInstallController.data('CStable').update();"></i>
+<form action="@Url.Action("Save", "InstallController")" id="InstallController-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+    <fieldset>
+        <div class="row">
+            @Html.BaseTextBox("ServerName", Model.ServerName, "ServerName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("ServerName") }, "required", "", false, new MyHtmlHelpers.BaseToolTip("Name of databse server"))
+            @Html.BaseTextBox("DatabaseName", Model.DatabaseName, "DatabaseName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("DatabaseName") }, "required", "", false, new MyHtmlHelpers.BaseToolTip("Database name for new database"))
+        </div>
+        <div class="row">
+            @Html.BaseTextBox("User", Model.User, "User", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("User") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("User for database"))
+            @Html.BasePassword("Password", Model.Password, "Password", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Password") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Password for database"))
+        </div>
+        <div class="row">
+            @Html.BaseCheckBox("Styles", Model.Styles, "", "26 Styles", 6, "Yes", "No", "")
+            @Html.BaseCheckBox("Graphs", Model.Graphs, "", "Graphs Creator", 6, "Yes", "No", "")
+            @Html.BaseCheckBox("AdminColumns", Model.AdminColumns, "", "Custom Columns Administrator", 6, "Yes", "No", "")
+            @Html.BaseCheckBox("Examples", Model.Examples, "", "Example for developers", 6, "Yes", "No", "")
+            @Html.BaseCheckBox("RawQueries", Model.RawQueries, "", "Execute Queries Directly", 6, "Yes", "No", "")
+            @Html.BaseCheckBox("Apis", Model.Apis, "", "Generate API for entities", 6, "Yes", "No", "")
+        </div>
+    </fieldset>
+    <footer>
+        <button class="btn btn-@(ViewBag.config.secundaryColor)" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")">Install</button>
+    </footer>
+</form>
+<div id="sub">
+
+</div>
+<script>
+    pageSetUp();
+    $(document).ready(function () {
+        validateForm("InstallController-form");
+    });
+</script>

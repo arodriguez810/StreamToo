@@ -1,0 +1,85 @@
+@model Admin.Models.RDClientChannel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i data-width="80%" class="dn" id="modalInfoClientChannel" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create ClientChannel")"  data-editModalTitle="@("Edit ClientChannel")" data-editing="@(Model.id==new Guid()?"False":"True")" ></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h3 class="panel-title">ClientChannel</h3>
+    </div>
+    <div class="panel-body">
+<form action="@Url.Action("Save", "RDClientChannel")" id="RDClientChannel-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")"  >
+<fieldset>
+@Html.HiddenFor(d => d.id)
+@Html.HiddenFor(d => d.active)
+@Html.HiddenFor(d => d.creationDate)
+<div class="row">
+@{var selectedchannel_channel = new List<object>(); if(Model.channel_channel!=null) { selectedchannel_channel.Add(Model.channel_channel); } } 
+@Html.BaseDropDownList("channel_channel", "RDChannel", "id", "name", "", 6, "Channel", "Select Channel", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedchannel_channel, false, "Refresh RDChannel", "", "required", "", null) 
+@Html.BaseSpiner("visitCount", Model.visitCount, "Visit Count", 6, MyHtmlHelpers.spinnerDirection.both, "", "required;number", 0, 2147483647, 1, 1, "n")
+</div>
+<div class="row">
+@Html.BaseDateTimePick("lastVisit", Model.lastVisit, "Last Visit", 6, "Last Visit", "required;date", "", "")
+@{var selectedclient_client = new List<object>(); if(Model.client_client!=null) { selectedclient_client.Add(Model.client_client); } } 
+@Html.BaseDropDownList("client_client", "RDClient", "id", "email", "", 6, "Client", "Select Client", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedclient_client, false, "Refresh RDClient", "", "required", "", null) 
+</div>
+<div class="row">
+@Html.BaseCheckBox("isFavorite", Model.isFavorite, "", "Is Favorite", 6, "Yes", "No", "")
+</div>
+</fieldset>
+<footer>
+@if (!string.IsNullOrEmpty(ViewBag.from))
+                {
+                    string[] relations = ViewBag.from.Split(':');
+                    <a class="btn btn-danger formClose" title="@("Close")" href="#RD@(relations[0].Split('_')[0])/Form/@(relations[1])"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+else if (ViewBag.relations.Count > 0 && Model.id != new Guid())
+                {
+                    <a class="btn btn-danger formClose fromBack" title="@("Close")" href="#RDClientChannel/Index"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+<button class="btn btn-success" data-success="$('#baseDynamicModalObject').modal('hide');csRDClientChannel@(ViewBag.from.Split(':')[0]).data('CStable').update();" title="@("Save")" ><i class="glyphicon glyphicon-floppy-disk"></i></button>
+</footer>
+</form>
+    </div>
+</div>
+@if (ViewBag.relations.Count > 0 && Model.id != new Guid())
+{
+    bool first = true;
+    <div class="panel panel-primary">
+        <ul class="nav nav-tabs">
+            @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                <li class="@(first ? "active" : "")"><a href="#@(item.K_Table + "_" + item.FK_Column)" data-toggle="tab" aria-expanded="@(first ? "true" : "false")">@Helper.Capitalize(item.K_Table,2)'s @Helper.Capitalize(item.FK_Column.Split('_')[1])</a></li>
+                first = false;
+            }
+        </ul>
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                @{
+                    first = true;
+                }
+                @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                    <div class="tab-pane fade @(first ? "active in" : "")" id="@(item.K_Table + "_" + item.FK_Column)">
+                        Loading...
+                    </div>
+                    <script>
+                        loadContent("@Url.Action("index", item.K_Table, new { from = item.FK_Column+ ":"+Model.id })", "#@(item.K_Table + "_" + item.FK_Column)");
+                    </script>
+first = false;
+                }
+            </div>
+        </div>
+    </div>
+                    }
+<script>
+function next() {
+        location.href = "#RDClientChannel/Form/" + BaseLastID;
+}
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("RDClientChannel-form");
+var from = "@ViewBag.from";
+        HideRelation("RDClientChannel-form", from);
+    });
+</script>

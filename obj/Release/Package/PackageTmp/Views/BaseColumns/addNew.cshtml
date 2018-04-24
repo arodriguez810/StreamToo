@@ -1,0 +1,78 @@
+﻿@model List<BaseDynamicList>
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<style>
+    .checkLeft {
+        float: left;
+    }
+</style>
+<i class="dn" id="modalInfo" data-modaltitle="@("Add")" data-editmodaltitle="Agregar" data-editing="@(0 == 0 ? "False" : "True")"></i>
+<form class="smart-form ajaxForm">
+    <fieldset>
+        <br />
+        <div class="row">
+            <section class="col col-10" style="width: 100%">
+                @{
+                    if (Model.Count != 0)
+                    {
+                        <table class="table table-striped table-hover tabla_style">
+                            <thead>
+                                <tr>
+                                    <th class=" text_th null"><a data-name="name">Nombre de Control</a></th>
+                                    <th class=" text_th null"><a data-name="show">Añadir Control</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{int cont = 0;}
+                                @foreach (var item in Model)
+                                {
+                                    string divID = "div" + cont;
+                                    <tr>
+                                        <td>@item.nameToDisplay</td>
+                                        <td><div id=@Html.Raw(divID)><a class="btn btn-success" id="boton" onclick="guardar('@item.id-True'); show(@cont);"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_plus">&nbsp;Añadir</i></a></div></td>
+                                    </tr>
+                                    cont++;
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p align="center">There is not controllers for create</p>
+                    }
+                }
+            </section>
+        </div>
+    </fieldset>
+    <footer>
+        <a onclick="quit()" class="btn btn-info formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-ok"></i></a>
+        <button id="continue" class="btn btn-default baseDynamicModal dn" data-action="@Url.Action("Form", "BaseColumns", "")"></button>
+        <button id="new" class="btn btn-default baseDynamicModal dn" data-action="@Url.Action("Form", "BaseColumns", new { })"></button>
+    </footer>
+</form>
+<script>
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseDynamicList-form");
+    });
+
+    function quit() {
+        refreshMe();
+    }
+
+    function show(div) {
+        document.getElementById("div" + div).innerHTML = '<p align="left">Control Añadido</p>';
+    }
+
+    function guardar(dat) {
+        $.ajax({
+            url: "@Url.Action("turnOnColum", "BaseColumns")",
+            data: "column=" + dat,
+            success: function (data) {
+
+            }
+        });
+    }
+</script>

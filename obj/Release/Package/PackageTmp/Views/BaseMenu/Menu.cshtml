@@ -1,0 +1,93 @@
+﻿@model Admin.Models.ViewModels.PermissionsModel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+<style>
+    .btnMenu:active {
+        position: fixed !important;
+        margin-left: 46% !important;
+        z-index: 9999 !important;
+    }
+
+    .btnMenu2:active {
+        position: fixed !important;
+        margin-left: 51% !important;
+        z-index: 9999 !important;
+    }
+
+    .btnMenu {
+        position: fixed !important;
+        margin-left: 46% !important;
+        z-index: 9999 !important;
+    }
+
+    .btnMenu2 {
+        position: fixed !important;
+        margin-left: 51% !important;
+        z-index: 9999 !important;
+    }
+</style>
+
+<form method="POST" action="@Url.Action("Menu", "BaseMenu")" class="ajaxForm NocurrentID">
+
+    <button class="btn btn-success baseDynamicModal" data-action="@Url.Action("Form", "BaseMenu")">@("Add")</button>
+    <button class="btn btn-info" data-success="location.reload();">@("Apply")</button>
+
+    <fieldset>
+        <div class="dd" id="nestable3">
+            <ol class="dd-list">
+                @foreach (var item in Model.Menus)
+                {
+                    <li class="dd-item" data-id="@item.id">
+                        <div class="dd-handle dd3-handle">
+                            .
+                        </div>
+                        <div class="dd3-content">
+                            @if (item.translatable)
+                            {
+                                @(item.text);
+                            }
+                            else
+                            {
+                                @item.text
+                            }
+                            <div class="pull-right">
+                                <button class="btn btn-info btn-xs baseDynamicModal" data-action="@Url.Action("Form", "BaseMenu", new { id = item.id })" title="@("Edit")"><i class="fa fa-edit"></i></button>
+                                <button data-message="@("Are you sure to delete this menu?")"
+                                        data-errormessage="@("Could not delete this menu")"
+                                        data-title="@("Delete Menu")"
+                                        data-buttons="[@("No")][@("Yes")]"
+                                        data-btnactions="@("Yes=>%$elem.parent().parent().remove();&No=>")"
+                                        class="btn btn-danger btn-xs delete" data-action="@Url.Action("Delete", "BaseMenu", new { id = item.id })" title="@("Delete")">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </div>
+                        </div>
+                        @Html.Raw(UIHtmlHelper.getTreeMenusCrud(item.BaseMenu1))
+                    </li>
+                }
+            </ol>
+        </div>
+        <input type="hidden" id="json" name="json" />
+    </fieldset>
+</form>
+
+<script>
+    function AG_Menu($scope) {
+        $scope.name = "Angular";
+    }
+    pageSetUp();
+    loadScript("js/plugin/jquery-nestable/jquery.nestable.js", runNestables);
+    function runNestables() {
+        var updateOutput = function (e) {
+            var list = e.length ? e : $(e.target), output = list.data('output');
+            if (window.JSON) {
+                $("#json").val(window.JSON.stringify(list.nestable('serialize')));
+            } else {
+
+            }
+        };
+        $('#nestable3').nestable({ items: "li:not(.unsortable)" }).on('change', updateOutput);
+        updateOutput($('#nestable3').data('output', ""));
+    }
+</script>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.config.appName</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/smartadmin-production.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/smartadmin-skins.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/@(ViewBag.config.css).css">
+    <link href="~/js/plugin/sweetalert/sweetalert2.css?@ViewBag.config.version" rel="stylesheet">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="~/Uploads/ApplicationLogos/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/Uploads/ApplicationLogos/favicon.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" href="~/http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+</head>
+<body id="login" class="animated fadeInDown custom-primary-color">
+    <div id="" role="main">
+        <!-- MAIN CONTENT -->
+        <div id="content" class="container">
+            <div class="row">
+                <div class="fat-man" style="width:400px; margin: 76px auto 0px;">
+                    <center>
+                        <div>
+                            <span id="main-login">
+                                <img src="~/Uploads/ApplicationLogos/default.png" alt="Logo">
+                            </span>
+                        </div>
+                        @RenderBody()
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================================================== -->
+    <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+    <script src="~/js/plugin/pace/pace.min.js"></script>
+    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+    <script src="///ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script> if (!window.jQuery) { document.write('<script src="~/js/libs/jquery-2.0.2.min.js"><\/script>'); } </script>
+    <script src="///ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script> if (!window.jQuery.ui) { document.write('<script src="~/js/libs/jquery-ui-1.10.3.min.js"><\/script>'); } </script>
+
+    <!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+        <script src="~/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+    <!-- BOOTSTRAP JS -->
+    <script src="~/js/language/language.js"></script>
+
+    <script src="~/js/language/@(System.Globalization.CultureInfo.CurrentCulture.Name).js"></script>
+
+   
+
+    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JQUERY VALIDATE -->
+    <script src="~/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+
+    <!-- JQUERY UI + Bootstrap Slider -->
+    <script src="~/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+    <!-- browser msie issue fix -->
+    <script src="~/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+    <!-- FastClick: For mobile devices -->
+    <script src="~/js/plugin/fastclick/fastclick.js"></script>
+
+    <!--[if IE 7]>
+
+            <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+        <![endif]-->
+    <!-- MAIN APP JS FILE -->
+    <script src="~/js/app.js"></script>
+    <script src="~/js/general.js"></script>
+    <script src="~/js/plugin/sweetalert/sweetalert2.js?@ViewBag.config.version"></script>
+    <script type="text/javascript">
+        runAllForms();
+
+        try {
+            if (top.location.hostname != self.location.hostname) throw 1;
+        } catch (e) {
+            top.location.href = self.location.href;
+        }
+
+        $(function () {
+            validateForm("login-form");
+            var returnUrl = location.href.split('#');
+            if (returnUrl.length > 1) {
+                returnUrl1 = returnUrl[1];
+                returnUrl0 = returnUrl[0];
+                returnUrl = returnUrl0.replace("Account/Login", "BaseHome").split('#')[0] + "#" + returnUrl1;
+                $("#returnUrl").val(returnUrl);
+            }
+
+        });
+    </script>
+</body>
+</html>

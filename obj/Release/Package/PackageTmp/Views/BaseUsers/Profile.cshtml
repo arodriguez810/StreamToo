@@ -1,0 +1,87 @@
+﻿@model Admin.Models.BaseUser
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create User")" data-editmodaltitle="@("Edit User")" data-editing="@(Model.ID == 0 ? "False" : "True")" data-onclose="csVWUser.data('CStable').update();"></i>
+
+<div style="width:30%; float:left">
+    @if (Model.imageUrl != "")
+    {
+        <img src="~/Uploads/UserImages/@Model.imageUrl" alt="me" class="online" style="width:100%;height:100%;" />
+    }
+    else
+    {
+        <img width="25px" height="25px" src="~/Uploads/UserImages/defaultImage.png" alt="me" class="online" />
+    }
+</div>
+<form style="width: 70%; float: right;" action="@Url.Action("Save", "BaseUsers")" id="User-form" class="smart-form ajaxForm" data-successmessage="@("Changed")" data-errormessage="@("Error writing data try later.") ">
+    <fieldset style="padding-top: 1px !important;">
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.widgetsToShow)
+        @Html.HiddenFor(model => model.createUser)
+        @Html.HiddenFor(model => model.superUser)
+        @Html.HiddenFor(model => model.userStatusID)
+        @Html.HiddenFor(model => model.defaultActionID)
+        @Html.Hidden("imgActual", Model.imageUrl)
+        @Html.HiddenFor(model => model.employeeType_Type)
+        @Html.HiddenFor(model => model.office_office)
+        <div class="row">
+            @Html.BaseFile("imageUrl", "Profile Image", 6, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_camera)
+        </div>
+        <div class="row">
+            @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Name") }, "required;maxlength:30", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+            @Html.BaseTextBox("lastName", Model.lastName, "LastName", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("LastName") }, "maxlength:30", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+        </div>
+        <div class="row">
+            @Html.BaseTextBox("username", Model.username, "Correo Electrónico", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Correo Electrónico") }, "required;maxlength:50;email;remote:" + Url.Action("ExistEmail", "BaseGeneral") + "=post>Nada?username&ID", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+            @Html.BaseTextBox("phone", Model.phone, "Phone", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Phone") }, "maxlength:20", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+        </div>
+        <div class="row">
+            @Html.BasePassword("password", Model.password, "Password", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Password") }, "required;strongPassword", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+            @Html.BasePassword("confirmpassword", Model.password, "Confirm Passoword", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Confirm Passoword") }, "required;strongPassword", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+        </div>
+        <div class="row">
+            @Html.BaseTextBox("address", Model.address, "Address", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Address") }, "maxlength:300", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+        </div>
+        <div class="row">
+        </div>
+        <br />
+    </fieldset>
+    <footer>
+        <button class="btn btn-success aa" data-success="location.reload()" title="@("Save")"><i class="glyphicon glyphicon-ok"></i></button>
+    </footer>
+</form>
+
+<script>
+    pageSetUp();
+
+    $(document).ready(function () {
+        $(':input').attr('readonly', 'readonly');
+        $('#password').removeAttr('readonly');
+        $('#confirmpassword').removeAttr('readonly');
+        $('#phone').removeAttr('readonly');
+        $('#address').removeAttr('readonly');
+    });
+
+    $(document).ready(function () {
+        validateForm("User-form");
+        $("#phone").mask("(999)999-9999");
+    });
+    $("#setperm").click(function () {
+        var id = "@Html.Raw(Model.ID)"; //$("#id").val();
+        var parameters = "?id=" + id;
+        var url = "@Admin.BaseClass.URLHelper.getUrl("BasePermissionsUser", "Index")" + parameters;
+        window.open(url, "_parent");
+    });
+
+    $('#imageUrl').change(function () {
+        me = $(this);
+        var ext = $(me).val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['png', 'jpg', 'tiff', 'bitmap', 'gif']) == -1) {
+            alert('Favor seleccionar un archivo de imagen!');
+            $(".aaa").attr("disabled", "disabled");
+            return false;
+        } else { $(".aaa").removeAttr("disabled"); }
+    });
+</script>
+

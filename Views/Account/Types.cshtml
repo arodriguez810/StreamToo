@@ -1,0 +1,32 @@
+﻿@model Admin.Models.SMOffice
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{
+    SMEmployee employee = ViewBag.employee;
+    List<int> enables = new List<int>();
+    foreach (var item in Model.SMSystemFeatures)
+    {
+        foreach (var type in item.SMEmployeeTypes)
+        {
+            if (!enables.Contains(type.id))
+            {
+                enables.Add(type.id);
+            }
+        }
+    }
+}
+
+@{
+    string mytypes = "";
+    if (enables.Count > 0)
+    {
+        mytypes = Model.SMSystemFeatures.Count == 0 ? "" : $" where id in ({string.Join(",", enables)}) ";
+    }
+    mytypes += employee.SMEmployeeTypes.Count == 0 ? "" : $" {((enables.Count > 0) ? "and" : "where")} id in ({string.Join(",", employee.SMEmployeeTypes.Select(d => d.id))}) ";
+    List<object> selected2 = new List<object>();
+    if (enables.Count > 0)
+    {
+        selected2.Add(enables.First());
+    }
+}
+@Html.BaseDropDownList("employeeType", "SMEmployeeType", "id", "name", mytypes, 12, "Type", "", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selected2, false, "Refresh Employee Types", "", "", "", null)

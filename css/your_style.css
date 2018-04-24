@@ -1,0 +1,925 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+
+#logo img {
+        margin: 0 !important;
+    padding-left: 3px;
+    width: 100px;
+    margin-top: 4px!important;
+}
+
+#logo {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 0;
+    width: 175px;
+}
+
+.dn {
+    display: none !important;
+}
+
+.fileInput {
+    padding: 5px !important;
+}
+
+
+.smart-form .select i:before {
+    border-bottom: medium none;
+    top: 0;
+}
+
+.bootstrap-timepicker-widget {
+    z-index: 9999 !important;
+}
+
+
+.form-control {
+    -moz-appearance: none;
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    color: #404040;
+    display: block;
+    font: 13px/16px "Open Sans",Helvetica,Arial,sans-serif;
+    height: 32px;
+    outline: 0 none;
+    padding: 8px 10px;
+    width: 100%;
+}
+
+.buttonMenuMargin {
+    margin: 3px 1px 1px !important;
+}
+/*Estilo de la tabla*/
+.elementos_up {
+    /*background: none repeat scroll 0 0 #fafafa;*/
+    /*border-bottom: 1px solid #ccc;*/
+    display: block;
+    min-height: 42px;
+}
+
+.style_font ul {
+    display: inline-flex;
+    list-style: outside none none;
+    /*float: right !important;*/
+}
+
+    .style_font ul li {
+        padding-left: 20px;
+    }
+
+.p_text {
+    /*padding: 10px;*/
+}
+
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+.pl0 {
+    padding-left: 0px !important;
+}
+
+.pr0 {
+    padding-right: 0px !important;
+}
+
+.cho_text {
+    height: 20px;
+    margin-top: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    min-height: 20px;
+    min-height: 31px !important;
+}
+
+.text_th a {
+    font-family: 'Verdana';
+    color: #000;
+}
+
+.borde_pagination {
+    border-color: #ccc !important;
+}
+
+.jarviswidget > div {
+    padding: 0,0,0,0 !important;
+}
+
+.overflowAuto {
+    overflow: auto;
+}
+
+.dexterslaboratory {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.arrow {
+    background: url("../img/Arrowhead-Down.png")no-repeat;
+    text-indent: -99999px;
+    width: 19px;
+}
+
+.arrow_up {
+    background: url("../img/Arrowhead-Up.png")no-repeat;
+}
+
+.img-support {
+    margin-top: -2px;
+    width: 71%;
+}
+
+#btn-custom-support {
+    background-color: #0087ad !important;
+    border-color: #0087ad !important;
+    padding: 0;
+}
+
+    #btn-custom-support:hover i,
+    #btn-custom-support:hover {
+        background: #ff671f none repeat scroll 0 0;
+        border-color: #ff671f;
+    }
+
+.tabla_style {
+    border: 1px solid;
+}
+
+
+.filterDetail {
+    cursor: pointer;
+}
+
+.style_ex .input {
+    float: left;
+    margin-right: 15px;
+    width: 25% !important;
+}
+
+.style_ex .refreshTable {
+    margin-left: 12px;
+}
+
+.table_ex {
+    width: 100%;
+    float: left;
+}
+
+#SitioEmpresas-form fieldset {
+    padding-top: 5px;
+}
+
+    #SitioEmpresas-form fieldset .mar_cube_ex section {
+        margin-bottom: 0;
+    }
+
+    #SitioEmpresas-form fieldset .mar_cube_ex .f .label {
+        margin-top: -12px;
+    }
+
+    #SitioEmpresas-form fieldset .segundo section label {
+        margin-top: -3px;
+    }
+
+.mar_cube_ex div.table_ex .table button {
+    height: 25px;
+    width: 25px;
+}
+/*
+.jarviswidget > div {
+    padding: 10px 10px 0!important;
+}*/
+
+#content {
+    min-height: 800px;
+    padding: 0px 13px !important;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 5px !important;
+}
+
+#ribbon {
+    /*float:left;*/
+    width: 100%;
+}
+
+.btn-circle {
+    height: 19px;
+    width: 19px;
+    padding: 0px 0px 0px 0px !important;
+    border-radius: 2px !important;
+    margin: 0px 4px 0px 1px;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    z-index: 0 !important;
+}
+
+.smart-form {
+    float: left;
+    width: 100%;
+}
+
+.modal-dialog .modal-content .smart-form {
+    float: none;
+}
+
+.smart-form footer {
+    padding: 0 9px 12px !important;
+}
+
+#completar div a {
+    margin-left: 14px;
+}
+
+._info {
+    margin-top: 10px;
+}
+
+.table_header h2 {
+    line-height: 25px !important;
+}
+
+.table_header {
+    height: 28px !important;
+}
+
+#btnCancelar .btn {
+    padding: 6.9px;
+}
+
+.input.p_text {
+    padding-bottom: 0;
+    width: 197px;
+}
+
+.cstable_show {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+#modalFilters {
+    padding: 8px 8px 3px;
+}
+
+#table_history_cases,
+#table_histors {
+    float: left;
+    margin-top: 0 !important;
+}
+
+.jarviswidget {
+    margin: 0 0 5px !important;
+}
+
+.widget-body {
+    float: left;
+    width: 100%;
+}
+
+.space {
+    margin-bottom: 8px !important;
+}
+
+.widget-body ul {
+}
+
+    .widget-body ul li {
+        float: left;
+        /*width: 100%;*/
+    }
+
+.pagination li {
+    float: none !important;
+}
+
+.jarviswidget .widget-body {
+    padding-bottom: 0px !important;
+}
+
+.btnClickModal {
+    padding: 6px 0 !important;
+    text-align: center !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.space {
+    margin-top: 0px !important;
+}
+
+.smart-form section {
+    margin-bottom: -6px;
+}
+
+.smart-form .fieldsetSinFondo {
+    padding-top: 4px !important;
+}
+
+    .tnd,
+    .smart-form .fieldsetSinFondo div {
+        padding-bottom: 6px;
+    }
+
+.tnd {
+}
+
+#depliegueAsignarCaso label {
+    width: 100%;
+}
+
+    #depliegueAsignarCaso label select {
+        margin: 0px;
+    }
+
+.btn_yellow {
+    margin-left: 2px;
+}
+
+    .colo a,
+    .btn_yellow button {
+        min-width: 145px;
+    }
+
+
+.xgon {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+.colo {
+    margin-bottom: 8px !important;
+    margin-top: 0 !important;
+}
+
+.eyou label.p_text {
+    margin-bottom: 8px;
+}
+
+.banshee {
+    float: left;
+    width: 100%;
+}
+
+
+    .banshee .p_btn,
+    .pooldead label {
+        float: left;
+        /*width: 104px !important;*/
+    }
+
+
+        .pooldead label.input {
+            float: left;
+            width: 100% !important;
+        }
+
+    .banshee section.input,
+    .banshee div.input {
+        float: left;
+        width: 209px !important;
+    }
+
+    .banshee div.textarea section label {
+        width: 100% !important;
+    }
+
+    .banshee div.textarea {
+        width: 100% !important;
+    }
+
+.ken {
+    float: left;
+}
+
+    .ken .banshee .control-label {
+    }
+
+    .ken #DynamicField-form {
+        height: 260px !important;
+    }
+
+.amazo .elementos_up {
+    padding-bottom: 9px;
+    margin-left: 14px !important;
+}
+
+
+/**********************************/
+
+.wamna0,
+.wamna {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+    .wamna .form-bootstrapWizard {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+
+        .wamna .form-bootstrapWizard button {
+            /*background: #0060c0 url("../img/icon_complete_now.png") no-repeat scroll right center;*/
+            /*background-image: url("../img/rayita.png");*/
+            background-position: right center;
+            background-repeat: no-repeat;
+            border-radius: 0;
+            /*color: #464646;*/
+            /*float: left;*/
+            font-family: arial;
+            font-size: 14px;
+            font-weight: bold;
+            height: 30px !important;
+            line-height: 2;
+            text-align: center;
+            width: 50px !important;
+            /*background-color: #f7f7f7;*/
+            margin-left: -4px;
+            color: #fff;
+        }
+
+            .wamna .form-bootstrapWizard button:last-child {
+                background-image: none;
+            }
+
+.ishika_btn {
+    /*background: #7b1fa2 url("../img/icon_active.png") no-repeat scroll right center !important;*/
+    color: #ffffff !important;
+}
+
+.post {
+    background-image: none !important;
+}
+
+
+.chuta section {
+    float: left;
+    width: 209px !important;
+}
+
+.sm h1,
+.sm h4 {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+#wrack .latraquea,
+#work_case .latraquea {
+    width: 60px !important;
+}
+
+#wrack .banshee .p_btn,
+#work_case .banshee .p_btn {
+    width: 160px !important;
+}
+
+.owa .wamna button + button + button + button {
+    /*background-image: none;*/
+}
+
+.wamna0 {
+    border: 0 none !important;
+    float: left;
+    padding: 0 !important;
+    height: 34px !important;
+}
+
+.wamna {
+    margin: 0px !important;
+}
+
+.page-title {
+    margin: 12px 0 15px;
+}
+
+.text_th {
+    width: 0 !important;
+}
+
+    /*.text_th.null {
+        width: 25% !important;
+    }*/
+
+/*.btn-danger {
+    height: 21px !important;
+    padding: 2px 0 0 !important;
+    width: 22px !important;
+}*/
+
+.exporst {
+    font-size: 21px !important;
+}
+
+#filterForm fieldset .label,
+.llab .label {
+    padding-left:0;
+}
+
+.tile_seccion {
+    font-size: 20px !important;
+}
+
+
+#MSCCaseType-form footer {
+    margin-top: -16px;
+    height: 30px;
+}
+
+    #MSCCaseType-form footer .btn {
+        margin-top: 5px;
+    }
+
+
+
+
+.faq .widget-body {
+    margin: 0px !important;
+}
+
+
+.ken .banshee label.input {
+    width: 100% !important;
+}
+
+
+
+.activeInput {
+    float: left;
+}
+
+    .activeInput section {
+        float: left;
+        width: 100% !important;
+    }
+
+        .activeInput section label,
+        .activeInput section label.toggle {
+            float: left;
+        }
+
+#csMSCCaseTypeDiv table thead tr th:last-child {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+#DivC_historicoCasos .elementos_up {
+    margin-left: 0 !important;
+}
+
+#commentReferer,
+#commentTrabajarCaso {
+    height: 93px !important;
+}
+
+.tableCenter {
+    text-align: center;
+}
+
+#Server-form section > label {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+#Application-form div section > label,
+#SMTP-form div section > label,
+#Auth-form div section > label {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+#Application-form div section,
+#SMTP-form div section,
+#Auth-form div section {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#Server-form section.col {
+    padding-bottom: 15px;
+}
+
+#widget-grid #mail > div,
+#widget-grid #config > div,
+#widget-grid #conpanies > div {
+    padding: 0;
+}
+
+#DivC_CasosAbiertos table thead tr th + th + th + th + th {
+    padding-right: 179px !important;
+}
+
+#DivC_CasosAbiertos table thead tr th:last-child {
+    padding-right: 0 !important;
+}
+
+#C_historico_list table thead tr th + th + th + th + th {
+    padding-right: 60px !important;
+}
+
+#C_historico_list table thead tr th:last-child {
+    padding-right: 130px !important;
+}
+
+#csBaseProfileDiv table thead tr th:last-child,
+#csSitioEmpresasDiv table thead tr th:last-child,
+#csCategoryDiv table thead tr th:last-child {
+    padding-right: 18px !important;
+}
+
+#csC_MailContentDiv table thead tr th:last-child {
+    padding-right: 38px !important;
+}
+
+
+
+/*Boton restaurar valores*/
+/*#widget-grid {
+    float: left;
+    width: 100%;
+}*/
+
+/*table tr td .btn {
+    margin-bottom: 4px !important;
+    padding: 0 !important;
+}*/
+
+footer .bb {
+    height: 31px !important;
+    width: 58px !important;
+}
+
+#csMRMatrizReportDiv table tr .text_th.null {
+    width: 8% !important;
+}
+
+#csEVRiskTableDiv table tr .text_th.null {
+    width: 15% !important;
+}
+
+#risk_map .number-td {
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+.wolfpack {
+    padding-right: 0px !important;
+}
+
+
+#risk_map .risk-row-name {
+    font-size: 15px;
+    margin-top: 14px;
+    width: 10px;
+    word-break: break-all;
+}
+
+.text-left div:last-child {
+    font-size: 15px;
+    margin-left: 5px;
+    padding-bottom: 20px;
+}
+
+.zdog {
+    padding: 0 4px !important;
+}
+
+.reportMR tr td {
+    border: 1px solid #888 !important;
+    padding: 5px;
+}
+
+#baseGenericModalTitle img {
+    height: 32px;
+    padding-right: 10px;
+    width: 40px;
+}
+
+/*nav ul{
+
+}*/
+.suerte {
+    background-color: #eeeeee;
+    bottom: 0;
+    float: left;
+    height: 22px;
+    position: fixed;
+    width: 100%;
+}
+
+.panel-body {
+    padding-top: 0 !important;
+}
+
+
+.btn-circle i.fa-tag {
+    color: orange !important;
+}
+
+.editlinks {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.btn-warning i.fa-check {
+    color: orange !important;
+}
+
+.textlong {
+    word-break: break-all;
+}
+
+.byeFeliciaConAndy label {
+    font-size: 24px;
+}
+
+.htmlmodal {
+    word-break: break-all;
+}
+
+.MessageBoxContainer {
+    top: 38%;
+    color: #fff;
+    position: relative;
+    width: 32%;
+    background-color: #232323;
+    background-color: rgba(0,0,0,0.8);
+    padding: 1%;
+    margin-left: 34%;
+    height: 17%;
+    border-radius: 15px;
+}
+
+.admCols {
+    display: none !important;
+}
+
+#filterForm fieldset {
+    padding: 0 0 20px 0 !important;
+}
+
+.hh label {
+    margin-left: 20px;
+}
+
+.subfields {
+    margin: 7px 0px 0px 41%;
+}
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: white; /* Black fallback color */
+    background-color: rgba(0,0,0, 0.1); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+    /* When you mouse over the navigation links, change their color */
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.signCanvas {
+    margin-top:15px;
+    background-color: #ddd;
+    border: solid;
+    width: 506px !important;
+    height: 107px;
+}
+
+.signCanvasPad {
+    margin-top:15px;
+}
+
+.firmCanvas {
+    cursor: crosshair;
+    background-color: #fff;
+    margin: 0 0 0 -15px !important;
+}
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.8;
+}
+nav ul ul ul li a {
+    color: white;
+    padding: 8px 10px 8px 70px;
+    font-size: 14px;
+}
+
+.btn-no-styles{
+    background: none;
+    box-shadow: none;
+    border: 0px;
+    color: #5F5F5F;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.table thead a{
+    font-weight: normal;
+}
+
+.btn-header-modal{
+    float: right;
+    font-size: 22.5px!important;
+    font-weight: bold!important;
+    line-height: 1!important;
+  
+}
+
+.buscador-tabs {
+    margin-bottom: 17px;
+}
+
+.titulos-tab {
+    font-weight: bold;
+    background: #f2f2f2 !important;
+}
+
+.lil-padding {
+    padding-left: 15px;
+}
+
+.centered-and-cropped { object-fit:cover; }

@@ -1,0 +1,28 @@
+﻿@{
+    Admin.Models.Context db = new Admin.Models.Context();
+    System.Data.DataRow user = Helper.getData("select * from [BaseUser] where ID=" + WebSecurity.CurrentUserId.ToString(), db).Rows[0];
+}
+<div id="shortcut">
+    <ul>
+        @{int userID = int.Parse(user["ID"].ToString());}
+        @foreach (Admin.Models.BaseMenuShortCut menu in db.BaseMenuShortCuts.Where(d=>d.userID==userID))
+        {
+            Admin.Models.BaseMenu m = menu.BaseMenu;
+            string href = m.directLink ? m.href : m.BaseAction.BaseController.name + "/" + m.BaseAction.name;
+            <li>
+                <a href="#@href" class="jarvismetro-tile big-cubes @m.backGroundColor"><span class="iconbox"><i class="fa @m.icon fa-4x"></i><span>@m.title
+
+                    @if (!string.IsNullOrEmpty(m.badgeQuery))
+                    {
+                        <span class="@("Badge" + m.id) ajaxBadge label pull-right @m.badgeColor">{0}</span>
+                    }
+                    else if (!string.IsNullOrEmpty(m.badgeText))
+                    {
+                        <span class="label pull-right @m.badgeColor">@m.badgeText</span>
+                    }
+                </span></span>
+                </a>
+            </li>   
+        }
+    </ul>
+</div>

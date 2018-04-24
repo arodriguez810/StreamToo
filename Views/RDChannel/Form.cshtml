@@ -1,0 +1,92 @@
+@model Admin.Models.RDChannel
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i data-width="80%" class="dn" id="modalInfoChannel" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create Channel")"  data-editModalTitle="@("Edit Channel")" data-editing="@(Model.id==0?"False":"True")" ></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h3 class="panel-title">Channel</h3>
+    </div>
+    <div class="panel-body">
+<form action="@Url.Action("Save", "RDChannel")" id="RDChannel-form" class="smart-form ajaxForm" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")"  >
+<fieldset>
+@Html.HiddenFor(d => d.id)
+@Html.HiddenFor(d => d.active)
+@Html.HiddenFor(d => d.creationDate)
+<div class="row">
+@Html.BaseTextBox("name", Model.name,"Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Name")  }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip(""))
+@Html.BaseTextBox("displayName", Model.displayName,"Display Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Display Name")  }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip(""))
+@Html.BaseTextBox("description", Model.description,"Description", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Description")  }, "maxlength:200", "", true, new MyHtmlHelpers.BaseToolTip(""))
+</div>
+<div class="row">
+@Html.BaseTextBox("url", Model.url,"Url", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = ("Url")  }, "required", "", true, new MyHtmlHelpers.BaseToolTip(""))
+@Html.BaseSpiner("orderNum", Model.orderNum, "Order Num", 4, MyHtmlHelpers.spinnerDirection.both, "", "required;number", 0, 2147483647, 1, 1, "n")
+@Html.BaseCheckBox("isTemporal", Model.isTemporal, "", "Is Temporal", 4, "Yes", "No", "")
+</div>
+<div class="row">
+@Html.BaseFile("iconImage", "Icon Image", 4, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_file, "", "","", Model.iconImage, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())
+@Html.BaseFile("logoImage", "Logo Image", 4, Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_file, "", "","", Model.logoImage, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())
+@{var selectedcategory_category = new List<object>(); if(Model.category_category!=null) { selectedcategory_category.Add(Model.category_category); } } 
+@Html.BaseDropDownList("category_category", "RDCategory", "id", "name", "", 4, "Category", "Select Category", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedcategory_category, false, "Refresh RDCategory", "", "", "", null) 
+</div>
+<div class="row">
+@{var selectedtype_type = new List<object>(); if(Model.type_type!=null) { selectedtype_type.Add(Model.type_type); } } 
+@Html.BaseDropDownList("type_type", "RDType", "id", "name", "", 4, "Type", "Select Type", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedtype_type, false, "Refresh RDType", "", "", "", null) 
+</div>
+</fieldset>
+<footer>
+@if (!string.IsNullOrEmpty(ViewBag.from))
+                {
+                    string[] relations = ViewBag.from.Split(':');
+                    <a class="btn btn-danger formClose" title="@("Close")" href="#RD@(relations[0].Split('_')[0])/Form/@(relations[1])"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+else if (ViewBag.relations.Count > 0 && Model.id != 0)
+                {
+                    <a class="btn btn-danger formClose fromBack" title="@("Close")" href="#RDChannel/Index"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+<button class="btn btn-success" data-success="$('#baseDynamicModalObject').modal('hide');csRDChannel@(ViewBag.from.Split(':')[0]).data('CStable').update();" title="@("Save")" ><i class="glyphicon glyphicon-floppy-disk"></i></button>
+</footer>
+</form>
+    </div>
+</div>
+@if (ViewBag.relations.Count > 0 && Model.id != 0)
+{
+    bool first = true;
+    <div class="panel panel-primary">
+        <ul class="nav nav-tabs">
+            @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                <li class="@(first ? "active" : "")"><a href="#@(item.K_Table + "_" + item.FK_Column)" data-toggle="tab" aria-expanded="@(first ? "true" : "false")">@Helper.Capitalize(item.K_Table,2)'s @Helper.Capitalize(item.FK_Column.Split('_')[1])</a></li>
+                first = false;
+            }
+        </ul>
+        <div class="panel-body">
+            <div id="myTabContent" class="tab-content">
+                @{
+                    first = true;
+                }
+                @foreach (var item in (List<VWISRElation>)ViewBag.relations)
+                {
+                    <div class="tab-pane fade @(first ? "active in" : "")" id="@(item.K_Table + "_" + item.FK_Column)">
+                        Loading...
+                    </div>
+                    <script>
+                        loadContent("@Url.Action("index", item.K_Table, new { from = item.FK_Column+ ":"+Model.id })", "#@(item.K_Table + "_" + item.FK_Column)");
+                    </script>
+first = false;
+                }
+            </div>
+        </div>
+    </div>
+                    }
+<script>
+function next() {
+        location.href = "#RDChannel/Form/" + BaseLastID;
+}
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("RDChannel-form");
+var from = "@ViewBag.from";
+        HideRelation("RDChannel-form", from);
+    });
+</script>

@@ -1,0 +1,30 @@
+﻿@using System.Data;
+@model DataTable
+@{
+    int count = 0;
+}
+<table class="table table-striped table-hover tabla_style">
+    <thead>
+        <tr>
+            @foreach (DataColumn item in Model.Columns)
+            {
+                <th>@item.ColumnName</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow item in Model.Rows)
+        {
+            <tr>
+                @foreach (DataColumn column in Model.Columns)
+                {
+                    <td>@item[column].ToString()</td>
+                }
+            </tr>
+                count++;
+        }
+    </tbody>
+    <tfoot>
+        @count registros
+    </tfoot>
+</table>

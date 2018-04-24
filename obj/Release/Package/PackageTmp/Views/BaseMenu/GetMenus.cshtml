@@ -1,0 +1,111 @@
+@*@model PermissionsEditPartial
+@using Admin.Models;
+@using Admin.Models.ViewModels;
+
+@{
+    double maxRecords = Model.controllers.Count;
+    double firstDiv = Math.Round((maxRecords / 3.0));
+    int i = (int)firstDiv;
+}
+<h3 >@Html.Label("Menu a Edit") </h3>
+<li>
+    <div class="col-lg-4 pl0">
+        
+        <div class="accordion">
+            @foreach (Admin.Models.Controller c in Model.controllers.Take(i))
+            {
+                if (string.IsNullOrEmpty(c.displayName))
+                {
+                <h3 id="@c.ID" class="aHeader">@c.name</h3>
+                }
+                else
+                {
+                <h3 id="@c.ID" class="aHeader">@c.displayName</h3>                
+                }
+                <div class="action.div">  
+                    @foreach (var action in c.Actions)
+                    {                     
+                        <label class="permissions fl">
+                            @if (string.IsNullOrEmpty(c.displayName))
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.name
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.displayName    
+                            }
+                        </label>
+                    }
+                </div>
+        
+            }
+
+        </div>
+    </div>
+
+    <div class="col-lg-4 pl0">
+        <div class="accordion">
+            @foreach (Admin.Models.Controller c in Model.controllers.Skip(i).Take(i))
+            {
+                if (string.IsNullOrEmpty(c.displayName))
+                {
+                <h3 id="@c.ID" class="aHeader">@c.name</h3>
+                }
+                else
+                {
+                <h3 id="@c.ID" class="aHeader">@c.displayName</h3>
+                }
+                <div class="action.div">
+                    @foreach (var action in c.Actions)
+                    {
+                        <label class="permissions fl">
+                            @if (string.IsNullOrEmpty(c.displayName))
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.name
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.displayName    
+                            }
+                        </label>
+                    }
+                </div>
+        
+            }
+
+        </div>
+    </div>
+
+    <div class="col-lg-4 pl0">
+        <div class="accordion">
+            @foreach (Admin.Models.Controller c in Model.controllers.Skip(i * 2))
+            {
+                if (string.IsNullOrEmpty(c.displayName))
+                {
+                <h3 id="@c.ID" class="aHeader">@c.name</h3>
+                }
+                else
+                {
+                <h3 id="@c.ID" class="aHeader">@c.displayName</h3>
+                }
+                <div class="action.div">
+                    @foreach (var action in c.Actions)
+                    {
+                        <label class="permissions fl">
+                            @if (string.IsNullOrEmpty(c.displayName))
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.name
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="actions" id="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.displayName    
+                            }
+                        </label>
+                    }
+                </div>
+        
+            }
+
+        </div>
+    </div>
+</li>*@

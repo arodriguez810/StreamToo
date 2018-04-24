@@ -1,0 +1,45 @@
+﻿
+<!-- collapse menu button -->
+<div id="hide-menu" class="btn-header pull-right">
+    <span><a class="btn btn-@(ViewBag.config.secundaryColor) beatit" href="javascript:void(0);" title="Collapse Menu"> <i class="fa fa-reorder"></i></a></span>
+</div>
+<!-- end collapse menu -->
+
+<!-- logout button -->
+<form action="@Url.Action("LogOff", "Account")" method="post" id="logoutForm">
+    @Html.AntiForgeryToken()
+    <div id="logout" class="btn-header transparent pull-right">
+        <span><a class="btn btn-@(ViewBag.config.secundaryColor) beatit" href="javascript:document.getElementById('logoutForm').submit()" title="@("Sign Out")" data-logout-msg=""><i class="fa fa-sign-out"></i></a></span>
+    </div>
+</form>
+
+<!-- end logout button -->
+
+<!-- search mobile button (this is hidden till mobile view port) -->
+<div id="search-mobile" class="btn-header transparent pull-right">
+    <span><a class="btn btn-@(ViewBag.config.secundaryColor)" href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a></span>
+</div>
+<!-- end search mobile button -->
+
+@*<!-- input: search field -->
+<form action="#ajax/search.html" class="header-search pull-right">
+    <input type="text" name="param" placeholder="Find reports and more" id="search-fld">
+    <button type="submit">
+        <i class="fa fa-search"></i>
+    </button>
+    <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+</form>
+<!-- end input: search field -->*@
+
+<!-- fullscreen button -->
+<div id="fullscreen" class="btn-header transparent pull-right">
+    <span><a class="btn btn-@(ViewBag.config.secundaryColor) beatit" href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Full Screen"><i class="fa fa-fullscreen"></i></a></span>
+</div>
+<!-- end fullscreen button -->
+
+<div class="btn-header pull-right">
+    <span><a id="btn-custom-support" class="btn  btn-success beatit" href="http://eisdr.com/" target="_blank" title="Support"> 
+        <i class="" style="float: left; width: 100%; height: 100%;"><img class="img-support" src="~/img/support.png"/></i>
+        </a>
+    </span>
+</div>

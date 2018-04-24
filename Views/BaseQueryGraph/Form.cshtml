@@ -1,0 +1,57 @@
+﻿@model Admin.Models.BaseQueryGraph
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Query for Graphs")" data-editmodaltitle="@("Edit Query for Graphs")" data-editing="@(Model.id == 0 ? "False" : "True")" data-onclose="csQueryGraph.data('CStable').update();"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Queries</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseQueryGraph")" id="QueryGraph-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(model => model.id)
+                <div class="row">
+                    @Html.BaseTextBox("name", Model.name, "Name", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Name") }, "required;maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("querys", Model.query, "Write Query", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Write Query"), cols = "60", rows = "20" }, "required;remote:" + Url.Action("ValidateQuery", "BaseGeneral") + "=post>Nada?querys", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    var mime = 'text/x-mariadb';
+    if (window.location.href.indexOf('mime=') > -1) {
+        mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
+    }
+
+    $(document).ready(function () {
+        validateForm("QueryGraph-form");
+
+        editor = CodeMirror.fromTextArea(document.getElementById('querys'), {
+            mode: mime,
+            indentWithTabs: true,
+            smartIndent: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autofocus: true,
+            extraKeys: { "Ctrl-Space": "autocomplete" },
+            hintOptions: {
+                tables: {
+                    users: { name: null, score: null, birthDate: null },
+                    countries: { name: null, population: null, size: null }
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,79 @@
+﻿@model Admin.Models.SMEmployee
+@using Admin.BaseClass.UI
+@using Admin.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutPlane.cshtml";
+    ViewBag.Title = "Select Enviroment";
+}
+<style>
+    #panel {
+        width: 50% !important;
+        text-align: left;
+        margin-right: 15% !important;
+    }
+
+    .smart-form fieldset {
+        display: block;
+        padding: 36px 14px 34px;
+        border: 0;
+        position: relative;
+    }
+
+    #main {
+        margin-left: 0 !important;
+    }
+</style>
+<div class="panel panel-primary select-employee">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"></button>
+        <h3 class="panel-title">Please select your enviroment parameters. </h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "Account")" id="User-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.") ">
+            <fieldset>
+                <div class="row">
+                    @{
+                        string myOffices = Model.SMOffices.Count == 0 ? "" : $" where id in ({string.Join(",", Model.SMOffices.Select(d => d.id))}) ";
+                        List<object> selected = new List<object>();
+                        selected.Add(Model.office_office);
+                    }
+                    @Html.BaseDropDownList("office", "SMOfficeLocation", "id", "name", myOffices, 12, "Office", "", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selected, false, "Refresh Employee Types", "", "", "", null)
+                </div>
+
+                <div id="queueTypes" class="row">
+
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#office').change(function () {
+                            $("sub").attr('disabled', 'disabled');
+                            var url = "@Url.Action("Types", "Account")";
+                            loadContent(url + "/" + $('#office').val(), "#queueTypes", function () {
+                                $("#employeeType").select2('destroy');
+                                $("#employeeType").select2({
+                                    allowClear: true,
+                                    width: '100%'
+                                });
+                                $("sub").removeAttr('disabled');
+                            });
+                        });
+                        $('#office').trigger('change');
+                    });
+                </script>
+            </fieldset>
+            <footer>
+                <button id="sub" type="submit" class="btn btn-primary"> Continue</button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp();
+    $("#ribbon").hide();
+    //$("#header").hide();
+    //$("img").hide();
+    $logo = $('#logo');
+    $img = $logo.find("img");
+    $img.attr('src', $img.attr('src').replace('/SM//', '/'));
+    clearInterval($.notyInterval);
+</script>

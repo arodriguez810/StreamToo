@@ -1,0 +1,218 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+
+<style>
+    #CaptchaInputText {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+</style>
+<ul class="nav navbar-nav navbar-right">
+    @if (!WebSecurity.IsAuthenticated)
+    {
+        <li class="dropdown login">
+            <a href="#" data-toggle="dropdown" class="text-white"><span class="glyphicon glyphicon-log-in "></span> Log in</a>
+            <div class="dropdown-menu">
+                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <form action="@Url.Action("OnLogin","BaseService")" method="post" class="ajaxForm" data-jsonback="loginresponse">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" class="form-control" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" required aria-required="">
+                        </div>
+                        <div class="form-group">
+                            <aside class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pl">
+                                <a class="link-password" onclick="forgotPassword();" target="_self">Forgot my password</a>
+                            </aside>
+                            <aside class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pr buttons">
+                                <button type="submit" class="btn btn-success btn-md pull-right">Log In</button>
+                                <button type="button" class="btn btn-default btn-md pull-right">Cancel</button>
+                            </aside>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    }
+    @if (WebSecurity.IsAuthenticated)
+    {
+        <li class="dropdown login">
+            <a href="#" onclick="$('#logout').click();" data-toggle="dropdown" class="text-white"><span class="glyphicon glyphicon-log-out "></span> Log out</a>
+            <form action="@Url.Action("OnLogaout", "BaseService")" method="post" id="logoutForm" style="display:none" class="ajaxForm" data-jsonback="logoutresponse">
+                @Html.AntiForgeryToken()
+                <button id="logout" class="btn btn-@(ViewBag.config.secundaryColor) beatit" title="@("Sign Out")" data-logout-msg="">
+                    Logout
+                </button>
+            </form>
+        </li>
+    }
+    else
+    {
+
+        <li class="dropdown signin">
+            <a href="#" data-toggle="dropdown" class="text-white"><span class="glyphicon glyphicon-user"></span> Sign in</a>
+            <div class="dropdown-menu">
+                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <form action="@Url.Action("OnRegister", "BaseService")" method="post" class="ajaxForm" data-jsonback="responseRegister">
+                        <div class="form-group">
+                            <label for="fullName">Username:<b style="color:red">*</b></label>
+                            <input type="text" name="username" id="username" class="form-control" required aria-required="true" data-validation="required;max:15">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Full Name:<b style="color:red">*</b></label>
+                            <input type="text" name="fullName" id="fullName" class="form-control" required aria-required="true" data-validation="required;max:100">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:<b style="color:red">*</b></label>
+                            <input type="email" name="email" id="email" class="form-control" required aria-required="true" data-validation="required;email">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Phone:<b style="color:red">*</b></label>
+                            <input type="text" name="phone" id="phone" class="form-control" required aria-required="true" data-validation="required;max:100">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:<b style="color:red">*</b></label>
+                            <input type="password" name="password" id="password" class="form-control" required aria-required="true" data-validation="required">
+                        </div>
+                        <div>
+                            @Html.Captcha("Refresh", "Input this", 4)
+                            <b style="color:red">Required fields: *</b>
+                        </div>
+                        <div class="form-group">
+                            <aside class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pr buttons">
+                                <button type="submit" class="btn btn-success btn-md pull-right">Sign In</button>
+                                <button type="button" class="btn btn-default btn-md pull-right">Cancel</button>
+                            </aside>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    }
+    @if (WebSecurity.IsAuthenticated)
+    {
+        Admin.Models.BaseAccount account = new Admin.Models.Context().BaseAccounts.FirstOrDefault(d => d.email == WebSecurity.CurrentUserName);
+        <li class="dropdown signin">
+            <a href="#" id="profile" onclick="$('#profileForm')[0].reset();" data-toggle="dropdown" class="text-white">Welcome, @account.fullName</a>
+            <div class="dropdown-menu">
+                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <form action="@Url.Action("OnProfile", "BaseService")" method="post" class="ajaxForm" id="profileForm" data-jsonback="responseProfile">
+                        @Html.Hidden("id", account.id)
+                        <div class="form-group">
+                            <label for="fullName">Username:<b style="color:red">*</b></label>
+                            <input type="text" name="username" id="username" class="form-control" value="@account.username" required aria-required="true" data-validation="required;max:15">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Full Name:<b style="color:red">*</b></label>
+                            <input type="text" name="fullName" id="fullName" class="form-control" value="@account.fullName" required aria-required="true" data-validation="required;max:100">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:<b style="color:red">*</b></label>
+                            <input type="email" name="email" id="email" class="form-control" value="@account.email" required aria-required="true" data-validation="required;email">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Phone:<b style="color:red">*</b></label>
+                            <input type="text" name="phone" id="phone" class="form-control" value="@account.phone" required aria-required="true" data-validation="required;max:100">
+                        </div>
+                        <div>
+                            <b style="color:red">Required fields: *</b>
+                        </div>
+                        <div class="form-group">
+                            <aside class="col-md-12 col-sm-12 col-lg-12 col-xs-12 pr buttons">
+                                <button type="submit" class="btn btn-success btn-md pull-right">Save</button>
+                                <button type="button" onclick="$('#profile').click(); $('#profileForm')[0].reset();" class="btn btn-default btn-md pull-right">Cancel</button>
+                            </aside>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    }
+    else
+    {
+        <li>
+            <label class="users text-white">Welcome, GUEST</label>
+        </li>
+    }
+</ul>
+<script>
+    function responseRegister(data) {
+        data = eval("(" + data + ")");
+
+        swal({
+            title: data.status,
+            text: data.message,
+            type: data.status,
+            showCancelButton: false,
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            location.reload();
+        });
+    }
+
+    function responseProfile(data) {
+        data = eval("(" + data + ")");
+
+        swal({
+            title: data.status,
+            text: data.message,
+            type: data.status,
+            showCancelButton: false,
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            eval(data.process);
+        });
+    }
+    function logoutresponse(data) {
+        data = eval("(" + data + ")");
+        if (data.status == 'error') {
+            swal({
+                title: data.status,
+                text: data.message,
+                type: data.status,
+                showCancelButton: false,
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+            });
+        } else {
+            location.href = "@Url.Action("Index","Send")";
+        }
+    }
+    function loginresponse(data) {
+        data = eval("(" + data + ")");
+        if (data.status == 'error') {
+            swal({
+                title: data.status,
+                text: data.message,
+                type: data.status,
+                showCancelButton: false,
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+
+            });
+        } else {
+            location.href = "@Url.Action("Index","Send")";
+        }
+
+    }
+    function forgotPassword() {
+        location.href = "@Url.Action("Forgot", "Account")";
+        return false;
+    }
+</script>

@@ -1,0 +1,47 @@
+﻿@model Admin.Models.BaseGraph
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+<div style='text-align:center'>
+    <button class="btn btn-@(ViewBag.config.secundaryColor) baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>" data-action="@Url.Action("Form", "BaseGraphs")" title="@("Add New")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_plus"></i></button>
+    <button class="btn btn-@(ViewBag.config.secundaryColor) refreshTable" onclick="refreshMe();" data-action="@Url.Action("Form", "BaseGraphs")" title="@("Refresh Table")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_refresh"></i></button>
+    <button class="btn btn-@(ViewBag.config.secundaryColor)" id="configAdmColumns" title="@("Columns")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_list"></i></button>
+</div>
+
+<div class="panel" style="border:none">
+    <div class="panel-body">
+        <div id="csBaseGraphsDiv" data-url="@Url.Action("data", "BaseGraphs")" class=""></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    pageSetUp();
+
+    function refreshMe() {
+        csBaseGraphs.data('CStable').update();
+    }
+
+    selectedFilters = undefined;
+    filterQuery = "";
+    filterQueryURL = "";
+    generalFilterSearch = "";
+    generalFilterlimit = 20;
+    function LoadTableBaseGraphs() {
+        csBaseGraphs = $('#csBaseGraphsDiv');
+        csBaseGraphs.CStable({
+            ajaxUrl: csBaseGraphs.data('url'),
+            pagerFirstLabel: '@("First")',
+            pagerLastLabel: '@("Last")',
+            ajaxData: {
+                limit: generalFilterlimit,
+                offset: 0,
+                cstable_search: generalFilterSearch
+            },
+            current: 1,
+            pagerCount: 10,
+            hasSearch: false,
+            hasShow: false,
+        });
+    }
+    LoadTableBaseGraphs();
+</script>

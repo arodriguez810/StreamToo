@@ -1,0 +1,56 @@
+﻿@model Admin.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+    ViewBag.Title = "Iniciar sesion";
+}
+
+<div class="well wellin no-padding">
+    @{
+        string email = "";
+        if (!string.IsNullOrEmpty(Request["email"]))
+        {
+            email = Request["email"];
+        }
+    }
+    <div class="btn-primary"> </div>
+    @using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "smart-form client-form ajaxForm", id = "login-form", data_jsonback = "response" }))
+    {
+        @Html.Hidden("returnUrl", "")
+        <fieldset class="iwkta">
+            @if (!string.IsNullOrEmpty(Request["i"]))
+            {
+                <em class="invalid error error_validate">@("Instructions have been sent.")</em>
+            }
+            <section>
+                <label class="label">@("E-mail")</label>
+                <label class="input">
+                    <i class="icon-append fa fa-user"></i>
+                    @Html.TextBox("UserName", email, new { type = "email", data_validation = "required;email" })
+                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>@("Please enter email address/username")</b>
+                </label>
+            </section>
+            @{
+                string defaultUrl = Url.RouteUrl("Default", ((Route)RouteTable.Routes["Default"]).Defaults);
+            }
+            <footer>
+                <a class="wos" style="float: left;margin-top: 14px;" href="@defaultUrl">Back To Login?</a>
+                <button type="submit" class="btn btn-primary bruski">
+                    Send Confirmation
+                </button>
+            </footer>
+        </fieldset>
+                }
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        pageSetUp(true);
+    });
+    function response(data) {
+        data = eval("(" + data + ")");
+        swal(data.status, data.message, data.status);
+        $("#UserName")[0].reset();
+    }
+
+</script>

@@ -1,0 +1,271 @@
+﻿@model Admin.Controllers.BaseDeveloperController.HawFilters
+@using Admin.Controllers
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+<style>
+    .optionLIKE {
+        padding-right: 0px !important;
+    }
+
+    .optionLIKEText {
+        padding-left: 3px !important;
+    }
+</style>
+
+<i data-width="75%" class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modalTitle="@("Create Item")" data-editModalTitle="@("Edit Item")" data-editing="True"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h3 class="panel-title">Filters for @Helper.Capitalize(Model.tableName, 2) @(!string.IsNullOrEmpty(ViewBag.from) ? " with " + Helper.Capitalize(ViewBag.from.Split(':')[0].Split('_')[1]) : "")</h3>
+    </div>
+    <div class="panel-body">
+        <div id="filterForm" action="#" class="smart-form">
+            <footer style="padding-bottom:0px!important;">
+                <button class="btn btn-@(ViewBag.config.secundaryColor) formClose fromFilter" data-begin="getFilters(this);" title="@("Apply")"><i class="@Admin.BaseClass.UI.BaseUIIconText.glyphicon.glyphicon_glyphicon_ok"></i></button>
+                <button id="clear" class="clear btn btn-@(ViewBag.config.primaryColor)" title="@("Clear")"><i class="@Admin.BaseClass.UI.BaseUIIconText.glyphicon.glyphicon_glyphicon_remove"></i>Clear</button>
+            </footer>
+            <fieldset>
+                @{
+                    int count = 1;
+                }
+                @foreach (BaseDeveloperController.HAWColumns item in Model.columns)
+                {
+                    if ("(nvarchar),(varchar),(char),(nchar)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                    }
+                    else if ("(int)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                    }
+                    else if ("(datetime)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+
+                    }
+                    else if ("(money),(decimal),(numeric)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+
+                    }
+                    else if ("(bit)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    if (count != 1)
+                    {
+                        @Html.Raw(count % 2 != 0 ? "</div>" : "")
+                    }
+                    count++;
+                    @Html.Raw(count % 2 == 0 ? "<div class='row'>" : "")
+                    if (!string.IsNullOrEmpty(item.RELATION))
+                    {
+                        if (item.RELATION_TYPE != "dynamic")
+                        {
+                            @Html.BaseDropDownList("filter_" + item.FK_COLUM, item.TABLE_TO, item.PK_COLUM, item.PK_COLUM_NAME, "", 6, Helper.Capitalize(item.FK_COLUM != item.LABEL ? item.LABEL : item.FK_COLUM.Split('_')[1], 0), "Select " + Helper.Capitalize(item.TABLE_TO, 2), "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), true, "Refresh", "", "", "", null, "/*dblist*/ col-xs-12", true)
+                        }
+                        else
+                        {
+                            @Html.BaseDropDownList("filter_" + item.COLUMN_NAME, item.RELATION, item.NUMERIC_PRECISION, item.NUMERIC_SCALE, "", 6, Helper.Capitalize(item.LABEL), "Select " + Helper.Capitalize(item.RELATION, 2), "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), true, "Refresh", "", "", "", null, "/*dblist*/ col-xs-12", true)
+                        }
+                        continue;
+                    }
+                    if ("(nvarchar),(varchar),(char),(nchar)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                        Dictionary<string, string> bools = new Dictionary<string, string>();
+                        bools.Add("contains ", "contains ");
+                        bools.Add("not contains ", "not contains ");
+                        bools.Add("equal to ", "equal to ");
+                        bools.Add("different to ", "different to ");
+                        bools.Add("starts with ", "starts with ");
+                        bools.Add("not starts with ", "not starts with ");
+                        bools.Add("ends with ", "ends with ");
+                        bools.Add("not ends with ", "not ends with ");
+                        bools.Add("only not set", "only not set");
+                        @Html.BaseDropDownList("LIKEoption_" + item.COLUMN_NAME, bools, 2, "Condition", "", "", "", new List<object>(), false, "", "", "/*optionLIKE dblist*/ col-xs-6")
+                        @Html.BaseTextBox("filter_" + item.COLUMN_NAME, "", Helper.Capitalize(item.LABEL), new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 4, new { placeholder = (Helper.Capitalize(item.COLUMN_NAME)) }, "", "", false, new MyHtmlHelpers.BaseToolTip(""), " /*optionLIKEText*/ col-xs-6")
+                    }
+                    if ("(int)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                        @Html.BaseSpiner("filter_" + item.COLUMN_NAME, 0, Helper.Capitalize(item.LABEL) + " From", 3, MyHtmlHelpers.spinnerDirection.both, "", "number", 0, 2147483647, 1, 1, "n", "col-xs-6")
+                        @Html.BaseSpiner("filter_sub_" + item.COLUMN_NAME, 0, Helper.Capitalize(item.LABEL) + " To", 3, MyHtmlHelpers.spinnerDirection.both, "", "number", 0, 2147483647, 1, 1, "n", "col-xs-6")
+                    }
+                    if ("(datetime)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                        @Html.BaseDateTimePick("filter_" + item.COLUMN_NAME, DateTime.Now.AddMinutes(-20), Helper.Capitalize(item.LABEL) + " From", 3, Helper.Capitalize(item.COLUMN_NAME), "date", "filter_sub_" + item.COLUMN_NAME, "", true, null, null, "", "col-xs-6")
+                        @Html.BaseDateTimePick("filter_sub_" + item.COLUMN_NAME, DateTime.Now, Helper.Capitalize(item.LABEL) + " To", 3, Helper.Capitalize(item.COLUMN_NAME), "date", "", "filter_" + item.COLUMN_NAME, true, null, null, "", "col-xs-6")
+                    }
+                    if ("(money),(decimal),(numeric)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                        @Html.BaseSpiner("filter_" + item.COLUMN_NAME, 0, Helper.Capitalize(item.LABEL) + " From", 3, MyHtmlHelpers.spinnerDirection.left, "", $"maxlength:{item.NUMERIC_PRECISION};scale:{item.NUMERIC_SCALE};number", 0, decimal.MaxValue, 0.10, 1, "C")
+                        @Html.BaseSpiner("filter_sub_" + item.COLUMN_NAME, 0, Helper.Capitalize(item.LABEL) + " To", 3, MyHtmlHelpers.spinnerDirection.left, "", $"maxlength:{item.NUMERIC_PRECISION};scale:{item.NUMERIC_SCALE};number", 0, decimal.MaxValue, 0.10, 1, "C")
+                    }
+                    if ("(bit)".Contains("(" + item.DATA_TYPE + ")"))
+                    {
+                        Dictionary<string, string> bools = new Dictionary<string, string>(); bools.Add("1", "Yes"); bools.Add("0", "No");
+                        @Html.BaseDropDownList("filter_" + item.COLUMN_NAME, bools, 6, Helper.Capitalize(item.LABEL), "", "", "", new List<object>(), true, "", "", "/*dblist*/")
+                    }
+                }
+                @Html.Raw(count % 2 != 0 ? "</div>" : "")
+            </fieldset>
+            <footer>
+                <button class="btn btn-@(ViewBag.config.secundaryColor) formClose fromFilter" data-begin="getFilters(this);" title="@("Apply")"><i class="@Admin.BaseClass.UI.BaseUIIconText.glyphicon.glyphicon_glyphicon_ok"></i></button>
+                <button id="clear" class="clear btn btn-@(ViewBag.config.primaryColor)" title="@("Clear")"><i class="@Admin.BaseClass.UI.BaseUIIconText.glyphicon.glyphicon_glyphicon_remove"></i>Clear</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+
+    $("input").keypress(function (e) {
+        if (e.which == 13) {
+            $(".fromFilter").click();
+            getFilters(this);
+        }
+    });
+
+
+    $(".clear").click(function () {
+        $("#filterForm").find("input").each(function (index, ele) {
+            var thisE = $(ele);
+            thisE.val('');
+        });
+        $("#filterForm").find("select").each(function (index, ele) {
+            var thisE = $(ele);
+            thisE.val('').trigger("change");
+        });
+    });
+
+    if (selectedFilters@(ViewBag.from.Split(':')[0]) != undefined) {
+        $("#filterForm").find("input").each(function (index, ele) {
+            var thisE = $(ele);
+            if (selectedFilters@(ViewBag.from.Split(':')[0])[thisE.attr('name')] != undefined) {
+                thisE.val(selectedFilters@(ViewBag.from.Split(':')[0])[thisE.attr('name')]);
+                thisE.trigger("change");
+            }
+        });
+        $("#filterForm").find("select").each(function (index, ele) {
+            var thisE = $(ele);
+            if (selectedFilters@(ViewBag.from.Split(':')[0])[thisE.attr('name')] != undefined) {
+                var selectedsChozze = selectedFilters@(ViewBag.from.Split(':')[0])[thisE.attr('name')];
+                if (selectedsChozze != null) {
+                    thisE.val(selectedsChozze).trigger("change");
+                }
+            }
+        });
+    } else {
+        $("#filterForm").find("input").each(function (index, ele) {
+            var thisE = $(ele);
+            thisE.val('');
+        });
+    }
+
+    function getFilters(element) {
+        $me = $(element);
+        $form = $me.parent().parent();
+        var data = new Array();
+        var query = new Array();
+        var selected = new Array();
+
+        $form.find("input").each(function (index, ele) {
+            var thisE = $(ele);
+            selected[thisE.attr('name')] = thisE.val();
+        });
+        $form.find("select").each(function (index, ele) {
+            var thisE = $(ele);
+            selected[thisE.attr('name')] = thisE.val();
+        });
+
+        $form.find("input").each(function (index, ele) {
+            var thisE = $(ele);
+            if (thisE.attr('name') != undefined)
+                if (thisE.attr('name').indexOf('_sub_') === -1)
+                    data[thisE.attr('name')] = thisE.val();
+        });
+        $form.find("select").each(function (index, ele) {
+            var thisE = $(ele);
+            if (thisE.attr('name').indexOf('LIKEoption_') === -1)
+                if (thisE.val() != '')
+                    data[thisE.attr('name')] = thisE.val();
+        });
+        for (var i in data) {
+            var q = i.replace('filter_', '');
+
+            var complex = "";
+            var altValue = $("#" + i.replace("_", "_sub_")).val();
+            if (data[i] != '' && altValue == undefined) {
+                if (data[i] != null) {
+                    var type = $("#" + i).prop("tagName");;
+                    if (type == "SELECT" || $("#" + i).hasClass("baseCheck")) {
+                        complex = "{0} in ('{1}')".format(q, data[i].join("','"))
+                        complex = complex.indexOf("'NULL'") !== -1 ? "{0} IS NUll".format(q) : complex;
+                    }
+                    else {
+                        var realcompare = $("#LIKEoption_" + q).val() + data[i];
+                        if (realcompare.toLowerCase().startsWith("equal to "))
+                            complex = "{0} = '{1}'".format(q, realcompare.substring("equal to ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("different to "))
+                            complex = "{0} != '{1}'".format(q, realcompare.substring("different to ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("contains "))
+                            complex = "{0} like '%{1}%'".format(q, realcompare.substring("contains ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("not contains "))
+                            complex = "{0} not like '%{1}%'".format(q, realcompare.substring("not contains ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("starts with "))
+                            complex = "{0} like '{1}%'".format(q, realcompare.substring("starts with ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("not starts with "))
+                            complex = "{0} not like '{1}%'".format(q, realcompare.substring("not starts with ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("ends with "))
+                            complex = "{0} like '%{1}'".format(q, realcompare.substring("ends with ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("not ends with "))
+                            complex = "{0} not like '%{1}'".format(q, realcompare.substring("not ends with ".length, realcompare.length));
+                        else if (realcompare.toLowerCase().startsWith("only not set"))
+                            complex = "{0} IS NULL".format(q);
+                        else
+                            complex = "{0} like '%{1}%'".format(q, data[i]);
+                    }
+                }
+            }
+            else if (data[i] == '' && altValue != undefined && altValue != '') {
+                complex = "{0} <= '{1}'".format(q, altValue);
+            } else
+                if (altValue != undefined && altValue != '') {
+                    complex = "{0} >= '{1}'".format(q, data[i]);
+                    complex = "({0} AND {1} <= '{2}')".format(complex, q, altValue);
+                } else {
+                    if (data[i] != '')
+                        complex = "{0} >= '{1}'".format(q, data[i]);
+                    else
+                        continue;
+                }
+            if (complex != '' && complex != null && complex != undefined) {
+                query.push(complex);
+            }
+
+        }
+
+        filterQuery@(ViewBag.from.Split(':')[0]) = "where " + query.join(' AND ');
+        selectedFilters@(ViewBag.from.Split(':')[0]) = selected;
+        var div = $('#cs@(Model.tableName)Div@(ViewBag.from.Split(':')[0])');
+        var url = div.data('url');
+        var queryString = url.split('?');
+        if (queryString.length <= 1)
+            div.data('url', url + "?filter=" + filterQuery@(ViewBag.from.Split(':')[0]));
+        else {
+            var plusQuery = new Array();
+            var segments = queryString[1].split('&');
+            for (var segment in segments) {
+                if (segments[segment].indexOf('filter') === -1) {
+                    plusQuery.push(segments[segment]);
+                }
+            }
+            var add = query.length > 0 ? "filter=" + encodeURI(filterQuery@(ViewBag.from.Split(':')[0])) + "&" : "";
+            filterQueryURL@(ViewBag.from.Split(':')[0]) = add;
+            div.data('url', queryString[0] + "?" + add + plusQuery.join('&'));
+        }
+        eval('LoadTable@(Model.tableName)@(ViewBag.from.Split(':')[0])();');
+        return false;
+    }
+</script>

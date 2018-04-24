@@ -1,0 +1,47 @@
+@model Admin.Models.BaseMessage
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfoMessage" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create Message")" data-editmodaltitle="@("Edit Message")" data-editing="@(Model.id==0?"False":"True")"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Message</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseMessage")" id="BaseMessage-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                @Html.HiddenFor(d => d.id)
+                <div class="row">
+                    @Html.BaseTextBox("code", Model.code, "Code", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Code") }, "required;maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip(""), "col-xs-6")
+                
+                    @{var selectedmessageCategory = new List<object>(); if (Model.messageCategory != null) { selectedmessageCategory.Add(Model.messageCategory); } }
+                    @Html.BaseDropDownList("messageCategory", "BaseMessageCategory", "id", "name", "", 6, "Message Category", "Select Message Category", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedmessageCategory, false, "Refresh BaseMessageCategory", "", "required", "", null, "col-xs-6")
+                </div>
+                <div class="row">
+                    
+                
+                    @Html.BaseTextBox("message", Model.message, "Message", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 12, new { placeholder = ("Message") }, "required;maxlength:500", "", true, new MyHtmlHelpers.BaseToolTip(""), "col-xs-12")
+                </div>
+            </fieldset>
+            <footer>
+                @if (Model.id != 0)
+                {
+                    <a class="btn btn-danger formClose" title="@("Close")" href="#BaseMessage/Index"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                }
+                <button class="btn btn-success" data-success="$('#baseDynamicModalObject').modal('hide');csBaseMessage.data('CStable').update();" title="@("Save")"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    function next() {
+        location.href = "#BaseMessage/Form/" + BaseLastID;
+    }
+    pageSetUp(true);
+    $(document).ready(function () {
+        validateForm("BaseMessage-form");
+    });
+</script>

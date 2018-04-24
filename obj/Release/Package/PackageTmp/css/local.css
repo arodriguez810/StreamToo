@@ -1,0 +1,618 @@
+input {
+    color: #000;
+}
+
+.tile_seccion {
+    font-size: 24px;
+    color: #7b1fa2;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.pl {
+    padding-left: 0 !important;
+}
+
+.pr {
+    padding-right: 0 !important;
+}
+
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+.wid {
+    width: 100% !important;
+    float: left !important;
+}
+
+.p_btn {
+    margin-bottom: 5px;
+}
+
+.descrip_wid {
+    height: 94px !important;
+}
+
+.btn_color {
+    background-image: linear-gradient(to bottom, #16bf0d 0%, #16bf0d 80%) !important;
+    border: 1px solid #0ca105 !important;
+    border-radius: 5px !important;
+}
+
+.btn_color_so {
+    background-image: linear-gradient(to bottom, #ff9400 0%, #ff9400 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    font-family: arial !important;
+}
+
+.btn_color_crear {
+    background-image: linear-gradient(to bottom, #7b1fa2 0%, #7b1fa2 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    font-family: arial !important;
+}
+
+.btn_color_fil {
+    background-image: linear-gradient(to bottom, #ff9400 0%, #ff9400 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+}
+
+.btn_color_so:active {
+    background-image: linear-gradient(to bottom, #ff9400 0%, #ff9400 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+}
+
+.btn_color:active {
+    background-image: linear-gradient(to bottom, #16bf0d 0%, #16bf0d 80%) !important;
+    border: 1px solid #0ca105 !important;
+    border-radius: 5px !important;
+}
+
+.btn_color_fil:active {
+    background-image: linear-gradient(to bottom, #ff9400 0%, #ff9400 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+}
+
+.form_after_ta {
+    width: 100%;
+    float: left;
+}
+
+.btn_color_bg {
+    background-image: linear-gradient(to bottom, #7b1fa2 0%, #7b1fa2 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+
+.btn_color_ver {
+    background-image: linear-gradient(to bottom, #7b1fa2 0%, #7b1fa2 80%) !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
+}
+
+.btn_ver_icon {
+    left: -16px;
+}
+
+.tabla_fill {
+    padding: 0 !important;
+}
+/******* Module Solución Casos ********/
+
+/*Table*/
+.marg_table {
+    margin-top: 20px;
+}
+
+.table_header {
+    background-color: #7b1fa2 !important;
+    border: 1px solid #9e9e9e !important;
+}
+
+.title_table {
+    font-family: arial;
+    color: #fff !important;
+    font-size: 20px !important;
+}
+
+.search_table {
+    margin-top: 29px;
+}
+
+.bg_liner_title {
+    background: url("../img/linear.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
+    float: left;
+    width: 100%;
+}
+
+.btn_title {
+    margin-top: 18px;
+}
+
+.btn_title2 {
+    margin-top: 10px;
+}
+
+.btn_title {
+    margin-right: 15px;
+}
+
+    .btn_title:first-child {
+        margin-right: 0;
+    }
+
+.zero_mar {
+    margin-bottom: 0 !important;
+}
+
+.text_th a {
+    color: #333;
+    font-family: Arial;
+}
+
+#table_history_cases #wid-id-0 .tabla_fill div.elementos_up select,
+#table_resumencase #wid-id-0 .tabla_fill div.elementos_up select,
+#DivC_historicoCasos .smart-form div.elementos_up select {
+    margin: 10px;
+}
+
+#table_resumencase #wid-id-0 .tabla_fill div.elementos_up label {
+    margin-left: 10px;
+}
+
+#table_history_cases #wid-id-0 .tabla_fill .widget-body,
+#table_resumencase #wid-id-0 .tabla_fill .widget-body,
+.p_zero .tabla_fill .widget-body {
+    padding-bottom: 0;
+}
+
+    #table_history_cases #wid-id-0 .tabla_fill .widget-body .borde_pagination ul,
+    #table_resumencase #wid-id-0 .tabla_fill .widget-body .borde_pagination ul,
+    #DivC_historicoCasos .borde_pagination .pagination {
+        margin: 0;
+    }
+
+    #table_resumencase #wid-id-0 .tabla_fill .widget-body #DivC_CasosAbiertos .input {
+        padding-left: 0;
+    }
+
+#DivC_CasosAbiertos .table-bordered {
+    width: 99.999%;
+}
+
+#csC_historicoDiv .table-striped,
+#csSitioTipobusquedasDiv .table-striped,
+#csSitioEmpresasDiv .table-striped,
+#csBaseMenuShortCutDiv .table-striped,
+#csMSCGroupDiv .table-striped,
+#csMSCCaseTypeDiv .table-striped,
+#csMSCReasonDiv .table-striped,
+#csMSCResolutionDiv .table-striped,
+#csVWUserDiv .table-striped,
+#csBaseProfileDiv .table-striped {
+    border: 0;
+}
+/*Crear Casos*/
+.space {
+    margin-bottom: 15px;
+    color: #585858;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    font-weight: normal;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #7b1fa2;
+    font-family: arial;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+._info {
+    padding-left: 0;
+}
+
+    ._info li {
+        list-style: none;
+    }
+
+.list_info {
+    color: #585858;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold !important;
+    float: left;
+    margin-right: 10px;
+}
+
+.label_m {
+    margin-left: 5px;
+}
+
+.w {
+    width: 48%;
+    float: left;
+}
+
+.wi {
+    width: 48%;
+}
+
+.wdft {
+    width: 95%;
+    padding-left: 10px;
+}
+
+.mar_table_search {
+    margin-top: 16px;
+}
+
+.btn_yellow {
+    margin-top: 10px;
+}
+
+.btn_god {
+    margin-top: 5px;
+}
+
+.mar_if {
+    margin-top: 16px;
+}
+
+.h {
+    height: 34px;
+    border: 1px solid #ccc;
+}
+
+.dis_none {
+    display: inline !important;
+}
+
+.lef_icont {
+    left: -17px !important;
+}
+
+.pegar_margin {
+    margin-left: -4px;
+    margin-top: -1px;
+}
+
+.icon-append {
+    border-left-style: solid;
+    border-left-width: 1px;
+    padding-left: 3px;
+    right: 5px;
+}
+/****Modal***/
+.header_modal {
+    background: #7b1fa2;
+}
+
+.title_modal {
+    font-size: 24px;
+    color: #fff;
+    font-family: arial;
+    font-weight: normal;
+}
+
+.buttom_modal {
+    color: #fff;
+    margin-top: 15px !important;
+    opacity: 1;
+}
+
+.text_modal {
+    color: #2b2b2b;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: normal;
+    float: left;
+}
+/***Trabajar casos***/
+.bg_cont_four {
+    background: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    padding: 12px;
+}
+
+.title_work_casos {
+    background: none repeat scroll 0 0 #7b1fa2;
+    border: 1px solid #f0f0f0;
+    color: #fff;
+    font-family: arial;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.box_one textarea {
+    height: 38px !important;
+}
+
+.box_one input {
+    /*height: 25px !important;*/
+    height: 30px !important;
+    padding: 5px !important;
+}
+
+.box_one select {
+    height: 25px !important;
+}
+
+.box_near_tablet {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #f0f0f0;
+    height: 257px;
+    padding: 12px;
+    overflow: auto;
+}
+
+.tama_near__ {
+    /*height: 240px;*/
+    height: auto;
+}
+
+.table_work thead tr th {
+    width: 25%;
+}
+
+.table_work tbody tr td:last-child {
+    text-align: center;
+}
+
+.box_linear {
+    background: url("../img/liner_blue.png") repeat-x scroll center center rgba(0, 0, 0, 0);
+}
+
+.box_linear_left {
+    background: url("../img/liner_blue_left.png") no-repeat scroll -1px 3px rgba(0, 0, 0, 0);
+    float: left;
+    height: 27px;
+    width: 50px;
+}
+
+.box_linear_right {
+    background: url("../img/liner_blue_right.png") no-repeat scroll 28px 3px rgba(0, 0, 0, 0);
+    float: right;
+    height: 27px;
+    width: 50px;
+}
+
+.text_arrow {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #7b1fa2;
+    border-radius: 10px;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: normal;
+    left: 30%;
+    margin-top: 3px;
+    text-align: center;
+}
+/******* Step ********/
+.demo #demo-setting {
+    display: none;
+}
+
+.step_up {
+    margin-top: -10px;
+}
+
+.button_numbre {
+    background: #fdc221 !important;
+    border-radius: 0 !important;
+    border: 2px solid #ebac02 !important;
+}
+
+.bootstrapWizard li:before {
+    border: 1px solid #5c5c5c !important;
+}
+
+.bootstrapWizard li.active .button_numbre, .bootstrapWizard li.active.complete .button_numbre {
+    background: #7b1fa2 !important;
+    border-radius: 50% !important;
+    border: 2px solid #0366a3 !important;
+}
+
+.button_numbre:hover {
+    background: #7b1fa2 !important;
+    border: 2px solid #0366a3 !important;
+}
+
+.button_numbre:visited {
+    background: #7b1fa2 !important;
+}
+/************** login ***************/
+#login .login_header {
+    background: #7b1fa2 !important;
+}
+
+.color_tiltle_login {
+    background: #7b1fa2 !important;
+    font-family: arial;
+    font-size: 18px !important;
+    color: #fff !important;
+}
+
+
+
+.btn-labeled {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+label {
+    font-weight: 400 !important;
+}
+
+.fieldsetSinFondo {
+    border: 0 none !important;
+    display: block !important;
+    position: relative !important;
+    padding: 0 0 0 0 !important;
+    background: none !important;
+}
+
+
+.palselect {
+    float: left;
+    width: 138px;
+}
+
+.spanToClick:hover {
+    cursor: pointer;
+}
+
+.hh label {
+    margin-left: 35px;
+    float: left;
+    width: 100%;
+}
+
+    .hh label:first-child {
+        margin-top: 5px;
+    }
+
+#info_client #fields #DynamicField-form .fieldsetSinFondo div .input section {
+    width: 100%;
+}
+
+#work_case .worker_c {
+    width: 100%;
+    float: left;
+}
+
+.wi_word_casos {
+    width: 100%;
+    float: left;
+}
+/**Menu***/
+.menu_style li a span {
+    font-weight: normal;
+}
+
+.menu_style .open ul .open ul li {
+    margin-left: 20px;
+}
+/***Trabajar casos***/
+.box_one section div div {
+    float: left !important;
+    width: 100% !important;
+}
+
+.box_one section div #s2id_StatusCaseType .select2-choice .select2-chosen,
+.box_one section div #s2id_ReasonID .select2-choice .select2-chosen {
+    margin-right: 0;
+    width: 158px;
+}
+
+.box_one section div #s2id_caseTypeID .select2-choice .select2-chosen {
+    margin-right: 0;
+    width: 150px;
+}
+/******toolkit******/
+#toolkit {
+    border: 1px solid #f0f0f0;
+    padding: 0;
+    border-radius: 0;
+}
+
+    #toolkit .popover-inner .popover-title {
+        background-color: #7b1fa2;
+        border: 0 none;
+        border-radius: 0;
+        color: #fff;
+        font-family: arial;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+table.pps td:nth-child(5), table.pps th:nth-child(5) {
+    display: none;
+}
+
+.admCols {
+    margin-left: 11px;
+}
+
+.ulnewStyle {
+    display: inline-table !important;
+    list-style: outside none none !important;
+}
+
+/***Meta Data***/
+#footer {
+    width: 100%;
+    background: none repeat scroll 0 0 #eeeeee;
+    border-top: 2px solid #ddd;
+    position: relative;
+    bottom: 0;
+    float: left;
+}
+
+#content_footer {
+    left: 0;
+    padding: 5px 14px;
+    position: relative;
+}
+
+    #content_footer a#logotipo_footer {
+        background: url("../img/logotipo_eis.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+        float: left;
+        line-height: 28px;
+        padding-left: 33px;
+        background-size: 30px;
+    }
+
+.black_margin {
+    margin-top: 5px;
+}
+
+.black_margin_p {
+    margin-bottom: 0;
+    padding-right: 30px;
+}
+
+.truncatetext {
+    width: 110px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.suerte {
+    background-color: #eeeeee;
+    bottom: 0;
+    float: left;
+    height: 36px;
+    padding-bottom: 3px;
+    position: fixed;
+    width: 100%;
+}
+
+.smart-form fieldset {
+    padding: 0px 14px 5px !important;
+}
+
+.cstable_show {
+    width: 40px !important;
+}

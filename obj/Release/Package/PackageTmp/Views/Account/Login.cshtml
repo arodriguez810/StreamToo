@@ -1,0 +1,52 @@
+﻿@model Admin.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+    ViewBag.Title = "Iniciar sesion";
+}
+
+
+<div class="well wellin no-padding">
+    @{
+        string email = "";
+        if (!string.IsNullOrEmpty(Request["email"]))
+        {
+            email = Request["email"];
+        }
+    }
+    <div class="btn-primary"> </div>
+    @using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "noAjax smart-form client-form", id = "login-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.Hidden("returnUrl", "")
+        <fieldset class="iwkta">
+            <section>
+                <label class="label">@("E-mail")</label>
+                <label class="input">
+                    <i class="icon-append fa fa-user"></i>
+                    @Html.TextBox("username", email, new { type = "email", data_validation = "required;email" })
+                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>@("Please enter email address/username")</b>
+                </label>
+            </section>
+            <section>
+                <label class="label">@("Password")</label>
+                <label class="input">
+                    <i class="icon-append fa fa-lock"></i>
+                    @Html.PasswordFor(m => m.password, new { type = "password", data_validation = "required;strongPassword", autocomplete = "off" })
+                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>@("Enter your password")</b>
+                </label>
+            </section>
+
+            @if (!string.IsNullOrEmpty(Request["i"]))
+            {
+                <em class="invalid error error_validate">@("The user name or password are invalid.")</em>
+            }
+            <footer>
+                <a class="wos" style="float: left;margin-top: 14px;" href="@Url.Action("Forgot")">Forgot password?</a>
+                <button type="submit" class="btn btn-primary bruski">
+                    Sign In
+                </button>
+            </footer>
+        </fieldset>
+    }
+</div>

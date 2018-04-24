@@ -1,0 +1,189 @@
+C:\wamp64\www\SM\bin\roslyn\csc.exe
+C:\wamp64\www\SM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\wamp64\www\SM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\SM\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\SM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\wamp64\www\SM\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\wamp64\www\SM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\wamp64\www\SM\bin\roslyn\System.Collections.Immutable.dll
+C:\wamp64\www\SM\bin\roslyn\System.Reflection.Metadata.dll
+C:\wamp64\www\SM\bin\roslyn\vbc.exe
+C:\wamp64\www\SM\bin\roslyn\VBCSCompiler.exe
+C:\wamp64\www\SM\bin\roslyn\VBCSCompiler.exe.config
+C:\wamp64\www\SM\bin\Admin.dll.config
+C:\wamp64\www\SM\bin\Admin.dll
+C:\wamp64\www\SM\bin\Admin.pdb
+C:\wamp64\www\SM\bin\Antlr3.Runtime.dll
+C:\wamp64\www\SM\bin\Calabonga.Mvc.PagedListExt.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.AspNet.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.Core.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OAuth.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OpenId.dll
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\wamp64\www\SM\bin\EntityFramework.dll
+C:\wamp64\www\SM\bin\EntityFramework.SqlServer.dll
+C:\wamp64\www\SM\bin\Ionic.Zip.dll
+C:\wamp64\www\SM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\wamp64\www\SM\bin\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\SM\bin\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\SM\bin\Microsoft.Web.Helpers.dll
+C:\wamp64\www\SM\bin\Microsoft.Web.Infrastructure.dll
+C:\wamp64\www\SM\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\wamp64\www\SM\bin\Newtonsoft.Json.dll
+C:\wamp64\www\SM\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\SM\bin\System.Net.Http.Extensions.dll
+C:\wamp64\www\SM\bin\System.Net.Http.Formatting.dll
+C:\wamp64\www\SM\bin\System.Net.Http.Primitives.dll
+C:\wamp64\www\SM\bin\System.Web.Helpers.dll
+C:\wamp64\www\SM\bin\System.Web.Http.dll
+C:\wamp64\www\SM\bin\System.Web.Http.Tracing.dll
+C:\wamp64\www\SM\bin\System.Web.Http.WebHost.dll
+C:\wamp64\www\SM\bin\System.Web.Mvc.dll
+C:\wamp64\www\SM\bin\System.Web.Optimization.dll
+C:\wamp64\www\SM\bin\System.Web.Razor.dll
+C:\wamp64\www\SM\bin\System.Web.WebPages.Deployment.dll
+C:\wamp64\www\SM\bin\System.Web.WebPages.dll
+C:\wamp64\www\SM\bin\System.Web.WebPages.Razor.dll
+C:\wamp64\www\SM\bin\Twilio.dll
+C:\wamp64\www\SM\bin\WebGrease.dll
+C:\wamp64\www\SM\bin\WebMatrix.Data.dll
+C:\wamp64\www\SM\bin\WebMatrix.WebData.dll
+C:\wamp64\www\SM\bin\DocumentFormat.OpenXml.dll
+C:\wamp64\www\SM\bin\Org.Mentalis.Security.Cryptography.dll
+C:\wamp64\www\SM\bin\Mono.Math.dll
+C:\wamp64\www\SM\bin\Antlr3.Runtime.pdb
+C:\wamp64\www\SM\bin\DotNetOpenAuth.AspNet.xml
+C:\wamp64\www\SM\bin\DotNetOpenAuth.Core.xml
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OAuth.xml
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OpenId.xml
+C:\wamp64\www\SM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\wamp64\www\SM\bin\EntityFramework.xml
+C:\wamp64\www\SM\bin\EntityFramework.SqlServer.xml
+C:\wamp64\www\SM\bin\Ionic.Zip.pdb
+C:\wamp64\www\SM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\wamp64\www\SM\bin\Microsoft.IdentityModel.Tokens.xml
+C:\wamp64\www\SM\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\wamp64\www\SM\bin\Newtonsoft.Json.xml
+C:\wamp64\www\SM\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\wamp64\www\SM\bin\System.Net.Http.Extensions.xml
+C:\wamp64\www\SM\bin\System.Net.Http.Formatting.xml
+C:\wamp64\www\SM\bin\System.Net.Http.Primitives.xml
+C:\wamp64\www\SM\bin\System.Web.Helpers.xml
+C:\wamp64\www\SM\bin\System.Web.Http.xml
+C:\wamp64\www\SM\bin\System.Web.Http.Tracing.xml
+C:\wamp64\www\SM\bin\System.Web.Http.WebHost.xml
+C:\wamp64\www\SM\bin\System.Web.Mvc.xml
+C:\wamp64\www\SM\bin\System.Web.Optimization.xml
+C:\wamp64\www\SM\bin\System.Web.Razor.xml
+C:\wamp64\www\SM\bin\System.Web.WebPages.xml
+C:\wamp64\www\SM\bin\System.Web.WebPages.Deployment.xml
+C:\wamp64\www\SM\bin\System.Web.WebPages.Razor.xml
+C:\wamp64\www\SM\bin\Microsoft.Web.Infrastructure.xml
+C:\wamp64\www\SM\bin\Twilio.xml
+C:\wamp64\www\SM\bin\WebMatrix.Data.xml
+C:\wamp64\www\SM\bin\WebMatrix.WebData.xml
+C:\wamp64\www\SM\bin\DocumentFormat.OpenXml.xml
+C:\wamp64\www\SM\bin\Org.Mentalis.Security.Cryptography.xml
+C:\wamp64\www\SM\bin\Mono.Math.xml
+C:\wamp64\www\SM\obj\Debug\SM.csproj.App.config
+C:\wamp64\www\SM\obj\Debug\SM.csprojResolveAssemblyReference.cache
+C:\wamp64\www\SM\obj\Debug\Admin.Properties.Resources.resources
+C:\wamp64\www\SM\obj\Debug\SM.csproj.GenerateResource.Cache
+C:\wamp64\www\SM\obj\Debug\Admin.dll
+C:\wamp64\www\SM\obj\Debug\Admin.pdb
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\csc.exe
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\vbc.exe
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\VBCSCompiler.exe
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Admin.dll.config
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Admin.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Admin.pdb
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Antlr3.Runtime.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Calabonga.Mvc.PagedListExt.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.Core.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\EntityFramework.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\EntityFramework.SqlServer.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Ionic.Zip.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.Web.Helpers.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Newtonsoft.Json.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Extensions.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Formatting.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Primitives.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Helpers.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.Tracing.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.WebHost.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Mvc.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Optimization.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Razor.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.Razor.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Twilio.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\WebGrease.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\WebMatrix.Data.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\WebMatrix.WebData.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DocumentFormat.OpenXml.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Mono.Math.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Antlr3.Runtime.pdb
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.Core.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\EntityFramework.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\EntityFramework.SqlServer.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Ionic.Zip.pdb
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Newtonsoft.Json.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Extensions.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Formatting.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Net.Http.Primitives.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Helpers.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.Tracing.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Http.WebHost.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Mvc.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Optimization.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.Razor.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\System.Web.WebPages.Razor.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Twilio.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\WebMatrix.Data.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\WebMatrix.WebData.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\DocumentFormat.OpenXml.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\bin\Mono.Math.xml
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\SM.csproj.App.config
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\SM.csprojResolveAssemblyReference.cache
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\SM.csproj.GenerateResource.Cache
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\Admin.dll
+C:\Users\Wailan Brea\Documents\EIS\Spark\obj\Debug\Admin.pdb

@@ -1,0 +1,114 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.BaseClass.UI
+@using Admin.Models;
+
+@{
+    Widget widget = new Widget("Acciones_list", "Actions List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widget.Data_widget_deletebutton = true;
+    widget.Data_widget_togglebutton = true;
+    widget.Data_widget_colorbutton = true;
+    widget.Data_widget_fullscreenbutton = true;
+    widget.Data_widget_sortable = true;
+    widget.Data_widget_editbutton = true;
+
+    Widget widgetMenu = new Widget("Menu_list", "Menu List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widgetMenu.Data_widget_deletebutton = true;
+    widgetMenu.Data_widget_togglebutton = true;
+    widgetMenu.Data_widget_colorbutton = true;
+    widgetMenu.Data_widget_fullscreenbutton = true;
+    widgetMenu.Data_widget_sortable = true;
+    widgetMenu.Data_widget_editbutton = true;
+
+    Widget widgetW = new Widget("Widgets", "Widgets List", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widgetW.Data_widget_deletebutton = true;
+    widgetW.Data_widget_togglebutton = true;
+    widgetW.Data_widget_colorbutton = true;
+    widgetW.Data_widget_fullscreenbutton = true;
+    widgetW.Data_widget_sortable = true;
+    widgetW.Data_widget_editbutton = true;
+}
+
+<label>Perfil:@Model.name </label>
+
+<form id="save-form" action="@Url.Action("SaveData", "BasePermissions")" class="" method="post">
+
+    @Html.HiddenFor(model => model.id)
+    <section id="widget-grid">
+        <div class="row">
+            @Html.Raw(widgetMenu.beginHeader())
+            @Html.Raw(widgetMenu.beginCustomButton())
+            <!--Aqui Botones-->
+            @Html.Raw(widgetMenu.Dcontinue())
+            @Html.Raw(widgetMenu.endHeader())
+            <!--Aqui Contenido-->
+            <div id="getMenus">Loading Content...</div>
+            @Html.Raw(widgetMenu.Dcontinue())
+            @Html.Raw(widgetMenu.end())
+        </div>
+
+        <div class="row">
+            @Html.Raw(widget.beginHeader())
+            @Html.Raw(widget.beginCustomButton())
+            <!--Aqui Botones-->
+            @Html.Raw(widget.Dcontinue())
+            @Html.Raw(widget.endHeader())
+            <!--Aqui Contenido-->
+            <div id="getActions">Loading Content...</div>
+            @Html.Raw(widget.Dcontinue())
+            @Html.Raw(widget.end())
+        </div>
+    </section>
+
+
+    @*<section id="widget-gridWidget" class="">
+            <div class="row">
+                @Html.Raw(widgetW.beginHeader())
+                @Html.Raw(widgetW.beginCustomButton())
+                <!--Aqui Botones-->
+                @Html.Raw(widgetW.Dcontinue())
+                @Html.Raw(widgetW.endHeader())
+                <!--Aqui Contenido-->
+                <div id="getWidgets"></div>
+                @Html.Raw(widgetW.Dcontinue())
+                @Html.Raw(widgetW.end())
+            </div>
+        </section>*@
+
+    <p>
+        <button id="clickem" class="btn btn-success">@("Save Settings")</button>
+    </p>
+</form>
+<script>
+    pageSetUp();
+    $(document).ready(function () {
+        var id = "@Html.Raw(Model.id)";
+        $.ajax({
+            url: "@Url.Action("ListaMenus", "BasePermissions")",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getMenus').html(data);
+                nav_page_height();
+            }
+        });
+
+        @*$.ajax({
+            url: "@Url.Action("ListaWidgets", "BasePermissions")",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getWidgets').html(data);
+            }
+        });*@
+
+        $.ajax({
+            url: "@Url.Action("ListaAcciones", "BasePermissions")",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getActions').html(data);
+                nav_page_height();
+            }
+        });
+    });
+
+
+
+</script>

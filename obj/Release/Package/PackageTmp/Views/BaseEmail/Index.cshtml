@@ -1,0 +1,188 @@
+@model Admin.Models.BaseEmail
+@using Admin.BaseClass.UI
+@using Admin.Models;
+     @{bool allowExport = false; bool saveConfig = false; string cookieName = "" ; int id = 0; bool enableControl = true;}
+         @foreach (var item in (List<BaseDynamicList>) ViewBag.dynamicList)
+         {
+             if (item.name == ViewBag.tableName)
+             {
+                 allowExport = item.allowExport;
+                 cookieName = item.cookieKey;
+                 id = item.id;
+                 saveConfig = item.allowSaveConfig;
+                 enableControl = item.enableControl;
+                 break;
+             }
+         }
+<div>
+    <div class="col-md-6 pl0 ">
+        <h2 class="tile_seccion">Email List</h2>
+    </div>
+    <div class="col-md-6 pr0" style='text-align:right'>
+<input id="refi" type="hidden" value="seEmail"/>
+<button class="btn-no-styles baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>"  data-action="@Url.Action("Form", "BaseEmail", new { from = ViewBag.from })" title="@("Add New")"><i class="fa fa-plus-circle"></i></button>
+<button class="btn-no-styles refreshTable" onclick="refreshMeBaseEmail@(ViewBag.from.Split(':')[0])();" data-action="@Url.Action("Form", "BaseEmail")" title="@("Refresh Table")"><i class="fa fa-refresh"></i></button>
+<button id="btnFilter@(ViewBag.from.Split(':')[0])" class="btn-no-styles baseDynamicModal" data-loading-text="<i class='fa fa-refresh fa-spin'></i>" data-action="@Url.Action("Filters", "BaseDeveloper", new { tableName="BaseEmail", from=ViewBag.from   })" title="@("Filter")" ><i class="fa fa-filter" ></i></button>
+<button class="btn-no-styles" id="configAdmColumns" title="@("Columns")" ><i class="fa fa-list" ></i></button>
+@if (allowExport)
+{
+      <button class="btn btn-@(ViewBag.config.secundaryColor)" onclick="exportCSVBaseEmail();" title="@("Export Excel")"><i class="@BaseUIIconText.glyphicon.glyphicon_glyphicon_export"></i></button>
+}
+</div>
+    <div id="SearchForm" action="#" class="smart-form" style="width: 100%;">
+        <fieldset style="padding: 0 0 0 0 !important;">
+            <div class="row">
+                @Html.BaseTextBox("table_generalSearch" + (string)(ViewBag.from.Split(':')[0]), "", "General Search", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_search, Position = BaseTextBoxIconPosition.icon_prepend } }, 10, new { placeholder = (Helper.Capitalize("Search texts")) }, "", "", false, new MyHtmlHelpers.BaseToolTip("This value looks for the match between all fields"))
+                @Html.BaseSpiner("table_generalLimit" + (string)(ViewBag.from.Split(':')[0]), 20, "Limit Per Page", 2, MyHtmlHelpers.spinnerDirection.both, "", "number", 1, 2147483647, 1, 1, "n")
+            </div>
+        </fieldset>
+    </div>
+</div><div class="panel" style="border:none">
+    <div class="panel-body">
+        <div id="csBaseEmailDiv@(ViewBag.from.Split(':')[0])" data-url="@Url.Action("data", "BaseEmail", new { from = ViewBag.from })" class=""></div>
+    </div>
+</div>      
+
+<script type="text/javascript">
+     pageSetUp();
+     var questionSaveConfigBaseEmail = "@saveConfig";
+     if (questionSaveConfigBaseEmail == "False") {
+         var ck = "@cookieName";
+         delete_cookie(ck);
+     }
+
+    function refreshMeBaseEmail@(ViewBag.from.Split(':')[0])() {
+        csBaseEmail@(ViewBag.from.Split(':')[0]).data('CStable').update();
+    }
+    $("#table_generalSearch@(ViewBag.from.Split(':')[0])").keypress(function (e) {
+        if (e.which == 13) {
+            generalFilterSearch@(ViewBag.from.Split(':')[0]) = $(this).val();
+            LoadTableBaseEmail@(ViewBag.from.Split(':')[0])();
+        }
+    });
+    $("#table_generalLimit@(ViewBag.from.Split(':')[0])").keypress(function (e) {
+        if (e.which == 13) {
+            generalFilterlimit@(ViewBag.from.Split(':')[0]) = $(this).val();
+            LoadTableBaseEmail@(ViewBag.from.Split(':')[0])();
+        }
+    });
+
+     var clOffBaseEmail = [
+     @foreach (var item in (List<BaseDynamicColumnList>) ViewBag.column)
+     {
+         if(item.listID == id && !item.show)
+         {
+             string quote = "\"";
+             string x = quote + item.name + quote + ", ";
+             @Html.Raw(x) 
+         }
+     }
+     ];
+    selectedFilters@(ViewBag.from.Split(':')[0]) = undefined;
+    filterQuery@(ViewBag.from.Split(':')[0]) = "";
+    filterQueryURL@(ViewBag.from.Split(':')[0]) = "";
+    generalFilterSearch@(ViewBag.from.Split(':')[0]) = "";
+    generalFilterlimit@(ViewBag.from.Split(':')[0]) = 20;
+function LoadTableBaseEmail@(ViewBag.from.Split(':')[0])() {
+    csBaseEmail@(ViewBag.from.Split(':')[0]) = $('#csBaseEmailDiv@(ViewBag.from.Split(':')[0])');
+    csBaseEmail@(ViewBag.from.Split(':')[0]).CStable({
+        ajaxUrl: csBaseEmail@(ViewBag.from.Split(':')[0]).data('url'),
+        pagerFirstLabel: '@("First")',
+        pagerLastLabel: '@("Last")',
+        ajaxData: {
+            limit: generalFilterlimit@(ViewBag.from.Split(':')[0]),
+            offset: 0,
+cstable_search: generalFilterSearch@(ViewBag.from.Split(':')[0])
+        },
+        columnasDesactivadas: clOffBaseEmail,
+        defaultColumnOff: true,
+        current: 1,
+        pagerCount: 10,
+            hasSearch: false,
+            hasShow : false,
+    });
+    }
+LoadTableBaseEmail@(ViewBag.from.Split(':')[0])();
+     function exportCSVBaseEmail() {
+         var cadenaGet = FiltersBaseEmail(); //Almacena todos los Filters
+         $.ajax({
+             url: "@Url.Action("getCSV", "BaseEmail")",
+             data: "from = @ViewBag.from&" + cadenaGet + "colActivas=" + columnasActivasReporteBaseEmail() + "&tableName=@ViewBag.tableName&" + filterQueryURL@(ViewBag.from.Split(':')[0]),
+             success: function (data) {
+                 window.location.href = this.url;
+             }
+         });
+     }
+     //Funcion que retorna un string con los Filters aplicados, en formato GET
+     function FiltersBaseEmail() {
+          var get = "";
+          var array = $.map(csBaseEmail@(ViewBag.from.Split(':')[0]).data('CStable').options.ajaxData, function (value, index) {
+          return index;
+          });
+          var array2 = $.map(csBaseEmail@(ViewBag.from.Split(':')[0]).data('CStable').options.ajaxData, function (value, index) {
+          return value;
+          });
+          for (var i = 0; i < array.length; i++) {
+             get += array[i] + "=" + array2[i] + "&";
+          }
+          return get;
+     }
+     //Funcion que retorna un String con las columnas activas, separadas por "-"
+      function columnasActivasReporteBaseEmail() {
+          var ac = eval(unescape(leerCockie("@cookieName")));
+          var colActivas = "";
+          if (ac != undefined) {
+              for (var i = 0; i < ac.length; i++) {
+                  if (ac[i].c) {
+if (columns_cstable_cookie_header_csBaseEmailDiv[ac[i].v] != undefined)
+                      colActivas += columns_cstable_cookie_header_csBaseEmailDiv[ac[i].v].n + "-";
+                  }
+              }
+              colActivas = colActivas.substring(0, colActivas.length - 1);
+         }
+         else{
+              for (var i = 0; i < columns_cstable_cookie_header_csBaseEmailDiv.length; i++) {
+if (columns_cstable_cookie_header_csBaseEmailDiv[ac[i].v] != undefined)
+                   colActivas += columns_cstable_cookie_header_csBaseEmailDiv[i].n + "-";
+              }
+              colActivas = colActivas.substring(0, colActivas.length - 1);
+         }
+         return colActivas;
+     }
+     //Si no existe la cookie
+function makeHide@(ViewBag.tableName)() { if (!existCookie("@cookieName")) { $("#updatechecks").trigger("click"); } }
+     if (!existCookie("@cookieName")) {
+         $("#updatechecks").trigger("click");
+     }
+     //Funcion que retorna el contenido de la cookie con el nombre que le pasan
+     function leerCockie(cname) {
+         var name = cname + "=";
+         var ca = document.cookie.split(';');
+             for (var i = 0; i < ca.length; i++) {
+                  var c = ca[i];
+                  while (c.charAt(0) == ' ') c = c.substring(1);
+                  if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+             }
+         return "";
+     }
+     //Delete cookie
+     function delete_cookie(name) {
+         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+     }
+     function existCookie(cname) {
+         var name = cname + "=";
+         var ca = document.cookie.split(';');
+             for (var i = 0; i < ca.length; i++) {
+                  var c = ca[i];
+                  while (c.charAt(0) == ' ') c = c.substring(1);
+                  if (c.indexOf(name) == 0) return true;
+             }
+         return false;
+     }
+     function resetBaseEmail(){
+         var ck = "@cookieName";
+         delete_cookie(ck);
+         location.reload();
+     }
+</script>
+

@@ -1,0 +1,106 @@
+﻿@using Admin.BaseClass.UI
+@using Admin.Models;
+
+@{
+    Widget widget = new Widget("NIIWidget", "Generate CRUD", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_reorder, this.ViewContext);
+    widget.Data_widget_deletebutton = true;
+    widget.Data_widget_togglebutton = true;
+    widget.Data_widget_colorbutton = true;
+    widget.Data_widget_fullscreenbutton = true;
+    widget.Data_widget_sortable = true;
+    widget.Data_widget_editbutton = true;
+}
+
+<section id="widget-grid" class="">
+    <div class="row">
+        @Html.Raw(widget.beginHeader())
+        @Html.Raw(widget.beginCustomButton())
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.endHeader())
+        <form action="@Url.Action("GenerateForm", "BaseDeveloper")" method="post" id="NII-form" class="smart-form" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.")">
+            <fieldset>
+                <div class="row">
+                    @Html.BaseTextBox("isChild", "", "required")
+                </div>
+                <div class="row">
+                    @Html.BaseDropDownList("tableNames", "VWBaseallsystem", "name", "name", " where name not like 'Base%' and name not like 'VW%' and name not like 'web%' and name not like 'sys%' order by create_date", 10, "Table Name", "Select Table", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), false, "Refresh Tables", "", "required", "", null)
+                    @*@Html.BaseDropDownList("tableNames", "VWBaseallsystem", "name", "name", "order by create_date", 10, "Table Name", "Select Table", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), false, "Refresh Tables", "", "required", "", null)*@
+                </div>
+                <div class="row">
+                    @Html.BaseDropDownList("isPadre", "VWBaseallsystem", "name", "name", " where name not like 'Base%' and name not like 'VW%' and name not like 'web%' and name not like 'sys%' order by create_date", 10, "Table Child", "Select Table", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), true, "Refresh Tables", "", "", "", null)
+                    @*@Html.BaseDropDownList("isPadre", "VWBaseallsystem", "name", "name", " order by create_date", 10, "Table Child", "Select Table", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, new List<object>(), false, "Refresh Tables", "", "required", "", null)*@
+                </div>
+                @Html.Hidden("parentMenu", false)
+                @Html.Hidden("report", false)
+                @Html.Hidden("buildColumns", true)
+            </fieldset>
+            <footer>
+                <button id="btnSubmit" class="btn btn-success"><i class="glyphicon glyphicon-ok" title="@("Save")"></i></button>
+            </footer>
+        </form>
+        @Html.Raw(widget.Dcontinue())
+        @Html.Raw(widget.end())
+    </div>
+</section>
+
+<script>
+    pageSetUp();
+    $(document).ready(function () {
+        validateForm("NII-form");
+
+
+        $("#tableNames").change(function () {
+            var $me = $(this);
+            $.ajax({
+                method: "GET",
+                dataType: 'json',
+                url: '@Url.Action("getChilds", "BaseDeveloper")',
+                data: { tableName: $me.val() },
+                success: function (response) {
+                    $("#isPadre").select2('val', response);
+                    $("#isPadre").trigger("change");
+                },
+                error: function (err) {
+                    
+                }
+            });
+
+            $.ajax({
+                method: "GET",
+                dataType: 'json',
+                url: '@Url.Action("getParent", "BaseDeveloper")',
+                data: { tableName: $me.val() },
+                success: function (response) {
+                    $("#isChild").val(response);
+                },
+                error: function (err) {
+                    
+                }
+            });
+
+        });
+
+   
+        $("#btnSubmit").click(function () {
+            var form = $("#NII-form");
+            var $me = $(this);
+            form.validate();
+            if (form.valid()) {
+                $me.attr("disabled", "disabled");
+                $.ajax({
+                    type: "POST",
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function (response) {
+                        alert(response.message);
+                        $me.removeAttr("disabled");
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

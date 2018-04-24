@@ -1,0 +1,92 @@
+﻿@model Admin.Models.BaseProfile
+@using Admin.Models;
+
+<label>Perfil:@Model.name </label>
+
+<ul class="nav nav-tabs" id="myTabs">
+    <li role="presentation" class="active">
+        <a href="#info" data-toggle="tab">Role Information</a>
+    </li>
+    <li role="presentation">
+        <a href="#menuList" data-toggle="tab">Menus List</a>
+    </li>
+    <li role="presentation">
+        <a href="#actionList" data-toggle="tab">Actions List</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="info">
+        <div id="getProfileForm">Loading Content...</div>
+    </div>
+    <div class="tab-pane" id="actionList">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Action List</h3>
+            </div>
+            <div class="panel-body" style="padding-top: 15px !important;">
+                <form id="save-form-menus" action="@Url.Action("SaveActions", "BasePermissions")" class="" method="post">
+                    @Html.HiddenFor(model => model.id)
+                    <div id="getActions" class="lil-padding">Loading Content...</div>
+
+                    <p class="lil-padding">
+                        <button id="clickem" class="btn btn-success">@("Save Actions")</button>
+                    </p>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="menuList">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Menu List</h3>
+            </div>
+            <div class="panel-body" style="padding-top: 15px !important;">
+                <form id="save-form-menus" action="@Url.Action("SaveMenus", "BasePermissions")" class="" method="post">
+                    @Html.HiddenFor(model => model.id)
+                    <div id="getMenus" class="lil-padding">Loading Content...</div>
+
+                    <p class="lil-padding">
+                        <button id="clickem" class="btn btn-success">@("Save Menus")</button>
+                    </p>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    pageSetUp();
+    $(document).ready(function () {
+        var id = "@Html.Raw(Model.id)";
+        $.ajax({
+            url: "@Url.Action("ListaMenus2", "BasePermissions")",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getMenus').html(data);
+                nav_page_height();
+            }
+        });
+
+        $.ajax({
+            url: "@Url.Action("ListaAcciones2", "BasePermissions")",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getActions').html(data);
+                nav_page_height();
+            }
+        });
+
+        $.ajax({
+            url: "@Url.Action("Form", "BaseProfiles", new { id = Model.id })",
+            data: { idProfile: id },
+            success: function (data) {
+                $('#getProfileForm').html(data);
+                nav_page_height();
+            }
+        });
+    });
+
+
+
+</script>

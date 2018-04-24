@@ -1,0 +1,40 @@
+@model System.Web.Mvc.HandleErrorInfo
+@using Admin.CustomCode
+@{ 
+    ViewBag.Title = "Error";
+}
+
+<div class="section_title fluid_wrap">
+    <div class="col-lg-8 pl0">
+        <h1 class="the_title">Conflicto en los datos</h1>
+    </div>
+    <div class="col-lg-4 pr0"></div>
+</div>
+
+<div class="drag_and_drop_container fluid_wrap reset">
+    <div class="drag_container_title">
+        <h2>Ha ocurrido un error al procesar su solicitud.</h2>
+    </div>
+    <div class="drag_container_the_content_area drag_content_area_fluid_wrap">
+        <hgroup class="title">
+            <h1 class="has-error">Se ha producido un error al procesar la solicitud. Vea el mensaje de error para más detalles.</h1>
+            <h1>Detalles: </h1>
+            @if (Model.Exception.GetBaseException() is System.Data.SqlClient.SqlException)
+            {
+                var ex = Model.Exception.GetBaseException() as System.Data.SqlClient.SqlException;
+                switch(ex.Number){
+                    case 547 : <h5 class="help-block">No se puede Delete un registro con datos referenciados.</h5> break; 
+                    case 2601: <h5 class="help-block">No se puede insertar un registro ya existente.</h5> break;
+                }
+            }
+            else { 
+                <h3>@Model.Exception</h3>
+            }
+        </hgroup>
+        <div class="col-lg-4 ">
+        <input name="action" type="submit" value="Regresar" onclick="window.history.back();" class="button_go_back btstyles col-lg-5" />
+        </div>
+    </div>
+    <!--end drag_container_the_content_area-->
+</div>
+<!--end drag_and_drop_container-->

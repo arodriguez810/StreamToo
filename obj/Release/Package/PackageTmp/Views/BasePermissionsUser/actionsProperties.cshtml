@@ -1,0 +1,80 @@
+﻿@model Admin.Models.BaseAction
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<h2 class="">Acción Seleccionada: @Html.Raw(Model.displayName)</h2>
+<br />
+<form id="prope-form" action="@Url.Action("actionsProperties", "BasePermissionsUser")" method="post" class="smart-form ajaxForm NocurrentID" data-successMessage="@("Saved")" data-errorMessage="@("Error writing data try later.")">
+    @{
+        var baseaction = Model.BaseUserActions;
+        if (baseaction.Any())
+        {
+            ViewBag.forever = baseaction.FirstOrDefault().forever;
+            ViewBag.untilDate = baseaction.FirstOrDefault().untilDate;
+            ViewBag.password = Admin.BaseClass.App.Permission.defaultShowPassword;
+            ViewBag.passwordAccess = baseaction.FirstOrDefault().passwordAccess;
+        }
+    }
+    @Html.HiddenFor(model => model.id)
+    @Html.Hidden("userid", (int)ViewBag.userid)
+
+    <div class="row">
+        @Html.BaseCheckBox("forever", (ViewBag.forever != null) ? (bool)ViewBag.forever : false, "", "Fecha de Caducidad", 6, "Si", "No", "required")
+        @Html.BaseCheckBox("passwordAccess", (ViewBag.passwordAccess != null) ? (bool)ViewBag.passwordAccess : false, "", "Password Access", 6, "Si", "No", "required")
+    </div>
+
+    <div class="row">
+        <section class=" col col-lg-6 ">
+            <label class="label">Hasta la fecha</label>
+            <label class="input">
+                @Html.TextBox("untilDate", (ViewBag.untilDate != null) ? (DateTime)ViewBag.untilDate : DateTime.Now, new { type = "text", placeholder = "Hasta la fecha", @class = "datetime", data_dateformat = "yy-mm-dd", data_maxDate = "0" })
+            </label>
+            <div class="note"></div>
+        </section>
+        @Html.BasePassword("password", (string)ViewBag.password, "Password", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = "Password" }, "", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"), "")
+
+
+
+    </div>
+    <footer>
+        <button data-success="$('#baseDynamicModalObject').modal('hide');" class="btn btn-primary ad">@("Save")</button>
+        <button type="button" class="btn btn-default btn_color_so" data-dismiss="modal">
+            Cancelar
+        </button>
+    </footer>
+</form>
+<script>
+    pageSetUp();
+    if ($('#forever').prop("checked") == true) {
+        $("#untilDate").removeClass('dn');
+    } else {
+        $("#untilDate").addClass('dn');
+    }
+    if ($('#passwordAccess').prop("checked") == true) {
+        $("#password").removeClass('dn');
+    } else {
+        $("#password").addClass('dn');
+    }
+
+    
+    $(document).ready(function () {
+        validateForm("prope-form");
+
+        
+
+        $(document).on('change', '#forever', function () {
+            if ($(this).prop("checked") == true) {
+                $("#untilDate").removeClass('dn');
+            } else {
+                $("#untilDate").addClass('dn');
+            }
+        });
+
+        $(document).on('change', '#passwordAccess', function () {
+            if ($(this).prop("checked") == true) {
+                $("#password").removeClass('dn');
+            } else {
+                $("#password").addClass('dn');
+            }
+        });
+    });
+</script>

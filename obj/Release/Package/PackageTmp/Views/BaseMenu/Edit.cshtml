@@ -1,0 +1,64 @@
+@*@using Admin.Helpers;
+@using Admin.Models;
+@using Admin.CustomCode; 
+@model Admin.Models.ViewModels.PermissionsEditModel
+
+@{ 
+    ViewBag.Title = "Permisos - Edit";
+    List<Admin.Models.Controller> controllers = ViewBag.controllers;
+}
+
+<div class="section_title fluid_wrap">
+    <ul class="col-lg-8 pl0">
+        <li class="fl add_title">
+            <h1 class="the_title_metro">@Helper.t("Edit_information_permissionsRoles")</h1>
+        </li>
+    </ul>
+    <div class="col-lg-3 pr0"></div>
+    @Html.Partial("Logout")
+</div>
+
+<div class="drag_and_drop_container fluid_wrap reset">
+
+    <div class="drag_container_the_content_area drag_content_area_fluid_wrap">
+        @using (Html.BeginForm("Edit", "BaseMenu", FormMethod.Post, new { @class = "standard_form fluid_wrap" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.AntiForgeryToken()
+
+            <fieldset>
+                <legend></legend>
+
+                <ul class="form_items_container col-lg-12 pl0">
+                    <li>
+                        <div class="form_items_container col-lg-4 pl0">
+                            @Html.LabelForR(model => model.RoleId, "Edit_role")
+                            @Html.DropDownListFor(model => model.RoleId, null, String.Empty, new { @class = "form-control col-lg-12 dropdown" })
+                            @Html.ValidationMessageFor(model => model.RoleId)
+                        </div>
+                    </li>
+                    <li>
+                        <div id="partial">
+                        </div>
+                    </li>
+                    <div class="relative_buttons">
+                    <ul>
+                        <li class="button_save_metro">
+                            <input type="submit" id="btGuardar" value="@Helper.t("Save")" class=" btstyles_metro col-lg-12"></li>
+                        <li class="button_cancel_metro">
+                            @Html.ActionLink(Helper.t("Cancel"), "Index", null, new { @class = "btstyles_metro col-lg-12" })
+                        </li>
+                    </ul>
+                </div>
+                    @Html.Hidden("actionUrl", Url.Action("GetMenus", "BaseMenu"))
+                </ul>
+            </fieldset>
+        }
+    </div>
+    <!--end drag_container_the_content_area-->
+</div>
+<!--end drag_and_drop_container-->
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/PermissionsHandlers.js"></script>
+}*@

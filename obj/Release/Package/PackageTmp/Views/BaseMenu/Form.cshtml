@@ -1,0 +1,76 @@
+﻿@model Admin.Models.BaseMenu
+@using Admin.BaseClass.UI
+@using Admin.Models;
+<i class="dn" id="modalInfo" data-modalimg="@Helper.GetApplicationImage(new Admin.Models.Context())" data-modaltitle="@("Create BaseMenu")"></i>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (Model.id == 0)
+        {
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"> X </button>
+        }
+        <h3 class="panel-title">Menu</h3>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Save", "BaseMenu")" id="BaseMenu-form" class="smart-form ajaxForm" data-successmessage="@("Saved")" data-errormessage="@("Error writing data try later.") ">
+            <fieldset>
+                @Html.HiddenFor(model => model.id)
+                <div class="row">
+                    @{var selectedmenuID = new List<object>(); if (Model.menuID != null) { selectedmenuID.Add(Model.menuID); } }
+                    @Html.BaseDropDownList("menuID", "BaseMenu", "id", "title", "where id!=" + Model.id.ToString(), 6, "MenuID", "Select BaseMenu", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedmenuID, false, "Refresh BaseMenu", "", "", "", null)
+                    @{var selectedactionID = new List<object>(); if (Model.actionID != null) { selectedactionID.Add(Model.actionID); } }
+                    @Html.BaseDropDownList("actionID", "VWBaseActionController", "id", "controller + '=>' + name", "  where controller is not null", 6, "ActionID", "Select BaseAction", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedactionID, false, "Refresh BaseAction", "controller", "", "", null)
+                </div>
+                <div class="row">
+                    @Html.BaseCheckBox("directLink", Model.directLink, "", "DirectLink", 6, "Si", "No", "")
+                    @Html.BaseCheckBox("translatable", Model.translatable, "", "Translatable", 6, "Si", "No", "")
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("href", Model.href, "Href", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Href") }, "maxlength:500", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("title", Model.title, "Title", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Title") }, "maxlength:50", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("css", Model.css, "Css", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Css") }, "maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseTextBox("text", Model.text, "Text", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("Text") }, "maxlength:100", "", false, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                </div>
+                <div class="row">
+                    @{var selectedIcon = new List<object>(); if (Model.icon != null) { selectedIcon.Add(Model.icon); } }
+                    <i id="texticon"></i>
+                    @Html.BaseDropDownList("icon", "BaseUIIcon", "css", "css", "", 6, "Icon", "Select Icon", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedIcon, false, "Refresh Icons", "", "", "", null)
+
+                    @{var selectedColor = new List<object>(); if (Model.backGroundColor != null) { selectedColor.Add(Model.backGroundColor); } }
+                    @Html.BaseDropDownList("backGroundColor", "BaseBGColors", "name", "text", "", 6, "BackGroundColor", "Select BackGroundColor", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedColor, false, "Refresh BackGroundColor", "", "", "", null)
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("badgeText", Model.badgeText, "BadgeText", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("BadgeText") }, "maxlength:100", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @{var selectedColorBadge = new List<object>(); if (Model.badgeColor != null) { selectedColorBadge.Add(Model.badgeColor); } }
+                    @Html.BaseDropDownList("badgeColor", "BaseBGColors", "name", "text", "", 6, "BadgeColor", "Select BadgeColor", "", Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_arrow_circle_down, selectedColorBadge, false, "Refresh BadgeColor", "", "", "", null)
+                </div>
+                <div class="row">
+                    @Html.BaseTextBox("badgeQuery", Model.badgeQuery, "BadgeQuery", new { icon1 = new BaseTextBoxIcon() { Icon = Admin.BaseClass.UI.BaseUIIcon.fa.fa_fa_text_width, Position = BaseTextBoxIconPosition.icon_append } }, 6, new { placeholder = ("BadgeQuery") }, "maxlength:300", "", true, new MyHtmlHelpers.BaseToolTip("Form Field"))
+                    @Html.BaseCheckBox("hidden", Model.hidden, "", "Hidden", 6)
+                </div>
+            </fieldset>
+            <footer>
+                <a class="btn btn-danger formClose" title="@("Close")" href="javascript:void();"><i class="glyphicon glyphicon-remove"></i></a>
+                <button class="btn btn-info" data-success="$('#baseDynamicModalObject').modal('hide');" title="@("Save And Close")"><i class="glyphicon glyphicon-transfer"></i></button>
+            </footer>
+        </form>
+    </div>
+</div>
+<script>
+    pageSetUp(true);
+    function UI($scope) {
+        $scope.nada = "hola";
+    }
+    $(document).ready(function () {
+        validateForm("BaseMenu-form");
+        $("#icon").change(function () {
+            var thist = $(this);
+            var act = thist.parent().parent().parent().find("i");
+            act.removeClass();
+            act.addClass("icon-append");
+            act.addClass($("#icon").val());
+        });
+
+    });
+</script>
