@@ -612,7 +612,6 @@
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loaders.gif" />
     <Content Include="img\alpha.png" />
-    <Content Include="img\descarga.jpg" />
     <Content Include="img\flags\AD.png" />
     <Content Include="img\flags\AE.png" />
     <Content Include="img\flags\AF.png" />
@@ -2066,6 +2065,7 @@
     <Content Include="Views\Shared\_Print.cshtml" />
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Shared\_HeadPrint.cshtml" />
+    <None Include="Properties\PublishProfiles\MyFTP.pubxml" />
     <None Include="Properties\PublishProfiles\OCR.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

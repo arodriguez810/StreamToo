@@ -20,7 +20,7 @@
                 @{
                     string img = @Helper.GetApplicationImage(new Admin.Models.Context());
                 }
-                <img alt="@ViewBag.config.appName" src="@img" style="margin-top:9px; margin-left:9px;">
+                <img alt="@ViewBag.config.appName" src="@(img.Replace("//","/"))" style="margin-top:9px; margin-left:9px;">
             </span>
             <h3 style="color: black;width: 660px;margin-left: 227px !important;margin-top: 2px;line-height: 41px;"></h3>
         </div>
